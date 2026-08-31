@@ -2,8 +2,30 @@
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --color-orange-brand: #FF8B02;
+    --color-orange-hover: #E67A00;
+    --color-orange-light: #FFF4E5;
+    --color-orange-border: #FFD199;
 }
+
+@layer utilities {
+    .bg-grid-pattern {
+        background-size: 36px 36px;
+        background-image: 
+            linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    }
+    .bg-orange-grid {
+        background-size: 36px 36px;
+        background-image: 
+            linear-gradient(to right, rgba(255, 139, 2, 0.06) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 139, 2, 0.06) 1px, transparent 1px);
+    }
+}
+[x-cloak] { display: none !important; }
+
+
