@@ -16,7 +16,7 @@
                 <a href="#hero" class="text-[#FF8B02] font-black relative py-1 border-b-2 border-[#FF8B02]">
                     Home
                 </a>
-                <a href="#categories" class="hover:text-[#FF8B02] transition-colors py-1">
+                <a href="{{ route('products') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Products
                 </a>
                 <a href="#why-us" class="hover:text-[#FF8B02] transition-colors py-1">

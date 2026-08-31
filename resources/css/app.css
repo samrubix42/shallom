@@ -5,7 +5,7 @@
 @source '../views/**/*.blade.php';
 
 @theme {
-    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
     --color-orange-brand: #FF8B02;
     --color-orange-hover: #E67A00;
     --color-orange-light: #FFF4E5;
