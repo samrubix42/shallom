@@ -11,6 +11,10 @@
     --color-orange-hover: #E67A00;
     --color-orange-light: #FFF4E5;
     --color-orange-border: #FFD199;
+    --color-brand: #FF8B02;
+    --color-brand-hover: #E67A00;
+    --color-brand-light: #FFF4E5;
+    --color-brand-border: #FFD199;
 }
 
 h1, h2, h3, h4 {
@@ -18,6 +22,7 @@ h1, h2, h3, h4 {
     font-weight: 700;
 }
 
+/* Continuous Marquee Ticker */
 @keyframes marquee {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
@@ -32,5 +37,25 @@ h1, h2, h3, h4 {
 .animate-marquee:hover {
     animation-play-state: paused;
 }
+
+/* Smooth Scroll Reveal Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay classes for staggered grid items */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
 
 [x-cloak] { display: none !important; }
