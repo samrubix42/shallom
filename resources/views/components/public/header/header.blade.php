@@ -1,7 +1,7 @@
 <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md text-slate-900 border-b border-slate-200/80 shadow-xs transition-all duration-300">
     
-    <!-- TOP STRIP WITH COMPANY DETAILS (ORANGE BRAND THEME) -->
-    <div class="bg-slate-900 text-slate-300 text-xs py-2 border-b border-slate-800">
+    <!-- TOP STRIP WITH COMPANY DETAILS (HIDDEN ON MOBILE PHONE SCREENS) -->
+    <div class="hidden sm:block bg-slate-900 text-slate-300 text-xs py-2 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
             
             <!-- Left Company Details: Phone & Plant Address -->

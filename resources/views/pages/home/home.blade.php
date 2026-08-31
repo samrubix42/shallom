@@ -261,7 +261,7 @@
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-white group">
                         <img src="{{ asset('images/prefab_house_hero_png_1788163818892.jpg') }}" 
                              alt="Shallom Prefab Systems Architectural Design" 
-                             class="w-full h-[400px] sm:h-[480px] object-cover object-center group-hover:scale-103 transition-transform duration-700">
+                             class="w-full h-[260px] sm:h-[400px] lg:h-[480px] object-cover object-center group-hover:scale-103 transition-transform duration-700">
                     </div>
                 </div>
 
