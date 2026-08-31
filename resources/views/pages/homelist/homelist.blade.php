@@ -6,11 +6,11 @@
             <div class="space-y-3 max-w-2xl">
                 <div class="flex items-center gap-2 text-[#FF8B02]">
                     <i class="ri-ruler-2-line text-lg"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest">TECHNICAL SPECIFICATIONS CATALOG</span>
+                    <span class="text-xs font-bold uppercase tracking-widest">OUR RANGE & SPECIFICATIONS</span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.18]">
-                    PRODUCT SPECIFICATIONS & <br/>
-                    <span class="text-[#FF8B02] font-normal">MODULAR PRICING</span>
+                    PREFAB SOLUTIONS & <br/>
+                    <span class="text-[#FF8B02] font-normal">OUR COMPLETE RANGE</span>
                 </h1>
                 <p class="text-slate-600 text-sm font-normal leading-relaxed">
                     Browse technical material grades, minimum order quantities, structural framing details, and PDF brochure spec sheets for Shallom prefabricated systems.
@@ -21,7 +21,7 @@
             <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none shrink-0">
                 <button wire:click="$set('activeCategory', 'all')" 
                         class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === 'all' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
-                    All Products
+                    All Ranges
                 </button>
                 <button wire:click="$set('activeCategory', 'houses')" 
                         class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === 'houses' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">

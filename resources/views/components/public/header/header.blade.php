@@ -47,8 +47,11 @@
                 <a href="{{ route('home') }}" class="hover:text-[#FF8B02] transition-colors py-1">
                     Home
                 </a>
+                <a href="{{ route('profile') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
+                    Profile
+                </a>
                 <a href="{{ route('products') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
-                    Products
+                    Our Range
                 </a>
                 <a href="{{ route('home') }}#why-us" class="hover:text-[#FF8B02] transition-colors py-1">
                     Why Choose Us
@@ -59,7 +62,7 @@
                 <a href="{{ route('home') }}#faq" class="hover:text-[#FF8B02] transition-colors py-1">
                     FAQ
                 </a>
-                <a href="{{ route('home') }}#contact" class="hover:text-[#FF8B02] transition-colors py-1">
+                <a href="{{ route('contact') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Contact
                 </a>
             </nav>
@@ -73,7 +76,7 @@
                 </a>
 
                 <!-- Send Enquiry Button -->
-                <a href="{{ route('home') }}#contact" 
+                <a href="{{ route('contact') }}" 
                    class="inline-flex items-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-2.5 rounded-full shadow-md shadow-orange-500/20 transition-all text-xs transform hover:-translate-y-0.5">
                     <i class="ri-mail-send-fill text-white text-sm"></i>
                     <span>Send Enquiry</span>
@@ -104,12 +107,13 @@
          x-transition:leave-end="opacity-0 -translate-y-4"
          class="lg:hidden border-t border-slate-200 bg-white px-4 pt-4 pb-6 space-y-3 shadow-xl">
         
-        <a href="{{ route('home') }}" @click="mobileMenuOpen = false" class="block py-2 text-[#8B2626] font-extrabold text-sm">Home</a>
-        <a href="{{ route('products') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">Products</a>
+        <a href="{{ route('home') }}" @click="mobileMenuOpen = false" class="block py-2 text-[#FF8B02] font-extrabold text-sm">Home</a>
+        <a href="{{ route('profile') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Profile</a>
+        <a href="{{ route('products') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Our Range</a>
         <a href="{{ route('home') }}#why-us" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">Why Choose Us</a>
         <a href="{{ route('home') }}#testimonials" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">Reviews</a>
         <a href="{{ route('home') }}#faq" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">FAQ</a>
-        <a href="{{ route('home') }}#contact" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">Contact</a>
+        <a href="{{ route('contact') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm font-bold">Contact</a>
 
         <div class="pt-3 border-t border-slate-100 space-y-2">
             <a href="tel:+917942550323" class="block text-center bg-[#FDF2F2] text-[#8B2626] font-bold py-2.5 rounded-full border border-[#F5C6C6] text-xs">

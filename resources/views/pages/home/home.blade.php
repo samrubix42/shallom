@@ -302,7 +302,7 @@
             <div class="max-w-3xl mb-16 space-y-4 reveal-on-scroll">
                 <div class="flex items-center gap-2 text-[#FF8B02]">
                     <i class="ri-grid-fill text-lg"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest">OUR CORE PORTFOLIO</span>
+                    <span class="text-xs font-bold uppercase tracking-widest">OUR RANGE</span>
                 </div>
 
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.18]">
