@@ -34,10 +34,27 @@
         <!-- 2. CORPORATE NARRATIVE & OVERVIEW -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <!-- Left Column: Showcase Video Card -->
-            <div class="lg:col-span-6">
+            <!-- Left Column: Showcase Video Card (Lazy Loaded) -->
+            <div class="lg:col-span-6"
+                 x-data="{
+                    initLazyProfileVideo() {
+                        const video = this.$refs.profileVideo;
+                        if (!video) return;
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    video.play().catch(() => {});
+                                } else {
+                                    video.pause();
+                                }
+                            });
+                        }, { threshold: 0.2 });
+                        observer.observe(video);
+                    }
+                 }"
+                 x-init="initLazyProfileVideo()">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-slate-900 group">
-                    <video autoplay loop muted playsinline controls
+                    <video x-ref="profileVideo" loop muted playsinline controls preload="none" poster="{{ asset('shallom/IMG-20260901-WA0014.jpg') }}"
                            class="w-full h-[320px] sm:h-[440px] object-cover object-center">
                         <source src="{{ asset('shallom/VID-20260901-WA0059.mp4') }}" type="video/mp4">
                         <source src="{{ asset('shallom/VID-20260901-WA0060.mp4') }}" type="video/mp4">

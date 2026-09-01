@@ -99,7 +99,7 @@
              class="absolute inset-0 w-full h-full flex items-center bg-[#FAF9F5]">
             
             <div class="absolute inset-y-0 right-0 w-full lg:w-3/5 h-full">
-                <img src="{{ asset('shallom/IMG-20260901-WA0015.jpg') }}" 
+                <img src="{{ asset('shallom/IMG-20260901-WA0014.jpg') }}" 
                      alt="Prefabricated Site Office Cabin" 
                      class="w-full h-full object-cover object-center">
                 <div class="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/40 lg:via-[#FAF9F5]/45 to-transparent"></div>
@@ -257,10 +257,27 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
-                <!-- Left Column: High-Res Architectural Video -->
-                <div class="lg:col-span-6 reveal-on-scroll">
+                <!-- Left Column: High-Res Architectural Video (Lazy Loaded) -->
+                <div class="lg:col-span-6 reveal-on-scroll"
+                     x-data="{
+                        initLazyVideo() {
+                            const video = this.$refs.lazyVideo;
+                            if (!video) return;
+                            const observer = new IntersectionObserver((entries) => {
+                                entries.forEach(entry => {
+                                    if (entry.isIntersecting) {
+                                        video.play().catch(() => {});
+                                    } else {
+                                        video.pause();
+                                    }
+                                });
+                            }, { threshold: 0.2 });
+                            observer.observe(video);
+                        }
+                     }"
+                     x-init="initLazyVideo()">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-slate-900 group">
-                        <video autoplay loop muted playsinline controls
+                        <video x-ref="lazyVideo" loop muted playsinline controls preload="none" poster="{{ asset('shallom/IMG-20260901-WA0014.jpg') }}"
                                class="w-full h-[260px] sm:h-[400px] lg:h-[480px] object-cover object-center">
                             <source src="{{ asset('shallom/VID-20260901-WA0060.mp4') }}" type="video/mp4">
                             <source src="{{ asset('shallom/VID-20260901-WA0059.mp4') }}" type="video/mp4">
