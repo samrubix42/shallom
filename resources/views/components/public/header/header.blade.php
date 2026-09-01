@@ -18,13 +18,14 @@
             </div>
 
             <!-- Right Company Credentials: GSTIN & Quality -->
-            <div class="flex items-center gap-4 text-[11px] font-semibold">
-                <span class="inline-flex items-center gap-1.5 bg-slate-800 text-[#FF8B02] px-2.5 py-0.5 rounded-full border border-slate-700">
+            <div class="flex items-center gap-6 text-[11px] font-semibold">
+                <span class="inline-flex items-center gap-1.5  text-[#FF8B02]">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                     GSTIN: 07ANDPG4822C2ZI
                 </span>
-                <span class="hidden sm:inline-block text-slate-400">
-                    ISO 9001:2015 Manufacturer
+                <span class="inline-flex items-center gap-1  text-emerald-400 font-bold">
+                    <i class="ri-award-fill text-[#FF8B02]"></i>
+                    ISO 9001:2015 Certified
                 </span>
             </div>
 
