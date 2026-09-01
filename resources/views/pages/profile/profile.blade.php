@@ -6,22 +6,22 @@
             <div class="space-y-4 max-w-3xl">
                 <div class="flex items-center gap-2 text-[#FF8B02]">
                     <i class="ri-building-2-line text-lg"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest">COMPANY PROFILE & INFRASTRUCTURE</span>
+                    <span class="text-xs font-bold uppercase tracking-widest">COMPANY PROFILE & CORPORATE OVERVIEW</span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.18]">
                     SHALLOM PREFAB SYSTEMS & <br/>
-                    <span class="text-[#FF8B02] font-normal">CORPORATE OVERVIEW</span>
+                    <span class="text-[#FF8B02] font-normal">CORPORATE PROFILE</span>
                 </h1>
                 <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
-                    Incorporated in the year 2009 at Delhi (India), Shallom Prefab Systems is a premier practice actively engaged in manufacturing, exporting, and supplying high-performance prefabricated buildings and turnkey structural solutions nationwide.
+                    Established with industry roots dating back to <strong>2009 at Delhi (India)</strong> and GST registered in 2017, Shallom Prefab Systems is a leading manufacturer, exporter, and turnkey service provider of advanced pre-engineered construction solutions under the leadership of Proprietor <strong>Mr. Arvind Kumar Gautam</strong>.
                 </p>
             </div>
 
             <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
-                <a href="tel:+917942550323" 
+                <a href="tel:+919899552380" 
                    class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
                     <i class="ri-phone-fill text-sm"></i>
-                    <span>07942550323</span>
+                    <span>+91-9899552380</span>
                 </a>
                 <a href="{{ route('products') }}" 
                    class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
@@ -42,7 +42,7 @@
                          class="w-full h-[320px] sm:h-[440px] object-cover object-center group-hover:scale-103 transition-transform duration-700">
                     <div class="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-2 rounded-xl text-xs font-bold border border-white/20 flex items-center gap-2">
                         <i class="ri-calendar-check-fill text-[#FF8B02] text-base"></i>
-                        <span>Established Year 2009 • Delhi, India</span>
+                        <span>Established 2009 • Dilshad Garden, Delhi</span>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 </p>
 
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                    These products are manufactured and designed with high precision in accordance with set market norms using supreme quality raw material and latest technology under the guidance of skilled professionals. Sourced strictly from certified industry vendors in compliance with international quality standards, our structures deliver fine finish, excellent design, robust construction, easy installation, and protection under extreme weather conditions.
+                    Under the visionary leadership of Proprietor <strong>Mr. Arvind Kumar Gautam</strong>, our structures are manufactured with high precision using supreme quality raw materials and latest technology. Sourced strictly from certified industry vendors in compliance with international quality standards, our solutions deliver fine finish, excellent design, robust construction, easy installation, and protection under extreme weather conditions.
                 </p>
 
                 <div class="grid grid-cols-2 gap-4 pt-2">
@@ -81,7 +81,69 @@
 
         </div>
 
-        <!-- 3. INFRASTRUCTURE & DIVISIONAL UNITS -->
+        <!-- 3. OFFICIAL COMPANY FACTSHEET TABLE -->
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-xs space-y-6">
+            <div class="space-y-2 border-b border-slate-100 pb-4">
+                <div class="flex items-center gap-2 text-[#FF8B02]">
+                    <i class="ri-file-list-3-line text-lg"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">OFFICIAL CREDENTIALS</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Company Factsheet</h2>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-slate-200/80">
+                <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                    <tbody class="divide-y divide-slate-200 font-medium">
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50 w-1/3">Company Name</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold w-2/3">Shallom Prefab Systems</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Leadership / Proprietor</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Mr. Arvind Kumar Gautam</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Year of Incorporation / Roots</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">2009 (GST Registered: July 2017)</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Legal Status</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Sole Proprietorship</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Nature of Business</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Manufacturer, Exporter, Supplier, Wholesaler, Trader & Turnkey Service Provider</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Annual Turnover</td>
+                            <td class="py-3.5 px-6 text-[#FF8B02] font-extrabold">₹5 Crore – ₹25 Crore</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Team Size</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">26 – 50 Skilled Professionals</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">GST Registration No.</td>
+                            <td class="py-3.5 px-6 font-mono font-bold text-slate-900">07ANDPG4822C2ZI</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Registered Office Address</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">N-3/A-3, Dilshad Garden, Delhi – 110095, India</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Banker</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">AXIS BANK</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Accepted Payment Modes</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Cash, Cheque, Demand Draft (DD), Wire Transfer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4. INFRASTRUCTURE & DIVISIONAL UNITS -->
         <div class="space-y-10">
             <div class="max-w-3xl space-y-3">
                 <div class="flex items-center gap-2 text-[#FF8B02]">
@@ -125,7 +187,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-slate-900">Skilled Engineers</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Our expert team includes structural engineers, CAD draftsmen, and quality controllers dedicated to achieving client architectural specifications.
+                        Our 26–50 expert personnel team includes structural engineers, CAD draftsmen, and quality controllers dedicated to achieving client specifications.
                     </p>
                 </div>
 
@@ -142,7 +204,7 @@
             </div>
         </div>
 
-        <!-- 4. QUALITY COMMITMENT & CUSTOMER CENTRIC PHILOSOPHY -->
+        <!-- 5. QUALITY COMMITMENT & CUSTOMER CENTRIC PHILOSOPHY -->
         <div class="bg-white rounded-2xl border border-slate-200/80 p-8 sm:p-12 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <div class="lg:col-span-7 space-y-6">
@@ -169,7 +231,7 @@
                         GSTIN: <span class="text-[#FF8B02]">07ANDPG4822C2ZI</span>
                     </div>
                     <div class="px-4 py-2 rounded-lg bg-[#FAF9F5] border border-slate-200 text-xs font-bold text-slate-800">
-                        Plant: <span class="text-slate-600">New Delhi - 110092</span>
+                        Office: <span class="text-slate-600">Dilshad Garden, Delhi – 110095</span>
                     </div>
                 </div>
             </div>
@@ -200,7 +262,7 @@
                 </ul>
 
                 <div class="pt-4 border-t border-slate-200">
-                    <a href="tel:+917942550323" class="block text-center bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider transition-all">
+                    <a href="tel:+919899552380" class="block text-center bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider transition-all">
                         Call Direct Engineering Team
                     </a>
                 </div>

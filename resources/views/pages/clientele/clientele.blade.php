@@ -45,16 +45,25 @@
             </div>
         </div>
 
-        <!-- 2. BIG CLIENT IMAGES GRID -->
+        <!-- 2. HIGH-IMPACT CLIENT LOGO SHOWCASE GRID -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
             @for($i = 1; $i <= 14; $i++)
                 @php
                     $ext = in_array($i, [7, 10, 12]) ? 'png' : 'jpg';
                 @endphp
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-[#FF8B02] transition-all duration-300 flex items-center justify-center h-48 sm:h-56 group reveal-on-scroll">
-                    <img src="{{ asset('clients/Picture' . $i . '.' . $ext) }}" 
-                         alt="Shallom Prefab Client Partner {{ $i }}" 
-                         class="max-h-full max-w-full object-contain group-hover:scale-108 transition-transform duration-300">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-2xl hover:border-[#FF8B02] hover:shadow-orange-500/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-between h-52 sm:h-60 group relative overflow-hidden reveal-on-scroll">
+                    <!-- Subtle Partner Badge -->
+                    <div class="w-full flex items-center justify-between text-[11px] font-extrabold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">
+                        <span class="group-hover:text-[#FF8B02] transition-colors">PARTNER {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</span>
+                        <i class="ri-checkbox-circle-fill text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+
+                    <!-- Client Logo Image Container -->
+                    <div class="w-full h-full flex items-center justify-center py-3">
+                        <img src="{{ asset('clients/Picture' . $i . '.' . $ext) }}" 
+                             alt="Shallom Prefab Client Partner {{ $i }}" 
+                             class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                    </div>
                 </div>
             @endfor
         </div>

@@ -516,8 +516,76 @@
                     </p>
                 </div>
 
+        </div>
+    </section>
+
+    <!-- ULTRA-PREMIUM CLIENTELE LOGO SLIDER SECTION -->
+    <section class="py-16 sm:py-20 bg-gradient-to-b from-[#0B132B] via-[#0F172A] to-[#0B132B] text-white border-y border-[#FF8B02]/30 relative overflow-hidden shadow-2xl">
+        <!-- Ambient Glowing Orbs Background -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#FF8B02]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-10 text-center space-y-3">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-[#FF8B02]/40 text-[#FF8B02] text-xs font-extrabold uppercase tracking-widest shadow-sm">
+                <i class="ri-shield-check-fill text-base"></i>
+                <span>TRUSTED BY INDUSTRY LEADERS</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-tight leading-[1.18]">
+                POWERING INDIA'S TOP <br/>
+                <span class="text-[#FF8B02] font-normal">INFRASTRUCTURE & CORPORATE GIANTS</span>
+            </h2>
+
+            <p class="text-slate-300 text-xs sm:text-sm font-normal max-w-2xl mx-auto leading-relaxed">
+                Since 2009, Shallom Prefab Systems has delivered pre-engineered structural excellence for India's leading EPC conglomerates, government PSUs, and commercial developers.
+            </p>
+        </div>
+
+        <!-- Infinite Marquee Track with Edge Fade Gradients -->
+        <div class="relative w-full overflow-hidden py-4">
+            <!-- Left Gradient Fade Mask -->
+            <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-[#0B132B] to-transparent z-20"></div>
+            <!-- Right Gradient Fade Mask -->
+            <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-[#0B132B] to-transparent z-20"></div>
+
+            <div class="animate-marquee whitespace-nowrap flex items-center gap-8">
+                <div class="flex items-center gap-8 shrink-0">
+                    @for($i = 1; $i <= 14; $i++)
+                        @php
+                            $ext = in_array($i, [7, 10, 12]) ? 'png' : 'jpg';
+                        @endphp
+                        <div class="h-24 w-52 bg-white rounded-2xl border border-slate-200/80 p-4 flex items-center justify-center shadow-lg hover:shadow-2xl hover:border-[#FF8B02] hover:shadow-orange-500/20 hover:-translate-y-1 transition-all duration-300 group shrink-0">
+                            <img src="{{ asset('clients/Picture' . $i . '.' . $ext) }}" 
+                                 alt="Client Partner {{ $i }}" 
+                                 class="max-h-full max-w-full object-contain filter group-hover:scale-110 transition-all duration-300">
+                        </div>
+                    @endfor
+                </div>
+                <div class="flex items-center gap-8 shrink-0">
+                    @for($i = 1; $i <= 14; $i++)
+                        @php
+                            $ext = in_array($i, [7, 10, 12]) ? 'png' : 'jpg';
+                        @endphp
+                        <div class="h-24 w-52 bg-white rounded-2xl border border-slate-200/80 p-4 flex items-center justify-center shadow-lg hover:shadow-2xl hover:border-[#FF8B02] hover:shadow-orange-500/20 hover:-translate-y-1 transition-all duration-300 group shrink-0">
+                            <img src="{{ asset('clients/Picture' . $i . '.' . $ext) }}" 
+                                 alt="Client Partner {{ $i }}" 
+                                 class="max-h-full max-w-full object-contain filter group-hover:scale-110 transition-all duration-300">
+                        </div>
+                    @endfor
+                </div>
             </div>
         </div>
+
+        <!-- View All Clientele Link -->
+        <div class="text-center pt-8 relative z-10">
+            <a href="{{ route('clientele') }}" 
+               class="inline-flex items-center gap-2 border border-white/20 hover:border-[#FF8B02] bg-white/5 hover:bg-[#FF8B02] text-white font-bold px-7 py-3 rounded-full text-xs uppercase tracking-widest transition-all duration-300 transform hover:-translate-y-0.5">
+                <span>View Full Clientele</span>
+                <i class="ri-arrow-right-line text-sm"></i>
+            </a>
+        </div>
+    </section>
+
     <!-- 6. MINIMALIST CLIENT REVIEWS SECTION -->
     <section id="testimonials" 
              x-data="{ 

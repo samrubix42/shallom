@@ -41,29 +41,31 @@
                 </div>
                 <div class="space-y-1">
                     <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">DIRECT HOTLINE</div>
-                    <a href="tel:+917942550323" class="text-2xl font-bold text-slate-900 hover:text-[#FF8B02] transition-colors block">
+                    <a href="tel:+919899552380" class="text-xl font-bold text-slate-900 hover:text-[#FF8B02] transition-colors block">
+                        +91-9899552380
+                    </a>
+                    <a href="tel:+917942550323" class="text-sm font-semibold text-slate-600 hover:text-[#FF8B02] transition-colors block">
                         07942550323
                     </a>
                 </div>
                 <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                    Available Mon - Sat for sales enquiries, product specs, and site visit scheduling.
+                    Email: <a href="mailto:shallomprefabsystems@gmail.com" class="text-[#FF8B02] font-semibold hover:underline">shallomprefabsystems@gmail.com</a>
                 </p>
             </div>
 
-            <!-- Card 2: Plant Coordinates -->
+            <!-- Card 2: Plant & Office Coordinates -->
             <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all space-y-4 group">
                 <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center group-hover:scale-110 transition-transform">
                     <i class="ri-map-pin-2-fill text-2xl"></i>
                 </div>
                 <div class="space-y-1">
-                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">PLANT & HEADQUARTERS</div>
-                    <div class="text-lg font-bold text-slate-900 leading-tight">
-                        Shallom Prefab Systems
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">REGISTERED OFFICE</div>
+                    <div class="text-sm font-bold text-slate-900 leading-snug">
+                        N-3/A-3, Dilshad Garden, Delhi – 110095, India
                     </div>
                 </div>
                 <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                    New Delhi, Delhi - 110092, India<br/>
-                    <strong class="text-slate-800">GSTIN: 07ANDPG4822C2ZI</strong>
+                    GSTIN: <strong class="text-slate-800">07ANDPG4822C2ZI</strong>
                 </p>
             </div>
 

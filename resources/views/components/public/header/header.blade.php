@@ -13,7 +13,7 @@
 
                 <div class="hidden md:flex items-center gap-1.5 font-medium text-slate-400">
                     <i class="ri-map-pin-2-fill text-[#FF8B02]"></i>
-                    <span><strong>Plant:</strong> New Delhi, Delhi - 110092</span>
+                    <span><strong>Office:</strong> Dilshad Garden, Delhi – 110095</span>
                 </div>
             </div>
 
@@ -55,9 +55,6 @@
                 </a>
                 <a href="{{ route('products') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Our Range
-                </a>
-                <a href="{{ route('why-choose-us') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
-                    Why Choose Us
                 </a>
                 <a href="{{ route('clientele') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Clientele
@@ -111,7 +108,6 @@
         <a href="{{ route('profile') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Profile</a>
         <a href="{{ route('services') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm font-bold">Services</a>
         <a href="{{ route('products') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Our Range</a>
-        <a href="{{ route('why-choose-us') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Why Choose Us</a>
         <a href="{{ route('clientele') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Clientele</a>
         <a href="{{ route('contact') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm font-bold">Contact</a>
 
