@@ -217,39 +217,40 @@
 
     </section>
 
-    <!-- 2. CONTINUOUS SCROLLING MARQUEE TICKER -->
-    <div class="bg-slate-900 text-white py-3.5 overflow-hidden border-b border-slate-800 relative shadow-inner">
+    <!-- 2. CONTINUOUS SCROLLING MARQUEE TICKER (DEEP SLATE MIDNIGHT NAVY COLOR SCHEME) -->
+    <div class="bg-gradient-to-r from-[#0B132B] via-[#0F172A] to-[#0B132B] text-white py-3.5 overflow-hidden border-y border-[#FF8B02]/30 relative shadow-lg">
         <div class="animate-marquee whitespace-nowrap flex items-center gap-12 text-xs font-bold uppercase tracking-widest">
             <div class="flex items-center gap-12 shrink-0">
                 <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2009 (Delhi, India)</span>
-                <span class="text-slate-600">•</span>
-                <span>25+ Years Structural Lifespan</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-[#FF8B02]">70% Rapid Construction Turnaround</span>
-                <span class="text-slate-600">•</span>
-                <span>100% Demountable Nut & Bolt Relocatable</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-emerald-400">Tata Housing Approved</span>
-                <span class="text-slate-600">•</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-slate-200">25+ Years Structural Lifespan</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-[#FF8B02] font-extrabold">70% Rapid Construction Turnaround</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-slate-200">100% Demountable Nut & Bolt Relocatable</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-emerald-400 font-extrabold">Tata Housing Approved</span>
+                <span class="text-slate-500">•</span>
                 <span class="text-[#FF8B02]">GSTIN: 07ANDPG4822C2ZI</span>
-                <span class="text-slate-600">•</span>
+                <span class="text-slate-500">•</span>
             </div>
             <div class="flex items-center gap-12 shrink-0">
                 <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2009 (Delhi, India)</span>
-                <span class="text-slate-600">•</span>
-                <span>25+ Years Structural Lifespan</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-[#FF8B02]">70% Rapid Construction Turnaround</span>
-                <span class="text-slate-600">•</span>
-                <span>100% Demountable Nut & Bolt Relocatable</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-emerald-400">Tata Housing Approved</span>
-                <span class="text-slate-600">•</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-slate-200">25+ Years Structural Lifespan</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-[#FF8B02] font-extrabold">70% Rapid Construction Turnaround</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-slate-200">100% Demountable Nut & Bolt Relocatable</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-emerald-400 font-extrabold">Tata Housing Approved</span>
+                <span class="text-slate-500">•</span>
                 <span class="text-[#FF8B02]">GSTIN: 07ANDPG4822C2ZI</span>
-                <span class="text-slate-600">•</span>
+                <span class="text-slate-500">•</span>
             </div>
         </div>
     </div>
+
 
     <!-- 3. ARCHITECTURAL "KNOW US BETTER" SECTION (EXACT REFERENCE DESIGN) -->
     <section id="about" class="py-20 sm:py-28 bg-[#FAF9F5] text-slate-900 border-b border-slate-200/80 relative">
@@ -517,8 +518,6 @@
 
             </div>
         </div>
-    </section>
-
     <!-- 6. MINIMALIST CLIENT REVIEWS SECTION -->
     <section id="testimonials" 
              x-data="{ 
@@ -734,6 +733,9 @@
 
         </div>
     </section>
+
+
+
 
     <!-- 8. MINIMALIST CONTACT & ENQUIRY FORM SECTION -->
     <section id="contact" class="py-20 sm:py-28 bg-white text-slate-900 relative">

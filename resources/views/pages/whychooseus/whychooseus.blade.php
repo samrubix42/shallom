@@ -79,8 +79,8 @@
         </div>
     </section>
 
-    <!-- 2. CONTINUOUS SCROLLING MARQUEE TICKER -->
-    <div class="bg-slate-900 text-white py-3.5 overflow-hidden border-b border-slate-800 relative shadow-inner">
+    <!-- 2. CONTINUOUS SCROLLING MARQUEE TICKER (DEEP SLATE MIDNIGHT NAVY COLOR SCHEME) -->
+    <div class="bg-gradient-to-r from-[#0B132B] via-[#0F172A] to-[#0B132B] text-white py-3.5 overflow-hidden border-y border-[#FF8B02]/30 relative shadow-lg">
         <div class="animate-marquee whitespace-nowrap flex items-center gap-12 text-xs font-bold uppercase tracking-widest">
             <div class="flex items-center gap-12 shrink-0">
                 <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2009 (Delhi, India)</span>

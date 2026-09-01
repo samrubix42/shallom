@@ -1,7 +1,7 @@
 <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md text-slate-900 border-b border-slate-200/80 shadow-xs transition-all duration-300">
     
-    <!-- TOP STRIP WITH COMPANY DETAILS (HIDDEN ON MOBILE PHONE SCREENS) -->
-    <div class="hidden sm:block bg-slate-900 text-slate-300 text-xs py-2 border-b border-slate-800">
+    <!-- TOP STRIP WITH COMPANY DETAILS (DEEP SLATE MIDNIGHT NAVY) -->
+    <div class="hidden sm:block bg-[#0B132B] text-slate-300 text-xs py-2 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
             
             <!-- Left Company Details: Phone & Plant Address -->
@@ -44,7 +44,7 @@
 
             <!-- Center: Perfectly Centered Desktop Navigation -->
             <nav class="hidden lg:flex items-center justify-center gap-7 text-xs font-bold uppercase tracking-wider text-slate-600 absolute left-1/2 -translate-x-1/2">
-                <a href="{{ route('home') }}" class="hover:text-[#FF8B02] transition-colors py-1">
+                <a href="{{ route('home') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Home
                 </a>
                 <a href="{{ route('profile') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
@@ -55,12 +55,6 @@
                 </a>
                 <a href="{{ route('why-choose-us') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Why Choose Us
-                </a>
-                <a href="{{ route('home') }}#testimonials" class="hover:text-[#FF8B02] transition-colors py-1">
-                    Reviews
-                </a>
-                <a href="{{ route('home') }}#faq" class="hover:text-[#FF8B02] transition-colors py-1">
-                    FAQ
                 </a>
                 <a href="{{ route('contact') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Contact
@@ -111,8 +105,6 @@
         <a href="{{ route('profile') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Profile</a>
         <a href="{{ route('products') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Our Range</a>
         <a href="{{ route('why-choose-us') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Why Choose Us</a>
-        <a href="{{ route('home') }}#testimonials" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">Reviews</a>
-        <a href="{{ route('home') }}#faq" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">FAQ</a>
         <a href="{{ route('contact') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm font-bold">Contact</a>
 
         <div class="pt-3 border-t border-slate-100 space-y-2">
