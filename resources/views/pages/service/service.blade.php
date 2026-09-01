@@ -37,7 +37,7 @@
                     <i class="ri-phone-fill text-sm"></i>
                     <span>07942550323</span>
                 </a>
-                <a href="{{ route('products') }}" 
+                <a href="{{ route('products') }}" wire:navigate
                    class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
                     <span>Explore Our Range</span>
                     <i class="ri-arrow-right-line text-sm"></i>
@@ -123,8 +123,11 @@
 
                         <!-- Card Footer Action -->
                         <div class="p-8 pt-0">
-                            <a href="{{ route('service.show', ['slug' => $item['slug']]) }}" 
+                            <a href="{{ route('service.show', ['slug' => $item['slug']]) }}" wire:navigate
                                class="w-full inline-flex items-center justify-between bg-[#FAF9F5] hover:bg-[#FF8B02] text-slate-800 hover:text-white font-extrabold px-6 py-4 rounded-2xl border border-slate-200/80 hover:border-[#FF8B02] text-xs uppercase tracking-wider transition-all duration-300 group/btn">
+                                <span>Explore Vertical Specs & Scope</span>
+                                <i class="ri-arrow-right-line text-base group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
                                 <span>Explore Vertical Specs & Scope</span>
                                 <i class="ri-arrow-right-line text-base group-hover/btn:translate-x-1 transition-transform"></i>
                             </a>
@@ -230,7 +233,7 @@
                         <i class="ri-phone-fill text-base"></i>
                         <span>Call 07942550323</span>
                     </a>
-                    <a href="{{ route('contact') }}" 
+                    <a href="{{ route('contact') }}" wire:navigate
                        class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-slate-100 font-extrabold px-8 py-4 rounded-full text-xs uppercase tracking-widest transition-all">
                         <span>Send BOQ Request</span>
                         <i class="ri-mail-send-fill text-base"></i>

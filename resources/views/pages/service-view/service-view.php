@@ -19,7 +19,7 @@ new #[Layout('layouts::app')] class extends Component
                 'title' => 'Hospitality & Tourism Infrastructure',
                 'tagline' => 'Modular Resorts, Eco-Cottages & Guest Houses',
                 'icon' => 'ri-hotel-line',
-                'image' => 'images/prefab_house_hero_png_1788163818892.jpg',
+                'image' => 'shallom/IMG-20260901-WA0033.jpg',
                 'summary' => 'Delivering high-end modular resort cottages, glamping cabins, and guest quarters designed for extreme weather endurance without harming surrounding natural landscapes.',
                 'content' => '
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Turnkey Resort & Tourism Engineering</h2>
@@ -62,7 +62,7 @@ new #[Layout('layouts::app')] class extends Component
                 'title' => 'Institutional & Accommodation Solutions',
                 'tagline' => 'Schools, Classrooms, Student Hostels & Labour Colonies',
                 'icon' => 'ri-government-line',
-                'image' => 'images/cat_prefab_buildings_png_1788163932649.jpg',
+                'image' => 'shallom/IMG-20260901-WA0034.jpg',
                 'summary' => 'Rapidly deployable pre-engineered school buildings, multi-story student hostels, and industrial worker housing camps engineered for high density and durability.',
                 'content' => '
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Rapid Institutional & Worker Housing</h2>
@@ -105,7 +105,7 @@ new #[Layout('layouts::app')] class extends Component
                 'title' => 'Commercial & Site Utilities',
                 'tagline' => 'Site Offices, Executive Cabins & Rooftop Extensions',
                 'icon' => 'ri-building-4-line',
-                'image' => 'images/prefab_site_office_hero_png_1788163841263.jpg',
+                'image' => 'shallom/IMG-20260901-WA0035.jpg',
                 'summary' => 'Customized turnkey site offices, glass-partitioned manager cabins, security guard posts, and lightweight rooftop building extensions.',
                 'content' => '
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Plug & Play Site Utilities & Offices</h2>
@@ -143,7 +143,7 @@ new #[Layout('layouts::app')] class extends Component
                 'title' => 'Specialized Interior Contracting',
                 'tagline' => 'Dry Wall Partitions, Acoustic Ceilings & Insulation',
                 'icon' => 'ri-layout-4-line',
-                'image' => 'images/cat_prefab_structures_png_1788163908538.jpg',
+                'image' => 'shallom/IMG-20260901-WA0036.jpg',
                 'summary' => 'High-performance interior partition systems, acoustic false ceilings, and industrial sandwich panel insulation designed for energy efficiency and sound damping.',
                 'content' => '
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Dry Wall & Industrial Insulation Solutions</h2>

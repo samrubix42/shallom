@@ -8,7 +8,7 @@
             
             <!-- Column 1: Company Profile with logo.webp -->
             <div class="lg:col-span-2 space-y-4">
-                <a href="{{ route('home') }}" class="inline-block">
+                <a href="{{ route('home') }}" wire:navigate class="inline-block">
                     <img src="{{ asset('logo.webp') }}" 
                          alt="Shallom Prefab Systems Logo" 
                          class="h-16 w-auto object-contain">
@@ -66,12 +66,12 @@
             <div class="space-y-3">
                 <h4 class="text-slate-900 text-sm font-extrabold uppercase tracking-wider">Navigation</h4>
                 <ul class="space-y-2 text-sm text-slate-600 font-medium">
-                    <li><a href="{{ route('home') }}" class="hover:text-[#FF8B02] transition-colors">Home</a></li>
-                    <li><a href="{{ route('services') }}" class="hover:text-[#FF8B02] transition-colors">Business Verticals</a></li>
-                    <li><a href="{{ route('products') }}" class="hover:text-[#FF8B02] transition-colors">Products Catalog</a></li>
-                    <li><a href="{{ route('why-choose-us') }}" class="hover:text-[#FF8B02] transition-colors">Why Choose Us</a></li>
-                    <li><a href="{{ route('clientele') }}" class="hover:text-[#FF8B02] transition-colors">Clientele</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:text-[#FF8B02] transition-colors">Contact Us</a></li>
+                    <li><a href="{{ route('home') }}" wire:navigate class="hover:text-[#FF8B02] transition-colors">Home</a></li>
+                    <li><a href="{{ route('services') }}" wire:navigate class="hover:text-[#FF8B02] transition-colors">Business Verticals</a></li>
+                    <li><a href="{{ route('products') }}" wire:navigate class="hover:text-[#FF8B02] transition-colors">Products Catalog</a></li>
+                    <li><a href="{{ route('why-choose-us') }}" wire:navigate class="hover:text-[#FF8B02] transition-colors">Why Choose Us</a></li>
+                    <li><a href="{{ route('clientele') }}" wire:navigate class="hover:text-[#FF8B02] transition-colors">Clientele</a></li>
+                    <li><a href="{{ route('contact') }}" wire:navigate class="hover:text-[#FF8B02] transition-colors">Contact Us</a></li>
                 </ul>
             </div>
 

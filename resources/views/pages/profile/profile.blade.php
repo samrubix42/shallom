@@ -23,7 +23,7 @@
                     <i class="ri-phone-fill text-sm"></i>
                     <span>+91-9899552380</span>
                 </a>
-                <a href="{{ route('products') }}" 
+                <a href="{{ route('products') }}" wire:navigate
                    class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
                     <span>Explore Our Range</span>
                     <i class="ri-arrow-right-line text-sm"></i>
@@ -34,13 +34,16 @@
         <!-- 2. CORPORATE NARRATIVE & OVERVIEW -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <!-- Left Column: Showcase Image Card -->
+            <!-- Left Column: Showcase Video Card -->
             <div class="lg:col-span-6">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-white group">
-                    <img src="{{ asset('images/prefab_house_hero_png_1788163818892.jpg') }}" 
-                         alt="Shallom Prefab Systems Manufacturing Practice" 
-                         class="w-full h-[320px] sm:h-[440px] object-cover object-center group-hover:scale-103 transition-transform duration-700">
-                    <div class="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-2 rounded-xl text-xs font-bold border border-white/20 flex items-center gap-2">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-slate-900 group">
+                    <video autoplay loop muted playsinline controls
+                           class="w-full h-[320px] sm:h-[440px] object-cover object-center">
+                        <source src="{{ asset('shallom/VID-20260901-WA0059.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('shallom/VID-20260901-WA0060.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-2 rounded-xl text-xs font-bold border border-white/20 flex items-center gap-2 pointer-events-none">
                         <i class="ri-calendar-check-fill text-[#FF8B02] text-base"></i>
                         <span>Established 2009 • Dilshad Garden, Delhi</span>
                     </div>

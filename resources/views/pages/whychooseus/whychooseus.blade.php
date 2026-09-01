@@ -407,14 +407,8 @@
                         <li class="flex items-center gap-2"><i class="ri-checkbox-circle-fill text-[#FF8B02] text-base"></i> Attached modular toilets & sanitary plumbing fixtures.</li>
                     </ul>
                 </div>
-                <div class="lg:col-span-5 bg-[#FAF9F5] p-6 rounded-2xl border border-slate-200 space-y-4">
-                    <div class="text-xs font-bold text-slate-500 uppercase">Turnkey Finishes Included</div>
-                    <div class="grid grid-cols-2 gap-3 text-xs font-bold text-slate-800">
-                        <div class="p-3 bg-white rounded-xl border border-slate-200">UPVC Windows</div>
-                        <div class="p-3 bg-white rounded-xl border border-slate-200">Vinyl Flooring</div>
-                        <div class="p-3 bg-white rounded-xl border border-slate-200">Concealed Wiring</div>
-                        <div class="p-3 bg-white rounded-xl border border-slate-200">Modular Bathrooms</div>
-                    </div>
+                <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+                    <img src="{{ asset('shallom/IMG-20260901-WA0056.jpg') }}" alt="Shallom Prefab Engineering Excellence" class="w-full h-64 object-cover">
                 </div>
             </div>
 

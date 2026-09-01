@@ -25,11 +25,11 @@ new #[Layout('layouts::app')] #[Title('Product Catalog & Specifications | Shallo
             'price' => 'Rs 1,550',
             'price_unit' => 'sq ft',
             'moq' => '1 sq ft',
-            'main_image' => 'images/cat_prefab_houses_png_1788163884847.jpg',
+            'main_image' => 'shallom/IMG-20260901-WA0009.jpg',
             'gallery' => [
-                'images/cat_prefab_houses_png_1788163884847.jpg',
-                'images/prefab_house_hero_png_1788163818892.jpg',
-                'images/cat_prefab_cabins_png_1788163983749.jpg',
+                'shallom/IMG-20260901-WA0009.jpg',
+                'shallom/IMG-20260901-WA0027.jpg',
+                'shallom/IMG-20260901-WA0028.jpg',
             ],
             'specs' => [
                 'Material' => 'Wood / PUF Sandwich Panels (60mm PPGI) / Steel Framework',
@@ -52,11 +52,11 @@ new #[Layout('layouts::app')] #[Title('Product Catalog & Specifications | Shallo
             'price' => 'Rs 1,250',
             'price_unit' => 'sq ft',
             'moq' => '100 sq ft',
-            'main_image' => 'images/cat_prefab_offices_png_1788163956003.jpg',
+            'main_image' => 'shallom/IMG-20260901-WA0010.jpg',
             'gallery' => [
-                'images/cat_prefab_offices_png_1788163956003.jpg',
-                'images/prefab_site_office_hero_png_1788163841263.jpg',
-                'images/cat_prefab_cabins_png_1788163983749.jpg',
+                'shallom/IMG-20260901-WA0010.jpg',
+                'shallom/IMG-20260901-WA0029.jpg',
+                'shallom/IMG-20260901-WA0030.jpg',
             ],
             'specs' => [
                 'Material' => 'Galvanized Steel Frame & 60mm PUF/EPS Insulation Panels',
@@ -78,11 +78,11 @@ new #[Layout('layouts::app')] #[Title('Product Catalog & Specifications | Shallo
             'price' => 'Rs 980',
             'price_unit' => 'sq ft',
             'moq' => '500 sq ft',
-            'main_image' => 'images/cat_prefab_structures_png_1788163908538.jpg',
+            'main_image' => 'shallom/IMG-20260901-WA0011.jpg',
             'gallery' => [
-                'images/cat_prefab_structures_png_1788163908538.jpg',
-                'images/steel_building_hero_png_1788163862265.jpg',
-                'images/cat_prefab_buildings_png_1788163932649.jpg',
+                'shallom/IMG-20260901-WA0011.jpg',
+                'shallom/IMG-20260901-WA0031.jpg',
+                'shallom/IMG-20260901-WA0032.jpg',
             ],
             'specs' => [
                 'Material' => 'IS 2062 Grade Heavy Structural MS Steel Framework',
@@ -104,11 +104,11 @@ new #[Layout('layouts::app')] #[Title('Product Catalog & Specifications | Shallo
             'price' => 'Rs 750',
             'price_unit' => 'sq ft',
             'moq' => '500 sq ft',
-            'main_image' => 'images/cat_labour_hutments_png_1788164012359.jpg',
+            'main_image' => 'shallom/IMG-20260901-WA0012.jpg',
             'gallery' => [
-                'images/cat_labour_hutments_png_1788164012359.jpg',
-                'images/cat_prefab_offices_png_1788163956003.jpg',
-                'images/cat_prefab_cabins_png_1788163983749.jpg',
+                'shallom/IMG-20260901-WA0012.jpg',
+                'shallom/IMG-20260901-WA0037.jpg',
+                'shallom/IMG-20260901-WA0038.jpg',
             ],
             'specs' => [
                 'Material' => 'Corrugated Sheet / Aerocon Panels / Steel Frame',

@@ -47,11 +47,11 @@
              class="absolute inset-0 w-full h-full flex items-center bg-[#FAF9F5]">
             
             <div class="absolute inset-y-0 right-0 w-full lg:w-3/5 h-full">
-                <img src="{{ asset('images/prefab_house_hero_png_1788163818892.jpg') }}" 
+                <img src="{{ asset('shallom/IMG-20260901-WA0014.jpg') }}" 
                      alt="Modern Prefabricated House" 
                      class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/85 lg:via-[#FAF9F5]/90 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#FAF9F5] via-transparent to-transparent lg:hidden"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/40 lg:via-[#FAF9F5]/45 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#FAF9F5]/70 via-transparent to-transparent lg:hidden"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
@@ -72,8 +72,8 @@
                     </p>
 
                     <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <a href="{{ route('products') }}" 
-                           class="inline-flex items-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-8 py-3.5 rounded-full shadow-lg shadow-orange-500/20 text-xs uppercase tracking-wider transition-all transform hover:-translate-y-0.5">
+                        <a href="{{ route('products') }}" wire:navigate
+                           class="inline-flex items-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-[#FFFFFF] font-extrabold px-8 py-3.5 rounded-full shadow-lg shadow-orange-500/20 text-xs uppercase tracking-wider transition-all transform hover:-translate-y-0.5">
                             <span>Explore Portfolio</span>
                             <i class="ri-arrow-right-line text-base"></i>
                         </a>
@@ -99,11 +99,11 @@
              class="absolute inset-0 w-full h-full flex items-center bg-[#FAF9F5]">
             
             <div class="absolute inset-y-0 right-0 w-full lg:w-3/5 h-full">
-                <img src="{{ asset('images/prefab_site_office_hero_png_1788163841263.jpg') }}" 
+                <img src="{{ asset('shallom/IMG-20260901-WA0015.jpg') }}" 
                      alt="Prefabricated Site Office Cabin" 
                      class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/85 lg:via-[#FAF9F5]/90 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#FAF9F5] via-transparent to-transparent lg:hidden"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/40 lg:via-[#FAF9F5]/45 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#FAF9F5]/70 via-transparent to-transparent lg:hidden"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
@@ -151,11 +151,11 @@
              class="absolute inset-0 w-full h-full flex items-center bg-[#FAF9F5]">
             
             <div class="absolute inset-y-0 right-0 w-full lg:w-3/5 h-full">
-                <img src="{{ asset('images/steel_building_hero_png_1788163862265.jpg') }}" 
+                <img src="{{ asset('shallom/IMG-20260901-WA0016.jpg') }}" 
                      alt="Pre-Engineered Steel Shed" 
                      class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/85 lg:via-[#FAF9F5]/90 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#FAF9F5] via-transparent to-transparent lg:hidden"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/40 lg:via-[#FAF9F5]/45 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#FAF9F5]/70 via-transparent to-transparent lg:hidden"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
@@ -257,12 +257,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
-                <!-- Left Column: High-Res Architectural Photo -->
+                <!-- Left Column: High-Res Architectural Video -->
                 <div class="lg:col-span-6 reveal-on-scroll">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-white group">
-                        <img src="{{ asset('images/prefab_house_hero_png_1788163818892.jpg') }}" 
-                             alt="Shallom Prefab Systems Architectural Design" 
-                             class="w-full h-[260px] sm:h-[400px] lg:h-[480px] object-cover object-center group-hover:scale-103 transition-transform duration-700">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/60 bg-slate-900 group">
+                        <video autoplay loop muted playsinline controls
+                               class="w-full h-[260px] sm:h-[400px] lg:h-[480px] object-cover object-center">
+                            <source src="{{ asset('shallom/VID-20260901-WA0060.mp4') }}" type="video/mp4">
+                            <source src="{{ asset('shallom/VID-20260901-WA0059.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
 
@@ -284,7 +287,7 @@
                     </p>
 
                     <div class="pt-4">
-                        <a href="{{ route('products') }}" 
+                        <a href="{{ route('products') }}" wire:navigate
                            class="inline-flex items-center gap-2 text-[#FF8B02] font-bold text-xs sm:text-sm uppercase tracking-widest hover:gap-3.5 transition-all group">
                             <span>DISCOVER STUDIO SCOPE</span>
                             <i class="ri-arrow-right-line text-base group-hover:translate-x-1 transition-transform"></i>
@@ -322,7 +325,7 @@
                 <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-100">
                     <div>
                         <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/cat_prefab_houses_png_1788163884847.jpg') }}" 
+                            <img src="{{ asset('shallom/IMG-20260901-WA0009.jpg') }}" 
                                  alt="Prefab Houses" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
@@ -344,7 +347,7 @@
                 <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-200">
                     <div>
                         <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/cat_prefab_structures_png_1788163908538.jpg') }}" 
+                            <img src="{{ asset('shallom/IMG-20260901-WA0011.jpg') }}" 
                                  alt="Prefab Structures" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
@@ -366,7 +369,7 @@
                 <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-300">
                     <div>
                         <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/cat_prefab_buildings_png_1788163932649.jpg') }}" 
+                            <img src="{{ asset('shallom/IMG-20260901-WA0026.jpg') }}" 
                                  alt="Prefab Buildings" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
@@ -388,7 +391,7 @@
                 <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-100">
                     <div>
                         <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/cat_prefab_offices_png_1788163956003.jpg') }}" 
+                            <img src="{{ asset('shallom/IMG-20260901-WA0010.jpg') }}" 
                                  alt="Prefab Offices" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
@@ -410,8 +413,8 @@
                 <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-200">
                     <div>
                         <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/cat_prefab_cabins_png_1788163983749.jpg') }}" 
-                                 alt="Prefab Cabins" 
+                            <img src="{{ asset('images/prefab_house_hero_png_1788163818892.jpg') }}" 
+                                 alt="Prefab House" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-7 space-y-3">
@@ -432,7 +435,7 @@
                 <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-300">
                     <div>
                         <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/cat_labour_hutments_png_1788164012359.jpg') }}" 
+                            <img src="{{ asset('shallom/IMG-20260901-WA0012.jpg') }}" 
                                  alt="Labour Hutments" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
@@ -578,7 +581,7 @@
 
         <!-- View All Clientele Link -->
         <div class="text-center pt-8 relative z-10">
-            <a href="{{ route('clientele') }}" 
+            <a href="{{ route('clientele') }}" wire:navigate
                class="inline-flex items-center gap-2 border border-white/20 hover:border-[#FF8B02] bg-white/5 hover:bg-[#FF8B02] text-white font-bold px-7 py-3 rounded-full text-xs uppercase tracking-widest transition-all duration-300 transform hover:-translate-y-0.5">
                 <span>View Full Clientele</span>
                 <i class="ri-arrow-right-line text-sm"></i>
