@@ -1,4 +1,4 @@
-<div class="space-y-0 text-slate-800 font-sans bg-[#FAF9F5]"
+<div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800"
      x-data="{
          initScrollReveal() {
              const observer = new IntersectionObserver((entries) => {
@@ -13,111 +13,45 @@
          }
      }"
      x-init="initScrollReveal()">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <!-- 1. ARCHITECTURAL STUDIO HERO BANNER -->
+        <div class="bg-white rounded-2xl p-8 sm:p-12 border border-slate-200/80 shadow-xs flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-4 max-w-3xl">
+                <div class="flex items-center gap-2 text-[#FF8B02]">
+                    <i class="ri-shield-check-line text-lg"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">ENGINEERED ADVANTAGES & RELIABILITY</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.18]">
+                    WHY SHALLOM PREFAB IS <br/>
+                    <span class="text-[#FF8B02] font-normal">INDIA'S MOST TRUSTED</span>
+                </h1>
+                <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
+                    Since <strong>2009</strong>, Shallom Prefab Systems has transformed traditional civil construction into rapid, high-precision pre-engineered modular structures. With <strong>70% faster turnaround times</strong>, <strong>25+ years structural lifespan</strong>, and <strong>100% relocatable nut-and-bolt designs</strong>, we deliver unmatched quality across India.
+                </p>
+            </div>
 
-    <!-- 1. HERO BANNER WITH BREADCRUMB -->
-    <section class="py-12 sm:py-18 bg-white border-b border-slate-200/80 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <!-- Breadcrumb Navigation -->
-            <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6">
-                <a href="{{ route('home') }}" class="hover:text-[#FF8B02] transition-colors flex items-center gap-1">
-                    <i class="ri-home-4-line"></i> Home
+            <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
+                <a href="tel:+917942550323" 
+                   class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
+                    <i class="ri-phone-fill text-sm"></i>
+                    <span>07942550323</span>
                 </a>
-                <span>/</span>
-                <span class="text-[#FF8B02] font-bold">Why Choose Us</span>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                
-                <!-- Left: Headline & Subtitle -->
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF4E5] border border-[#FFD199] text-[#FF8B02] text-xs font-extrabold uppercase tracking-widest">
-                        <i class="ri-shield-check-fill text-base"></i>
-                        <span>ENGINEERED EXCELLENCE & RELIABILITY</span>
-                    </div>
-
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.15]">
-                        WHY SHALLOM PREFAB IS <br/>
-                        <span class="text-[#FF8B02] font-normal">INDIA'S MOST TRUSTED</span> <br/>
-                        <span class="text-[#FF8B02] font-normal">MODULAR CHOICE</span>
-                    </h1>
-
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                        Since <strong>2009</strong>, Shallom Prefab Systems has transformed traditional civil construction into rapid, high-precision pre-engineered modular structures. With <strong>70% faster turnaround times</strong>, <strong>25+ years structural lifespan</strong>, and <strong>100% relocatable nut-and-bolt designs</strong>, we deliver unmatched quality across India.
-                    </p>
-
-                    <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <a href="tel:+917942550323" 
-                           class="inline-flex items-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-7 py-3.5 rounded-full shadow-lg shadow-orange-500/20 text-xs uppercase tracking-wider transition-all transform hover:-translate-y-0.5">
-                            <i class="ri-phone-fill text-sm"></i>
-                            <span>Talk to Engineer: 07942550323</span>
-                        </a>
-                        <a href="{{ route('products') }}" 
-                           class="inline-flex items-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-800 font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-widest transition-all">
-                            <span>Explore Our Range</span>
-                            <i class="ri-arrow-right-line text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right: High-Res Feature Graphic / Banner Card -->
-                <div class="lg:col-span-5">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-white group">
-                        <img src="{{ asset('images/prefab_house_hero_png_1788163818892.jpg') }}" 
-                             alt="Shallom Prefab Engineering Superiority" 
-                             class="w-full h-[280px] sm:h-[360px] object-cover object-center group-hover:scale-103 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                            <div class="text-xs font-bold text-[#FF8B02] uppercase tracking-widest">ISO 9001:2015 CERTIFIED PLANT</div>
-                            <div class="text-lg font-bold">Delhi NCR Roll-Forming Precision</div>
-                            <p class="text-xs text-slate-300 font-normal">Pre-engineered steel columns, insulated Aerocon panels & weatherproof roofing.</p>
-                        </div>
-                    </div>
-                </div>
-
+                <a href="{{ route('products') }}" 
+                   class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
+                    <span>Explore Our Range</span>
+                    <i class="ri-arrow-right-line text-sm"></i>
+                </a>
             </div>
         </div>
-    </section>
 
-    <!-- 2. CONTINUOUS SCROLLING MARQUEE TICKER (DEEP SLATE MIDNIGHT NAVY COLOR SCHEME) -->
-    <div class="bg-gradient-to-r from-[#0B132B] via-[#0F172A] to-[#0B132B] text-white py-3.5 overflow-hidden border-y border-[#FF8B02]/30 relative shadow-lg">
-        <div class="animate-marquee whitespace-nowrap flex items-center gap-12 text-xs font-bold uppercase tracking-widest">
-            <div class="flex items-center gap-12 shrink-0">
-                <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2009 (Delhi, India)</span>
-                <span class="text-slate-600">•</span>
-                <span>70% Faster Turnaround</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-[#FF8B02]">25+ Years Structural Lifespan</span>
-                <span class="text-slate-600">•</span>
-                <span>100% Demountable & Relocatable</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-emerald-400">Tata Housing Approved Vendor</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-[#FF8B02]">GSTIN: 07ANDPG4822C2ZI</span>
-                <span class="text-slate-600">•</span>
-            </div>
-            <div class="flex items-center gap-12 shrink-0">
-                <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2009 (Delhi, India)</span>
-                <span class="text-slate-600">•</span>
-                <span>70% Faster Turnaround</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-[#FF8B02]">25+ Years Structural Lifespan</span>
-                <span class="text-slate-600">•</span>
-                <span>100% Demountable & Relocatable</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-emerald-400">Tata Housing Approved Vendor</span>
-                <span class="text-slate-600">•</span>
-                <span class="text-[#FF8B02]">GSTIN: 07ANDPG4822C2ZI</span>
-                <span class="text-slate-600">•</span>
-            </div>
-        </div>
-    </div>
+
 
     <!-- 3. CORE ADVANTAGES (6-PILLAR GRID) -->
-    <section class="py-20 sm:py-28 bg-[#FAF9F5] border-b border-slate-200/80">
+    <section class="py-10 sm:py-14 bg-[#FAF9F5] border-b border-slate-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="max-w-3xl mb-16 space-y-4 reveal-on-scroll">
+            <div class="max-w-3xl mb-12 space-y-4 reveal-on-scroll">
                 <div class="flex items-center gap-2 text-[#FF8B02]">
                     <i class="ri-ruler-2-line text-lg"></i>
                     <span class="text-xs font-bold uppercase tracking-widest">6 PILLARS OF EXCELLENCE</span>
@@ -212,10 +146,10 @@
     </section>
 
     <!-- 4. COMPARATIVE ANALYSIS MATRIX: PREFAB VS TRADITIONAL MASONRY -->
-    <section class="py-20 sm:py-28 bg-white border-b border-slate-200/80">
+    <section class="py-10 sm:py-14 bg-white border-b border-slate-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="max-w-3xl mb-16 space-y-4 reveal-on-scroll">
+            <div class="max-w-3xl mb-12 space-y-4 reveal-on-scroll">
                 <div class="flex items-center gap-2 text-[#FF8B02]">
                     <i class="ri-scales-3-line text-lg"></i>
                     <span class="text-xs font-bold uppercase tracking-widest">COMPARATIVE ANALYSIS</span>
@@ -334,7 +268,7 @@
     </section>
 
     <!-- 5. INTERACTIVE PERFORMANCE CALCULATOR / VALUE TABS -->
-    <section class="py-20 sm:py-28 bg-[#FAF9F5] border-b border-slate-200/80"
+    <section class="py-10 sm:py-14 bg-[#FAF9F5] border-b border-slate-200/80"
              x-data="{ activeTab: 'speed' }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -488,7 +422,7 @@
     </section>
 
     <!-- 6. KEY STATS & PROOF MILESTONES -->
-    <section class="py-16 sm:py-24 bg-slate-900 text-white relative">
+    <section class="py-10 sm:py-14 bg-slate-900 text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-x-0 sm:divide-x divide-slate-800">
                 
@@ -521,11 +455,11 @@
     </section>
 
     <!-- 7. FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
-    <section class="py-20 sm:py-28 bg-white border-b border-slate-200/80"
+    <section class="py-10 sm:py-14 bg-white border-b border-slate-200/80"
              x-data="{ openFaq: 0 }">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center mb-16 reveal-on-scroll space-y-4">
+            <div class="text-center mb-12 reveal-on-scroll space-y-4">
                 <div class="inline-flex items-center gap-2 text-[#FF8B02]">
                     <i class="ri-questionnaire-line text-lg"></i>
                     <span class="text-xs font-bold uppercase tracking-widest">KNOWLEDGE BASE</span>
@@ -591,7 +525,7 @@
     </section>
 
     <!-- 8. HIGH-CONVERSION BOTTOM CALL TO ACTION BANNER -->
-    <section class="py-16 sm:py-24 bg-[#FAF9F5]">
+    <section class="py-8 sm:py-12 bg-[#FAF9F5]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
                 

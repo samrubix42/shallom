@@ -50,11 +50,17 @@
                 <a href="{{ route('profile') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Profile
                 </a>
+                <a href="{{ route('services') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
+                    Services
+                </a>
                 <a href="{{ route('products') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Our Range
                 </a>
                 <a href="{{ route('why-choose-us') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Why Choose Us
+                </a>
+                <a href="{{ route('clientele') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
+                    Clientele
                 </a>
                 <a href="{{ route('contact') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Contact
@@ -103,8 +109,10 @@
         
         <a href="{{ route('home') }}" @click="mobileMenuOpen = false" class="block py-2 text-[#FF8B02] font-extrabold text-sm">Home</a>
         <a href="{{ route('profile') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Profile</a>
+        <a href="{{ route('services') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm font-bold">Services</a>
         <a href="{{ route('products') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Our Range</a>
         <a href="{{ route('why-choose-us') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Why Choose Us</a>
+        <a href="{{ route('clientele') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Clientele</a>
         <a href="{{ route('contact') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm font-bold">Contact</a>
 
         <div class="pt-3 border-t border-slate-100 space-y-2">
