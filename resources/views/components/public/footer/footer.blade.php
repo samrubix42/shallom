@@ -84,7 +84,7 @@
                 <ul class="space-y-2 text-sm text-slate-600 font-medium">
                     <li><a href="#hero" class="hover:text-[#FF8B02] transition-colors">Home</a></li>
                     <li><a href="#categories" class="hover:text-[#FF8B02] transition-colors">Products Catalog</a></li>
-                    <li><a href="#why-us" class="hover:text-[#FF8B02] transition-colors">Why Choose Us</a></li>
+                    <li><a href="{{ route('why-choose-us') }}" class="hover:text-[#FF8B02] transition-colors">Why Choose Us</a></li>
                     <li><a href="#faq" class="hover:text-[#FF8B02] transition-colors">FAQ Section</a></li>
                     <li><a href="#contact" class="hover:text-[#FF8B02] transition-colors">Contact Us</a></li>
                 </ul>

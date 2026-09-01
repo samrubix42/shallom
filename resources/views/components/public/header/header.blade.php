@@ -53,7 +53,7 @@
                 <a href="{{ route('products') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Our Range
                 </a>
-                <a href="{{ route('home') }}#why-us" class="hover:text-[#FF8B02] transition-colors py-1">
+                <a href="{{ route('why-choose-us') }}" class="hover:text-[#FF8B02] transition-colors py-1 font-bold">
                     Why Choose Us
                 </a>
                 <a href="{{ route('home') }}#testimonials" class="hover:text-[#FF8B02] transition-colors py-1">
@@ -110,7 +110,7 @@
         <a href="{{ route('home') }}" @click="mobileMenuOpen = false" class="block py-2 text-[#FF8B02] font-extrabold text-sm">Home</a>
         <a href="{{ route('profile') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Profile</a>
         <a href="{{ route('products') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Our Range</a>
-        <a href="{{ route('home') }}#why-us" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">Why Choose Us</a>
+        <a href="{{ route('why-choose-us') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm">Why Choose Us</a>
         <a href="{{ route('home') }}#testimonials" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">Reviews</a>
         <a href="{{ route('home') }}#faq" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#8B2626] font-semibold text-sm">FAQ</a>
         <a href="{{ route('contact') }}" @click="mobileMenuOpen = false" class="block py-2 text-slate-700 hover:text-[#FF8B02] font-semibold text-sm font-bold">Contact</a>
