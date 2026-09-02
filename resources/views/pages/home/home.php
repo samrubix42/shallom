@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Testimonial;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -8,6 +9,15 @@ use Livewire\Component;
 
 new #[Layout('layouts::app')] #[Title('Shallom Prefab Systems | Modular Houses & Prefab Buildings')] class extends Component
 {
+    #[Computed]
+    public function testimonials()
+    {
+        return Testimonial::query()
+            ->where('is_active', true)
+            ->orderBy('display_order', 'asc')
+            ->orderBy('id', 'desc')
+            ->get();
+    }
     // Interactive Product Tab State
     public string $activeCategory = 'all';
 

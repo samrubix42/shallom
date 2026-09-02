@@ -21,10 +21,10 @@
     <body class="h-full font-sans antialiased text-slate-900 selection:bg-[#FF8B02] selection:text-white"
           x-data="{ sidebarOpen: false }">
 
-        <div class="min-h-screen flex bg-[#FAF9F5]">
+        <div class="h-screen flex overflow-hidden bg-[#FAF9F5]">
             
             <!-- Desktop Sidebar -->
-            <div class="hidden lg:block shrink-0">
+            <div class="hidden lg:flex lg:flex-col shrink-0 h-full">
                 <livewire:admin.sidebar />
             </div>
 
@@ -50,16 +50,18 @@
                      x-transition:leave="transition ease-in-out duration-200 transform"
                      x-transition:leave-start="translate-x-0"
                      x-transition:leave-end="-translate-x-full"
-                     class="relative flex-1 flex flex-col max-w-xs w-full bg-[#0B132B]">
+                     class="relative flex-1 flex flex-col max-w-xs w-full bg-white h-full">
                     <livewire:admin.sidebar />
                 </div>
             </div>
 
             <!-- Right Content Area -->
-            <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+            <div class="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
                 
                 <!-- Admin Top Header -->
-                <livewire:admin.header />
+                <div class="shrink-0">
+                    <livewire:admin.header />
+                </div>
 
                 <!-- Page Main Slot -->
                 <main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">

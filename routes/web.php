@@ -20,4 +20,5 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::livewire('/admin', 'admin::dashboard')->name('admin.dashboard');
     Route::livewire('/admin/clients', 'admin::clients')->name('admin.clients');
+    Route::livewire('/admin/testimonials', 'admin::testimonial')->name('admin.testimonials');
 });

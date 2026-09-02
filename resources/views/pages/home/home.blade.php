@@ -607,15 +607,32 @@
     </section>
 
     <!-- 6. MINIMALIST CLIENT REVIEWS SECTION -->
+    @php
+        $testimonialGroups = $this->testimonials->chunk(3);
+    @endphp
+
     <section id="testimonials" 
              x-data="{ 
-                 page: 0,
-                 totalPages: 2,
+                 activeSlide: 0,
+                 totalSlides: {{ count($testimonialGroups) }},
                  timer: null,
-                 next() { this.page = (this.page + 1) % this.totalPages },
-                 prev() { this.page = (this.page - 1 + this.totalPages) % this.totalPages },
-                 start() { this.timer = setInterval(() => { this.next() }, 6000) },
-                 stop() { clearInterval(this.timer) }
+                 next() {
+                     if (this.totalSlides > 0) {
+                         this.activeSlide = (this.activeSlide + 1) % this.totalSlides;
+                     }
+                 },
+                 prev() {
+                     if (this.totalSlides > 0) {
+                         this.activeSlide = (this.activeSlide - 1 + this.totalSlides) % this.totalSlides;
+                     }
+                 },
+                 start() {
+                     this.stop();
+                     this.timer = setInterval(() => { this.next() }, 7000);
+                 },
+                 stop() {
+                     if (this.timer) clearInterval(this.timer);
+                 }
              }" 
              x-init="start()"
              @mouseenter="stop()"
@@ -624,7 +641,7 @@
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal-on-scroll">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
                 <div class="space-y-4 max-w-2xl">
                     <div class="flex items-center gap-2 text-[#FF8B02]">
                         <i class="ri-user-star-line text-lg"></i>
@@ -637,119 +654,83 @@
                     </h2>
                 </div>
 
-                <div class="flex items-center gap-3 shrink-0">
-                    <button @click="prev()" class="w-11 h-11 rounded-full border border-slate-300/80 bg-[#FAF9F5] hover:bg-[#FFF4E5] hover:border-[#FF8B02] text-slate-700 hover:text-[#FF8B02] flex items-center justify-center transition-all focus:outline-none">
-                        <i class="ri-arrow-left-line text-base"></i>
-                    </button>
-                    <button @click="next()" class="w-11 h-11 rounded-full border border-slate-300/80 bg-[#FAF9F5] hover:bg-[#FFF4E5] hover:border-[#FF8B02] text-slate-700 hover:text-[#FF8B02] flex items-center justify-center transition-all focus:outline-none">
-                        <i class="ri-arrow-right-line text-base"></i>
-                    </button>
+                @if(count($testimonialGroups) > 0)
+                    <div class="flex items-center gap-4 shrink-0">
+                        <span class="text-xs font-mono font-semibold text-slate-400">
+                            <span x-text="activeSlide + 1" class="text-slate-800 font-bold"></span> / <span x-text="totalSlides"></span>
+                        </span>
+                        <div class="flex items-center gap-2">
+                            <button @click="prev()" 
+                                    class="w-10 h-10 rounded-md border border-slate-300 bg-[#FAF9F5] hover:bg-[#FFF4E5] hover:border-[#FF8B02] text-slate-700 hover:text-[#FF8B02] flex items-center justify-center transition-colors focus:outline-none cursor-pointer">
+                                <i class="ri-arrow-left-line text-sm"></i>
+                            </button>
+                            <button @click="next()" 
+                                    class="w-10 h-10 rounded-md border border-slate-300 bg-[#FAF9F5] hover:bg-[#FFF4E5] hover:border-[#FF8B02] text-slate-700 hover:text-[#FF8B02] flex items-center justify-center transition-colors focus:outline-none cursor-pointer">
+                                <i class="ri-arrow-right-line text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                @endif
+            </div>
+
+            <!-- DYNAMIC HORIZONTAL SLIDING TRACK (3 Cards Per Slide) -->
+            <div class="overflow-hidden relative w-full">
+                <div class="flex transition-transform duration-700 ease-in-out"
+                     :style="'transform: translateX(-' + (activeSlide * 100) + '%);'">
+                    
+                    @forelse($testimonialGroups as $groupIndex => $group)
+                        <div class="w-full shrink-0">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 px-0.5 py-1">
+                                @foreach($group as $testimonial)
+                                    <div class="bg-[#FAF9F5] rounded-md p-6 sm:p-8 border border-slate-200/90 shadow-xs flex flex-col justify-between h-full relative overflow-hidden group hover:border-[#FF8B02] transition-colors">
+                                        <div class="space-y-4">
+                                            <!-- Rating Stars -->
+                                            <div class="flex items-center text-amber-500 gap-1 text-sm">
+                                                @for($s = 1; $s <= 5; $s++)
+                                                    @if($s <= $testimonial->rating)
+                                                        <i class="ri-star-fill"></i>
+                                                    @else
+                                                        <i class="ri-star-line text-slate-300"></i>
+                                                    @endif
+                                                @endfor
+                                            </div>
+
+                                            <!-- Quote Content -->
+                                            <p class="text-slate-700 text-xs sm:text-sm font-normal leading-relaxed italic">
+                                                "{{ $testimonial->content }}"
+                                            </p>
+                                        </div>
+
+                                        <!-- Client Meta Info -->
+                                        <div class="pt-5 border-t border-slate-200/80 mt-6">
+                                            <div class="text-sm font-bold text-slate-900">{{ $testimonial->client_name }}</div>
+                                            <div class="text-xs text-slate-500 font-normal mt-0.5">
+                                                {{ $testimonial->company }} @if($testimonial->designation) • {{ $testimonial->designation }} @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @empty
+                        <div class="w-full bg-[#FAF9F5] rounded-md p-8 text-center text-slate-500 text-sm">
+                            No testimonials published yet.
+                        </div>
+                    @endforelse
+
                 </div>
             </div>
 
-            <!-- PAGE 1 (3 Cards) -->
-            <div x-show="page === 0" 
-                 x-cloak
-                 x-transition:enter="transition ease-out duration-700"
-                 x-transition:enter-start="opacity-0 scale-98"
-                 x-transition:enter-end="opacity-100 scale-100"
-                 x-transition:leave="transition ease-in duration-300"
-                 x-transition:leave-start="opacity-100"
-                 x-transition:leave-end="opacity-0"
-                 class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <div class="bg-[#FAF9F5] rounded-2xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center text-[#FF8B02] gap-1 text-sm">
-                            <i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i>
-                        </div>
-                        <p class="text-slate-700 text-sm font-normal leading-relaxed italic">"Shallom delivered our 15,000 sq. ft. modular site office complex in 5 days! Thermal insulation during Delhi summers keeps inside temperatures cool."</p>
-                    </div>
-                    <div class="pt-6 border-t border-slate-200/80 mt-6">
-                        <div class="text-sm font-bold text-slate-900">Sunil Verma</div>
-                        <div class="text-xs text-slate-500 font-normal">Project Director • L&T Infra</div>
-                    </div>
+            <!-- Slider Pagination Dots -->
+            @if(count($testimonialGroups) > 1)
+                <div class="flex items-center justify-center gap-2 mt-8">
+                    <template x-for="(slide, index) in totalSlides" :key="index">
+                        <button @click="activeSlide = index" 
+                                :class="activeSlide === index ? 'w-8 bg-[#FF8B02]' : 'w-2.5 bg-slate-300 hover:bg-slate-400'"
+                                class="h-2.5 rounded-md transition-all duration-300 focus:outline-none cursor-pointer"></button>
+                    </template>
                 </div>
-
-                <div class="bg-[#FAF9F5] rounded-2xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center text-[#FF8B02] gap-1 text-sm">
-                            <i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i>
-                        </div>
-                        <p class="text-slate-700 text-sm font-normal leading-relaxed italic">"The labour hutments supplied for our township site passed all heavy monsoon tests with zero water leakage. Demountable nut-bolt framework makes relocating seamless."</p>
-                    </div>
-                    <div class="pt-6 border-t border-slate-200/80 mt-6">
-                        <div class="text-sm font-bold text-slate-900">Rajesh Agarwal</div>
-                        <div class="text-xs text-slate-500 font-normal">Site Operations • Tata Housing</div>
-                    </div>
-                </div>
-
-                <div class="bg-[#FAF9F5] rounded-2xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center text-[#FF8B02] gap-1 text-sm">
-                            <i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i>
-                        </div>
-                        <p class="text-slate-700 text-sm font-normal leading-relaxed italic">"We needed an urgent 2-story school expansion erected during summer break. Shallom completed structural steel framing and soundproof Aerocon panels on schedule."</p>
-                    </div>
-                    <div class="pt-6 border-t border-slate-200/80 mt-6">
-                        <div class="text-sm font-bold text-slate-900">Dr. Ananya Roy</div>
-                        <div class="text-xs text-slate-500 font-normal">Trustee • Greenfield Intl. School</div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- PAGE 2 (3 Cards) -->
-            <div x-show="page === 1" 
-                 x-cloak
-                 x-transition:enter="transition ease-out duration-700"
-                 x-transition:enter-start="opacity-0 scale-98"
-                 x-transition:enter-end="opacity-100 scale-100"
-                 x-transition:leave="transition ease-in duration-300"
-                 x-transition:leave-start="opacity-100"
-                 x-transition:leave-end="opacity-0"
-                 class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <div class="bg-[#FAF9F5] rounded-2xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center text-[#FF8B02] gap-1 text-sm">
-                            <i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i>
-                        </div>
-                        <p class="text-slate-700 text-sm font-normal leading-relaxed italic">"Shallom Prefab's modular cottages transformed our eco-resort footprint. Their team erected luxury wooden-finish cottages without harming surrounding trees."</p>
-                    </div>
-                    <div class="pt-6 border-t border-slate-200/80 mt-6">
-                        <div class="text-sm font-bold text-slate-900">Vikramaditya Singh</div>
-                        <div class="text-xs text-slate-500 font-normal">MD • Himalayan Eco Resorts</div>
-                    </div>
-                </div>
-
-                <div class="bg-[#FAF9F5] rounded-2xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center text-[#FF8B02] gap-1 text-sm">
-                            <i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i>
-                        </div>
-                        <p class="text-slate-700 text-sm font-normal leading-relaxed italic">"Added 4,000 sq. ft. executive rooftop office on our commercial complex. Lightweight structural frame avoided heavy civil load issues completely!"</p>
-                    </div>
-                    <div class="pt-6 border-t border-slate-200/80 mt-6">
-                        <div class="text-sm font-bold text-slate-900">Karan Malhotra</div>
-                        <div class="text-xs text-slate-500 font-normal">VP Infra • DLF Commercial</div>
-                    </div>
-                </div>
-
-                <div class="bg-[#FAF9F5] rounded-2xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center text-[#FF8B02] gap-1 text-sm">
-                            <i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i><i class="ri-[#FF8B02] ri-star-fill"></i>
-                        </div>
-                        <p class="text-slate-700 text-sm font-normal leading-relaxed italic">"Precision engineering and clean panel finish. Their portable bunk houses with attached toilets exceeded our architectural standards for mining quarters."</p>
-                    </div>
-                    <div class="pt-6 border-t border-slate-200/80 mt-6">
-                        <div class="text-sm font-bold text-slate-900">Priya Sharma</div>
-                        <div class="text-xs text-slate-500 font-normal">Principal Architect • Modern Spaces</div>
-                    </div>
-                </div>
-
-            </div>
+            @endif
 
         </div>
     </section>
