@@ -19,4 +19,5 @@ Route::middleware('guest')->group(function () {
 // Authenticated Admin Routes
 Route::middleware('auth')->group(function () {
     Route::livewire('/admin', 'admin::dashboard')->name('admin.dashboard');
+    Route::livewire('/admin/clients', 'admin::clients')->name('admin.clients');
 });

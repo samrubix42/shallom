@@ -42,8 +42,8 @@
                 <span>Product Catalog</span>
             </a>
 
-            <a href="{{ route('clientele') }}" wire:navigate 
-               class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-xs font-bold transition-all {{ request()->routeIs('clientele') ? 'bg-[#FFF4E5] text-[#FF8B02] border border-[#FFD199]' : 'text-slate-600 hover:bg-[#FAF9F5] hover:text-slate-900' }}">
+            <a href="{{ route('admin.clients') }}" wire:navigate 
+               class="flex items-center gap-3 px-3.5 py-3 rounded-2xl text-xs font-bold transition-all {{ request()->routeIs('admin.clients') ? 'bg-[#FFF4E5] text-[#FF8B02] border border-[#FFD199]' : 'text-slate-600 hover:bg-[#FAF9F5] hover:text-slate-900' }}">
                 <i class="ri-building-3-line text-base text-[#FF8B02]"></i>
                 <span>Client Partners</span>
             </a>
