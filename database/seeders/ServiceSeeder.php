@@ -12,208 +12,206 @@ class ServiceSeeder extends Seeder
      */
     public function run(): void
     {
+        Service::query()->delete();
+
         $services = [
-            // Category 1: Residential & Hospitality Solutions
             [
-                'name' => 'Prefabricated Luxurious Houses & Villas',
-                'slug' => 'prefabricated-luxurious-houses-villas',
-                'short_description' => 'Premium architectural finishes, custom layouts, and energy-efficient living spaces built with zero masonry hassle.',
+                'name' => 'Residential & Hospitality Solutions',
+                'slug' => 'residential-hospitality-solutions',
+                'short_description' => 'Turnkey engineering of luxury prefab villas, eco-resort wooden cottages, terrace rooftop extensions, and hospitality leisure blocks.',
                 'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Turnkey Luxurious Prefab Houses & Villas</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Shallom Prefab Systems delivers high-end prefabricated luxury houses and villas engineered with precision IS 2062 steel frames, insulated PUF/Aerocon sandwich walls, and designer exterior cladding. Ideal for private estates, vacation homes, and rapid residential expansion.</p>
-                    
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Key Technical Advantages</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-6">
-                        <li><strong>Architectural Freedom:</strong> Fully customizable floorplans, multi-room layouts, and premium wooden-texture or composite panel finishes.</li>
-                        <li><strong>High Energy Efficiency:</strong> 60mm PUF insulation core cutting HVAC power consumption by up to 40%.</li>
-                        <li><strong>Seismic & Storm Safe:</strong> Zone-V earthquake compliant and rated for wind speeds up to 39 m/s.</li>
-                        <li><strong>Rapid Execution:</strong> Ready for occupancy within 15 to 30 days of site foundation readiness.</li>
-                    </ul>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
-            [
-                'name' => 'Modular Cottages & Wooden Houses',
-                'slug' => 'modular-cottages-wooden-houses',
-                'short_description' => 'Aesthetic, nature-integrated cottages tailored for eco-resorts, hill stations, and holiday retreats.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Eco-Friendly Modular Cottages & Wooden Cabins</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Engineered specifically for sensitive ecological sites, hill stations, and eco-resorts. Our modular cottages feature realistic wooden-grain weatherboard exteriors without destroying natural timber resources.</p>
-                    
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Highlights</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-6">
-                        <li><strong>Zero Site Pollution:</strong> Dry nut-and-bolt assembly protecting local vegetation and soil.</li>
-                        <li><strong>Thermal & Moisture Barrier:</strong> Moisture-proof Aerocon and PUF wall panelling preventing mold and condensation.</li>
-                        <li><strong>100% Relocatable:</strong> Can be unbolted and re-assembled at new resort coordinates.</li>
-                    </ul>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
-            [
-                'name' => 'Farmhouses & Rooftop Extensions',
-                'slug' => 'farmhouses-rooftop-extensions',
-                'short_description' => 'Lightweight, structurally sound living spaces erected directly on urban building terraces or rural farmland plots.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Lightweight Terrace Rooftop Extensions & Farmhouses</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Add extra floors or build rural weekend farmhouses without overloading existing civil foundations. Our lightweight PEB steel framework minimizes dead-load pressure while delivering 50+ year structural durability.</p>
-                    
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Key Benefits</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-6">
-                        <li><strong>Dead-Load Prevention:</strong> Ultra-lightweight structural engineering avoiding stress on old building beams.</li>
-                        <li><strong>Monsoon Proofing:</strong> Overlapping PPGL corrugated roof profile sheeting eliminating terrace leakages.</li>
-                    </ul>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
-            [
-                'name' => 'Resorts & Recreation Blocks',
-                'slug' => 'resorts-recreation-blocks',
-                'short_description' => 'Fast-track guest houses, reception lounges, clubhouse pavilions, and leisure spaces for hospitality complexes.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Turnkey Resort Reception & Hospitality Infrastructure</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Fast-track turnkey construction of resort reception halls, poolside lounges, dining pavilions, and guest accommodation quarters equipped with concealed electrical plumbing and luxury sanitation cubicles.</p>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-bold text-slate-900">1. Residential & Hospitality Solutions Overview</h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            Shallom Prefab Systems delivers custom pre-engineered residential and hospitality structures designed for rapid deployment, extreme weather endurance, and zero site pollution. Our modular living spaces are ideal for private estates, hill station resorts, coastal retreats, and eco-tourism destinations across India.
+                        </p>
 
-            // Category 2: Commercial & Corporate Infrastructure
-            [
-                'name' => 'Prefabricated Site & Executive Offices',
-                'slug' => 'prefabricated-site-executive-offices',
-                'short_description' => 'Modern workspace cabins, manager/director suites, and multi-desk collaborative offices for infrastructure projects.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Executive Site Offices & Manager Cabins</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Plug-and-play executive site offices fitted with pre-wired copper electrical channels, LED lighting, UPVC sliding glass windows, and glass-partitioned director cabins.</p>
-                    
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Specifications</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-6">
-                        <li><strong>Pre-Wired Infrastructure:</strong> Fitted switchboards, AC points, and internet cabling ducts.</li>
-                        <li><strong>Durable Flooring:</strong> Heavy-duty anti-skid vinyl floor finish over fiber-cement sub-base.</li>
-                    </ul>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
-            [
-                'name' => 'Office Cafeterias & Canteens',
-                'slug' => 'office-cafeterias-canteens',
-                'short_description' => 'Hygienic dining halls, modern food service spaces, and pantry modules for corporate plants and sites.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Modular Industrial Canteens & Pantry Blocks</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Hygienic, easy-to-clean prefabricated dining halls and industrial kitchen modules equipped with washable wall panels, stainless steel sink provisions, and heavy exhaust ventilation.</p>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
-            [
-                'name' => 'Security Guard Cabins & Toll Plazas',
-                'slug' => 'security-guard-cabins-toll-plazas',
-                'short_description' => 'Heavy-duty, weather-tight security booths, entrance checkpoints, and toll plazas.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Heavy-Duty Security Guard Cabins & Toll Booths</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Weatherproof security guard booths with 360-degree glass visibility, insulated walls, shelf desks, and pre-fitted electrical fixtures. Ready to drop on-site via crane.</p>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
-            [
-                'name' => 'Commercial Retail Outlets & Kiosks',
-                'slug' => 'commercial-retail-outlets-kiosks',
-                'short_description' => 'Modular storefronts and commercial setups for shopping complexes and highway plazas.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Modular Retail Kiosks & Commercial Storefronts</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Eye-catching prefabricated retail kiosks, popup store modules, and highway food court booths designed for rapid commercial deployment.</p>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
+                        <div class="bg-orange-50/60 p-6 rounded-2xl border border-orange-200/80 space-y-4">
+                            <h3 class="text-lg font-bold text-[#FF8B02] uppercase tracking-wider">Core Product Offerings & Scope</h3>
+                            <ul class="space-y-3 text-slate-700 text-sm font-medium">
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Prefabricated Luxurious Houses & Villas:</strong> Premium architectural finishes, custom multi-room layouts, composite wall cladding, and energy-efficient living.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Modular Cottages & Wooden Houses:</strong> Aesthetic, nature-integrated cottages tailored for eco-resorts, hill stations, glamping pods, and holiday homes.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Farmhouses & Rooftop Extensions:</strong> Lightweight, structurally sound living spaces erected directly on building terraces or rural plots without foundation stress.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Resorts & Recreation Blocks:</strong> Fast-track guest houses, reception lounges, dining pavilions, poolside cabanas, and leisure spaces.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
-            // Category 3: Industrial & Heavy Infrastructure Utilities
-            [
-                'name' => 'Labor Camps & Hutments',
-                'slug' => 'labor-camps-hutments',
-                'short_description' => 'Safe, modular worker accommodations engineered specifically for large-scale mining, metro, and infra sites.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">High-Capacity Worker Colonies & Labour Hutments</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Modular multi-bed dormitories and worker camps capable of housing 50 to 5,000+ workers. Features fire-retardant Aerocon panels, ventilated roofing, and attached sanitation blocks.</p>
-                    
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Key Features</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-6">
-                        <li><strong>Demountable Frame:</strong> Nut-bolt assembly allowing 100% material reuse across future project locations.</li>
-                        <li><strong>Fire & Weather Safe:</strong> Class "O" BS 476 certified fire resistance.</li>
-                    </ul>
+                        <h3 class="text-xl font-bold text-slate-900 pt-2">Engineering & Material Specifications</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-600">
+                            <li><strong>Structural Framing:</strong> Heavy-duty galvanized MS tubular box sections (IS 2062 certified).</li>
+                            <li><strong>Wall & Roof Insulation:</strong> 60mm high-density Polyurethane Foam (PUF) / Aerocon sandwich panels.</li>
+                            <li><strong>Thermal Efficiency:</strong> Superior R-value rating cutting HVAC electricity bills by up to 40%.</li>
+                            <li><strong>Safety Ratings:</strong> Seismic Zone-V earthquake resistance & wind velocity rating up to 39 m/s.</li>
+                        </ul>
+                    </div>
                 ',
                 'image' => null,
                 'is_active' => true,
             ],
             [
-                'name' => 'Industrial Sheds & PEB Steel Buildings',
-                'slug' => 'industrial-sheds-peb-steel-buildings',
-                'short_description' => 'Large-span pre-engineered steel structures for warehouses, workshops, factories, and power plants.',
+                'name' => 'Commercial & Corporate Infrastructure',
+                'slug' => 'commercial-corporate-infrastructure',
+                'short_description' => 'Modern workspace cabins, manager suites, industrial canteens, toll plazas, security booths, and modular commercial kiosks.',
                 'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Pre-Engineered Heavy PEB Steel Warehouses & Factory Sheds</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Large column-free span PEB industrial warehouses built with high-tensile IS 2062 steel girders, anti-corrosive primer coating, and crane-runway provisions.</p>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
-            [
-                'name' => 'Modular Sanitation & Portable Toilets',
-                'slug' => 'modular-sanitation-portable-toilets',
-                'short_description' => 'Mobile toilet blocks, shower cubicles, and eco-friendly sanitary units with plumbing integration.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Portable Toilet Blocks & Mobile Sanitation Units</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Hygienic multi-seat mobile toilet units, shower blocks, and washrooms pre-fitted with CPVC piping, overhead water tank fittings, and waste disposal outlets.</p>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
-            [
-                'name' => 'Bunk Houses & Mobile Site Storage',
-                'slug' => 'bunk-houses-mobile-site-storage',
-                'short_description' => 'Containerized and modular field offices, emergency shelters, and equipment storage units.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Portable Bunk Houses & Field Storage Units</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Heavy-duty mobile bunk houses designed for remote geological survey, mining, and highway construction crews.</p>
-                ',
-                'image' => null,
-                'is_active' => true,
-            ],
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-bold text-slate-900">2. Commercial & Corporate Infrastructure Solutions</h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            Factory-finished executive site offices, director cabins, employee dining halls, entrance security booths, and commercial storefronts built for rapid project setup and long-term utility across industrial plants and corporate yards.
+                        </p>
 
-            // Category 4: Specialized Interior Contracting & Turnkey Services
-            [
-                'name' => 'Prefab Building Installation & Maintenance',
-                'slug' => 'prefab-building-installation-maintenance',
-                'short_description' => 'End-to-end site erection, lifecycle repair, structural audit, and scheduled maintenance services.',
-                'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Turnkey Erection & Maintenance Services</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Complete project management services from soil bearing testing (SBC) and anchor foundation placement to crane installation, panel fitting, and annual maintenance contracts.</p>
+                        <div class="bg-orange-50/60 p-6 rounded-2xl border border-orange-200/80 space-y-4">
+                            <h3 class="text-lg font-bold text-[#FF8B02] uppercase tracking-wider">Core Product Offerings & Scope</h3>
+                            <ul class="space-y-3 text-slate-700 text-sm font-medium">
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Prefabricated Site & Executive Offices:</strong> Modern workspace cabins, manager/director suites, glass-partitioned conference rooms, and multi-desk collaborative offices.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Office Cafeterias & Canteens:</strong> Hygienic dining halls, modern food service spaces, commercial kitchen modules, and pantry setups.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Security Guard Cabins & Toll Plazas:</strong> Heavy-duty, weather-tight security booths, entrance checkpoints, highway toll booths, and ticket kiosks with 360-degree vision.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Commercial Retail Outlets & Kiosks:</strong> Modular storefronts, popup store modules, and inner-side commercial setups for shopping complexes.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 pt-2">Plug & Play Features</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-600">
+                            <li><strong>Pre-Wired Infrastructure:</strong> Fitted copper wiring, LED panel lights, distribution boards, and AC mounting ducts.</li>
+                            <li><strong>Durable Flooring:</strong> Anti-skid vinyl floor finish over heavy fiber-cement sub-base.</li>
+                            <li><strong>Glass Partitions:</strong> Toughened glass windows with UPVC frames and safety grills.</li>
+                        </ul>
+                    </div>
                 ',
                 'image' => null,
                 'is_active' => true,
             ],
             [
-                'name' => 'Dry Wall Partition & Ceiling Works',
-                'slug' => 'dry-wall-partition-ceiling-works',
-                'short_description' => 'Acoustic suspended ceilings, lightweight dry walls, and thermal insulation panelling for commercial buildings.',
+                'name' => 'Industrial & Heavy Infrastructure Utilities',
+                'slug' => 'industrial-heavy-infrastructure-utilities',
+                'short_description' => 'Safe modular worker colonies, large-span PEB warehouses, mobile toilet blocks, bunk houses, and site equipment storage.',
                 'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Commercial Dry Wall Partitions & False Ceilings</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Precision installation of Aerocon/gypsum acoustic dry wall partitions, mineral fiber grid false ceilings, and concealed utility channels for IT parks and offices.</p>
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-bold text-slate-900">3. Industrial & Heavy Infrastructure Utilities</h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            Heavy-duty pre-engineered worker housing, industrial warehouses, mobile sanitation blocks, and site storage units built for large-scale mining, metro rail, highway, and mega construction projects.
+                        </p>
+
+                        <div class="bg-orange-50/60 p-6 rounded-2xl border border-orange-200/80 space-y-4">
+                            <h3 class="text-lg font-bold text-[#FF8B02] uppercase tracking-wider">Core Product Offerings & Scope</h3>
+                            <ul class="space-y-3 text-slate-700 text-sm font-medium">
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Labor Camps & Hutments:</strong> Safe, modular worker accommodations engineered specifically for large-scale mining and construction sites with high occupant capacity.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Industrial Sheds & PEB Steel Buildings:</strong> Large-span pre-engineered steel structures for warehouses, workshops, factories, and power plants.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Modular Sanitation & Portable Toilets:</strong> Mobile toilet blocks, shower cubicles, and eco-friendly sanitary units with integrated CPVC plumbing.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Bunk Houses & Mobile Site Storage:</strong> Containerized and modular field offices, emergency shelters, and secure tool storage units.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 pt-2">Performance & Relocatability</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-600">
+                            <li><strong>100% Relocatable:</strong> Demountable nut-and-bolt assembly allowing complete dismantling and re-erection.</li>
+                            <li><strong>Fire Safety:</strong> Aerocon tongue-and-groove fiber-cement panels with 2-hour fire rating (Class "O" BS 476).</li>
+                        </ul>
+                    </div>
                 ',
                 'image' => null,
                 'is_active' => true,
             ],
             [
-                'name' => 'Thermal & Acoustic Insulation Services',
-                'slug' => 'thermal-acoustic-insulation-services',
-                'short_description' => 'Advanced PUF/Aerocon panelling solutions to cut HVAC energy bills and eliminate noise transmission.',
+                'name' => 'Specialized Interior Contracting & Turnkey Services',
+                'slug' => 'specialized-interior-contracting-turnkey-services',
+                'short_description' => 'End-to-end site erection, lifecycle maintenance, dry wall partition works, acoustic false ceilings, and industrial PUF insulation.',
                 'description' => '
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Industrial Thermal & Acoustic Insulation Panelling</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">High-density Polyurethane Foam (PUF) wall cladding and soundproofing services cutting commercial HVAC electricity expenses by 40% and offering Class "O" fire protection.</p>
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-bold text-slate-900">4. Specialized Interior Contracting & Turnkey Services</h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            Comprehensive site erection, foundation anchor setting, structural auditing, acoustic dry wall installation, false ceiling execution, and high-performance thermal insulation panelling for commercial and industrial complexes.
+                        </p>
+
+                        <div class="bg-orange-50/60 p-6 rounded-2xl border border-orange-200/80 space-y-4">
+                            <h3 class="text-lg font-bold text-[#FF8B02] uppercase tracking-wider">Core Product Offerings & Scope</h3>
+                            <ul class="space-y-3 text-slate-700 text-sm font-medium">
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Prefab Building Installation & Maintenance Services:</strong> End-to-end site erection, crane positioning, lifecycle repairs, structural audits, and scheduled AMC contracts.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Dry Wall Partition & Ceiling Works:</strong> Acoustic suspended ceilings, lightweight dry walls, clean-room partitions, and concealed utility ducting.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong>Thermal & Acoustic Insulation:</strong> Advanced PUF/Aerocon panelling solutions to cut HVAC energy bills by 40% and eliminate sound transmission.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 pt-2">Quality Standards</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-600">
+                            <li><strong>ISO 9001:2015 Norms:</strong> Strict manufacturing tolerances and site commissioning quality checks.</li>
+                            <li><strong>Acoustic Isolation:</strong> Sound-damping mineral wool and fiber-cement board sandwich construction.</li>
+                        </ul>
+                    </div>
                 ',
                 'image' => null,
                 'is_active' => true,
