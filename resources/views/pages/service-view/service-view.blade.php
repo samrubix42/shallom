@@ -68,7 +68,7 @@
                     
                     @if(isset($currentVertical['image']))
                         <div class="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden bg-slate-900 shadow-sm">
-                            <img src="{{ asset($currentVertical['image']) }}" 
+                            <img src="{{ Str::startsWith($currentVertical['image'], 'http') ? $currentVertical['image'] : asset(ltrim($currentVertical['image'], '/')) }}" 
                                  alt="{{ $currentVertical['title'] ?? 'Service Image' }}" 
                                  class="w-full h-full object-cover">
                         </div>
