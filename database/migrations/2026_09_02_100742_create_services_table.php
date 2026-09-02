@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('banner')->nullable();
             $table->boolean('is_active')->default(false);
             $table->timestamps();
         });

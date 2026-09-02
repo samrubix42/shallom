@@ -7,6 +7,8 @@ new #[Layout('layouts::app')] class extends Component
 {
     public ?string $slug = 'hospitality-tourism-infrastructure';
 
+    public ?object $dbService = null;
+
     public array $currentVertical = [];
 
     public array $allVerticals = [];
@@ -176,6 +178,30 @@ new #[Layout('layouts::app')] class extends Component
                 ],
             ],
         ];
+
+        if ($slug) {
+            $dbModel = \App\Models\Service::where('slug', $slug)->where('is_active', true)->first();
+            if ($dbModel) {
+                $this->dbService = $dbModel;
+                $this->slug = $dbModel->slug;
+                $this->currentVertical = [
+                    'slug' => $dbModel->slug,
+                    'title' => $dbModel->name,
+                    'tagline' => 'Turnkey Engineering & Prefab Solution',
+                    'icon' => 'ri-customer-service-2-line',
+                    'image' => $dbModel->image ? \Illuminate\Support\Facades\Storage::url($dbModel->image) : 'shallom/IMG-20260901-WA0033.jpg',
+                    'summary' => $dbModel->short_description ?: 'Comprehensive turnkey prefab building and modular structure service.',
+                    'content' => $dbModel->description ?: '<p class="text-slate-600">No detailed content provided for this service.</p>',
+                    'sub_offerings' => [],
+                    'specs' => [
+                        'Structural Frame' => 'Galvanized Heavy MS Tubular & Box Sections (IS 2062)',
+                        'Wall Panelling' => 'Insulated PUF / EPS Sandwich Core / Aerocon Panels',
+                        'Quality Norms' => 'ISO 9001:2015 Manufacturing & Installation Norms',
+                    ],
+                ];
+                return;
+            }
+        }
 
         if ($slug && isset($this->allVerticals[$slug])) {
             $this->slug = $slug;

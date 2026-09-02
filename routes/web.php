@@ -21,4 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::livewire('/admin', 'admin::dashboard')->name('admin.dashboard');
     Route::livewire('/admin/clients', 'admin::clients')->name('admin.clients');
     Route::livewire('/admin/testimonials', 'admin::testimonial')->name('admin.testimonials');
+    Route::livewire('/admin/services', 'admin::service.list')->name('admin.services.list');
+    Route::livewire('/admin/services/create', 'admin::service.add')->name('admin.services.create');
+    Route::livewire('/admin/services/{service}/edit', 'admin::service.update')->name('admin.services.edit');
 });

@@ -1,11 +1,18 @@
 <?php
 
+use App\Models\Service;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
 new #[Layout('layouts::app')] #[Title('Core Business Verticals & Turnkey Services | Shallom Prefab Systems')] class extends Component
 {
+    #[Computed]
+    public function dbServices()
+    {
+        return Service::query()->where('is_active', true)->get();
+    }
     public array $verticals = [
         [
             'slug' => 'hospitality-tourism-infrastructure',

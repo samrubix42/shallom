@@ -70,70 +70,127 @@
             <!-- Verticals Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 
-                @foreach($verticals as $index => $item)
-                    <div class="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll">
-                        <div>
-                            <!-- Card Header Image -->
-                            <div class="relative h-64 w-full overflow-hidden bg-slate-900">
-                                <img src="{{ asset($item['image']) }}" 
-                                     alt="{{ $item['title'] }}" 
-                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                                
-                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-[#FF8B02] px-3.5 py-1.5 rounded-full text-xs font-extrabold shadow-sm flex items-center gap-1.5">
-                                    <i class="{{ $item['icon'] }} text-base"></i>
-                                    <span>VERTICAL 0{{ $index + 1 }}</span>
-                                </div>
-                            </div>
-
-                            <!-- Card Body -->
-                            <div class="p-8 space-y-6">
-                                <div>
-                                    <h3 class="text-2xl font-bold text-slate-900 group-hover:text-[#FF8B02] transition-colors">{{ $item['title'] }}</h3>
-                                    <p class="text-xs font-bold text-[#FF8B02] uppercase tracking-wider mt-1">{{ $item['tagline'] }}</p>
-                                </div>
-
-                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    {{ $item['summary'] }}
-                                </p>
-
-                                <!-- Sub-Offerings Pills -->
-                                <div class="space-y-2 pt-2 border-t border-slate-100">
-                                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Key Offerings:</div>
-                                    <div class="flex flex-wrap gap-2">
-                                        @foreach($item['sub_offerings'] as $sub)
-                                            <span class="px-3 py-1 rounded-full bg-[#FAF9F5] border border-slate-200 text-xs font-semibold text-slate-800">
-                                                • {{ $sub }}
-                                            </span>
-                                        @endforeach
+                @if(count($this->dbServices) > 0)
+                    @foreach($this->dbServices as $index => $item)
+                        <div class="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll">
+                            <div>
+                                <!-- Card Header Image -->
+                                <div class="relative h-64 w-full overflow-hidden bg-slate-900">
+                                    @if($item->image)
+                                        <img src="{{ Storage::url($item->image) }}" 
+                                             alt="{{ $item->name }}" 
+                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                    @else
+                                        <img src="{{ asset('shallom/IMG-20260901-WA0033.jpg') }}" 
+                                             alt="{{ $item->name }}" 
+                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                    @endif
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                    
+                                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-[#FF8B02] px-3.5 py-1.5 rounded-full text-xs font-extrabold shadow-sm flex items-center gap-1.5">
+                                        <i class="ri-customer-service-2-line text-base"></i>
+                                        <span>SERVICE 0{{ $index + 1 }}</span>
                                     </div>
                                 </div>
 
-                                <!-- Key Highlights Checklist -->
-                                <ul class="space-y-2 text-xs text-slate-600 font-medium">
-                                    @foreach($item['highlights'] as $highlight)
+                                <!-- Card Body -->
+                                <div class="p-8 space-y-6">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-slate-900 group-hover:text-[#FF8B02] transition-colors">{{ $item->name }}</h3>
+                                        <p class="text-xs font-bold text-[#FF8B02] uppercase tracking-wider mt-1">/service/{{ $item->slug }}</p>
+                                    </div>
+
+                                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                        {{ $item->short_description ?: Str::limit(strip_tags($item->description), 150) }}
+                                    </p>
+
+                                    <!-- Key Highlights Checklist -->
+                                    <ul class="space-y-2 text-xs text-slate-600 font-medium">
                                         <li class="flex items-center gap-2">
                                             <i class="ri-checkbox-circle-fill text-emerald-500 text-sm"></i>
-                                            <span>{{ $highlight }}</span>
+                                            <span>Heavy-Duty Insulated Prefab Structural Steel</span>
                                         </li>
-                                    @endforeach
-                                </ul>
+                                        <li class="flex items-center gap-2">
+                                            <i class="ri-checkbox-circle-fill text-emerald-500 text-sm"></i>
+                                            <span>Turnkey Erection & Nationwide Delivery</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Card Footer Action -->
+                            <div class="p-8 pt-0">
+                                <a href="{{ route('service.show', ['slug' => $item->slug]) }}" wire:navigate
+                                   class="w-full inline-flex items-center justify-between bg-[#FAF9F5] hover:bg-[#FF8B02] text-slate-800 hover:text-white font-extrabold px-6 py-4 rounded-2xl border border-slate-200/80 hover:border-[#FF8B02] text-xs uppercase tracking-wider transition-all duration-300 group/btn">
+                                    <span>View Full Service Scope</span>
+                                    <i class="ri-arrow-right-line text-base group-hover/btn:translate-x-1 transition-transform"></i>
+                                </a>
                             </div>
                         </div>
+                    @endforeach
+                @else
+                    @foreach($verticals as $index => $item)
+                        <div class="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll">
+                            <div>
+                                <!-- Card Header Image -->
+                                <div class="relative h-64 w-full overflow-hidden bg-slate-900">
+                                    <img src="{{ asset($item['image']) }}" 
+                                         alt="{{ $item['title'] }}" 
+                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                    
+                                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-[#FF8B02] px-3.5 py-1.5 rounded-full text-xs font-extrabold shadow-sm flex items-center gap-1.5">
+                                        <i class="{{ $item['icon'] }} text-base"></i>
+                                        <span>VERTICAL 0{{ $index + 1 }}</span>
+                                    </div>
+                                </div>
 
-                        <!-- Card Footer Action -->
-                        <div class="p-8 pt-0">
-                            <a href="{{ route('service.show', ['slug' => $item['slug']]) }}" wire:navigate
-                               class="w-full inline-flex items-center justify-between bg-[#FAF9F5] hover:bg-[#FF8B02] text-slate-800 hover:text-white font-extrabold px-6 py-4 rounded-2xl border border-slate-200/80 hover:border-[#FF8B02] text-xs uppercase tracking-wider transition-all duration-300 group/btn">
-                                <span>Explore Vertical Specs & Scope</span>
-                                <i class="ri-arrow-right-line text-base group-hover/btn:translate-x-1 transition-transform"></i>
-                            </a>
-                                <span>Explore Vertical Specs & Scope</span>
-                                <i class="ri-arrow-right-line text-base group-hover/btn:translate-x-1 transition-transform"></i>
-                            </a>
+                                <!-- Card Body -->
+                                <div class="p-8 space-y-6">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-slate-900 group-hover:text-[#FF8B02] transition-colors">{{ $item['title'] }}</h3>
+                                        <p class="text-xs font-bold text-[#FF8B02] uppercase tracking-wider mt-1">{{ $item['tagline'] }}</p>
+                                    </div>
+
+                                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                        {{ $item['summary'] }}
+                                    </p>
+
+                                    <!-- Sub-Offerings Pills -->
+                                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                                        <div class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Key Offerings:</div>
+                                        <div class="flex flex-wrap gap-2">
+                                            @foreach($item['sub_offerings'] as $sub)
+                                                <span class="px-3 py-1 rounded-full bg-[#FAF9F5] border border-slate-200 text-xs font-semibold text-slate-800">
+                                                    • {{ $sub }}
+                                                </span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
+                                    <!-- Key Highlights Checklist -->
+                                    <ul class="space-y-2 text-xs text-slate-600 font-medium">
+                                        @foreach($item['highlights'] as $highlight)
+                                            <li class="flex items-center gap-2">
+                                                <i class="ri-checkbox-circle-fill text-emerald-500 text-sm"></i>
+                                                <span>{{ $highlight }}</span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Card Footer Action -->
+                            <div class="p-8 pt-0">
+                                <a href="{{ route('service.show', ['slug' => $item['slug']]) }}" wire:navigate
+                                   class="w-full inline-flex items-center justify-between bg-[#FAF9F5] hover:bg-[#FF8B02] text-slate-800 hover:text-white font-extrabold px-6 py-4 rounded-2xl border border-slate-200/80 hover:border-[#FF8B02] text-xs uppercase tracking-wider transition-all duration-300 group/btn">
+                                    <span>Explore Vertical Specs & Scope</span>
+                                    <i class="ri-arrow-right-line text-base group-hover/btn:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
 
             </div>
 

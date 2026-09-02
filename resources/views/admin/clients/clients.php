@@ -95,6 +95,7 @@ new #[Layout('layouts::admin')] #[Title('Clients | Admin')] class extends Compon
                 'display_order' => $this->display_order,
                 'is_active' => $this->is_active,
             ]);
+            $this->dispatch('toast-show', message: 'Client updated successfully!', type: 'success');
         } else {
             Client::create([
                 'name' => $this->name,
@@ -102,6 +103,7 @@ new #[Layout('layouts::admin')] #[Title('Clients | Admin')] class extends Compon
                 'display_order' => $this->display_order,
                 'is_active' => $this->is_active,
             ]);
+            $this->dispatch('toast-show', message: 'Client created successfully!', type: 'success');
         }
 
         $this->resetFormFields();
@@ -115,6 +117,7 @@ new #[Layout('layouts::admin')] #[Title('Clients | Admin')] class extends Compon
             if ($client) {
                 $client->delete();
             }
+            $this->dispatch('toast-show', message: 'Client deleted successfully!', type: 'info');
         }
 
         $this->deletingClientId = null;
@@ -127,6 +130,9 @@ new #[Layout('layouts::admin')] #[Title('Clients | Admin')] class extends Compon
         $client = Client::findOrFail($id);
         $client->is_active = ! $client->is_active;
         $client->save();
+
+        $statusStr = $client->is_active ? 'activated' : 'deactivated';
+        $this->dispatch('toast-show', message: "Client {$statusStr}!", type: 'info');
     }
 
     private function resetFormFields(): void

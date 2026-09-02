@@ -32,6 +32,8 @@
         <!-- Footer -->
         <x-public.footer />
 
+        <x-toaster />
+
         @livewireScripts
     </body>
 </html>

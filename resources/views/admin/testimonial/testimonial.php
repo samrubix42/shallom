@@ -93,6 +93,7 @@ new #[Layout('layouts::admin')] #[Title('Testimonials | Admin')] class extends C
                 'display_order' => $this->display_order,
                 'is_active' => $this->is_active,
             ]);
+            $this->dispatch('toast-show', message: 'Testimonial updated successfully!', type: 'success');
         } else {
             Testimonial::create([
                 'client_name' => $this->client_name,
@@ -103,6 +104,7 @@ new #[Layout('layouts::admin')] #[Title('Testimonials | Admin')] class extends C
                 'display_order' => $this->display_order,
                 'is_active' => $this->is_active,
             ]);
+            $this->dispatch('toast-show', message: 'Testimonial created successfully!', type: 'success');
         }
 
         $this->resetFormFields();
@@ -116,6 +118,7 @@ new #[Layout('layouts::admin')] #[Title('Testimonials | Admin')] class extends C
             if ($testimonial) {
                 $testimonial->delete();
             }
+            $this->dispatch('toast-show', message: 'Testimonial deleted successfully!', type: 'info');
         }
 
         $this->deletingTestimonialId = null;
@@ -128,6 +131,9 @@ new #[Layout('layouts::admin')] #[Title('Testimonials | Admin')] class extends C
         $testimonial = Testimonial::findOrFail($id);
         $testimonial->is_active = ! $testimonial->is_active;
         $testimonial->save();
+
+        $statusStr = $testimonial->is_active ? 'activated' : 'deactivated';
+        $this->dispatch('toast-show', message: "Testimonial {$statusStr}!", type: 'info');
     }
 
     private function resetFormFields(): void

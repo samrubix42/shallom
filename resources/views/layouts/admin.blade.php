@@ -16,6 +16,9 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+        <!-- TinyMCE CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.2/tinymce.min.js" referrerpolicy="no-referrer"></script>
+
         @livewireStyles
     </head>
     <body class="h-full font-sans antialiased text-slate-900 selection:bg-[#FF8B02] selection:text-white"
@@ -71,6 +74,8 @@
             </div>
 
         </div>
+
+        <x-toaster />
 
         @livewireScripts
     </body>
