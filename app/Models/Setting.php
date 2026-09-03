@@ -18,4 +18,12 @@ class Setting extends Model
 
         return $setting ? $setting->value : $default;
     }
+
+    public static function set(string $key, ?string $value, string $group = 'general'): Setting
+    {
+        return static::query()->updateOrCreate(
+            ['key' => $key],
+            ['value' => $value, 'group' => $group]
+        );
+    }
 }

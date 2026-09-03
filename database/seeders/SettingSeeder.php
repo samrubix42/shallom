@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Setting;
 use Illuminate\Database\Seeder;
 
 class SettingSeeder extends Seeder
@@ -15,6 +15,8 @@ class SettingSeeder extends Seeder
         $settings = [
             ['key' => 'company_name', 'value' => 'Shallom Prefab Systems', 'group' => 'general'],
             ['key' => 'company_tagline', 'value' => 'Design for the Future | Innovative Engineering. Sustainable Construction.', 'group' => 'general'],
+            ['key' => 'logo', 'value' => 'logo.webp', 'group' => 'general'],
+            ['key' => 'favicon', 'value' => 'favicon.ico', 'group' => 'general'],
             ['key' => 'proprietor', 'value' => 'Mr. Arvind Kumar Gautam', 'group' => 'company'],
             ['key' => 'incorporation_year', 'value' => '2009 (GST Registered: July 2017)', 'group' => 'company'],
             ['key' => 'turnover', 'value' => '₹5 Crore – ₹25 Crore', 'group' => 'company'],
@@ -22,6 +24,7 @@ class SettingSeeder extends Seeder
             ['key' => 'gst_no', 'value' => '07ANDPG4822C2ZI', 'group' => 'company'],
             ['key' => 'banker', 'value' => 'AXIS BANK', 'group' => 'company'],
             ['key' => 'phone', 'value' => '+91-9899552380', 'group' => 'contact'],
+            ['key' => 'whatsapp', 'value' => '+919899552380', 'group' => 'contact'],
             ['key' => 'landline', 'value' => '07942550323', 'group' => 'contact'],
             ['key' => 'email', 'value' => 'shallomprefabsystems@gmail.com', 'group' => 'contact'],
             ['key' => 'address', 'value' => 'N-3/A-3, Dilshad Garden, Delhi – 110095, India', 'group' => 'contact'],
@@ -31,7 +34,7 @@ class SettingSeeder extends Seeder
         ];
 
         foreach ($settings as $setting) {
-            \App\Models\Setting::updateOrCreate(
+            Setting::updateOrCreate(
                 ['key' => $setting['key']],
                 $setting
             );

@@ -1,9 +1,9 @@
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
-        <!-- Architectural Studio Catalog Banner Header -->
-        <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200/80 shadow-xs flex flex-col md:flex-row items-center justify-between gap-8">
-            <div class="space-y-3 max-w-2xl">
+        <!-- 1. ARCHITECTURAL STUDIO HERO BANNER -->
+        <div class="bg-white rounded-2xl p-8 sm:p-12 border border-slate-200/80 shadow-xs flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-4 max-w-3xl">
                 <div class="flex items-center gap-2 text-[#FF8B02]">
                     <i class="ri-ruler-2-line text-lg"></i>
                     <span class="text-xs font-bold uppercase tracking-widest">OUR RANGE & SPECIFICATIONS</span>
@@ -12,27 +12,47 @@
                     PREFAB SOLUTIONS & <br/>
                     <span class="text-[#FF8B02] font-normal">OUR COMPLETE RANGE</span>
                 </h1>
-                <p class="text-slate-600 text-sm font-normal leading-relaxed">
+                <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
                     Browse technical material grades, minimum order quantities, structural framing details, and PDF brochure spec sheets for Shallom prefabricated systems.
                 </p>
             </div>
 
-            <!-- Dynamic Category Filter Pills -->
-            <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none shrink-0">
+            <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
+                <a href="tel:+917942550323" 
+                   class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
+                    <i class="ri-phone-fill text-sm"></i>
+                    <span>Call 07942550323</span>
+                </a>
+                <button type="button" wire:click="openEnquiryModal('General Catalog Requirement')"
+                        class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all cursor-pointer">
+                    <i class="ri-mail-send-line text-sm"></i>
+                    <span>Request Catalog Info</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. DYNAMIC CATEGORY FILTER NAVIGATION BAR -->
+        <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                <i class="ri-filter-3-line text-[#FF8B02] text-sm"></i>
+                <span class="font-bold text-slate-800">Filter by Product Category:</span>
+            </div>
+
+            <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-none">
                 <button wire:click="$set('activeCategory', 'all')" 
-                        class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === 'all' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
+                        class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border shrink-0 cursor-pointer {{ $activeCategory === 'all' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
                     All Ranges
                 </button>
                 @foreach($this->categories as $cat)
                     <button wire:click="$set('activeCategory', '{{ $cat->slug }}')" 
-                            class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === $cat->slug ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
+                            class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border shrink-0 cursor-pointer {{ $activeCategory === $cat->slug ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
                         {{ $cat->name }}
                     </button>
                 @endforeach
             </div>
         </div>
 
-        <!-- ELEGANT DETAILED PRODUCT CARDS LIST -->
+        <!-- 3. ELEGANT DETAILED PRODUCT CARDS LIST -->
         <div class="space-y-10">
             @forelse($this->products as $product)
                 @php
@@ -49,7 +69,7 @@
                 <div x-data="{ activeImg: '{{ $mainImage }}' }" 
                      class="bg-white rounded-2xl border border-slate-200/80 shadow-xs p-6 sm:p-10 space-y-8 hover:border-[#FF8B02]/50 hover:shadow-xl transition-all duration-300">
                     
-                    <!-- 1. Card Top Bar: Product Name & Call Back Button -->
+                    <!-- Card Top Bar: Product Name & Call Back Button -->
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
                         <div class="space-y-1">
                             <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
@@ -73,7 +93,7 @@
                         </a>
                     </div>
 
-                    <!-- 2. Main Content Layout (Left Photo Showcase + Right Specs Table) -->
+                    <!-- Main Content Layout (Left Photo Showcase + Right Specs Table) -->
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                         
                         <!-- LEFT COLUMN: Photo Gallery Showcase + Quote Button -->
