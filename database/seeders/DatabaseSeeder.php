@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             TestimonialSeeder::class,
             ServiceSeeder::class,
             SettingSeeder::class,
+            OurRangeCategorySeeder::class,
+            OurRangeSeeder::class,
         ]);
     }
 }

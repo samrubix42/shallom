@@ -24,4 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::livewire('/admin/services', 'admin::service.list')->name('admin.services.list');
     Route::livewire('/admin/services/create', 'admin::service.add')->name('admin.services.create');
     Route::livewire('/admin/services/{service}/edit', 'admin::service.update')->name('admin.services.edit');
+    Route::livewire('/admin/our-range-categories', 'admin::our-range-categories')->name('admin.our-range-categories');
+    Route::livewire('/admin/our-ranges', 'admin::our-ranges')->name('admin.our-ranges');
 });

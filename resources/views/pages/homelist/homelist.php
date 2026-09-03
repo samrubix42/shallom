@@ -1,128 +1,56 @@
 <?php
 
+use App\Models\OurRange;
+use App\Models\OurRangeCategory;
+use Illuminate\Database\Eloquent\Collection;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-new #[Layout('layouts::app')] #[Title('Product Catalog & Specifications | Shallom Prefab Systems')] class extends Component {
+new #[Layout('layouts::app')] #[Title('Product Catalog & Specifications | Shallom Prefab Systems')] class extends Component
+{
     public string $activeCategory = 'all';
+
     public ?string $selectedProductForEnquiry = null;
+
     public bool $showEnquiryModal = false;
-    
+
     // Form fields
     public string $name = '';
+
     public string $phone = '';
+
     public string $email = '';
+
     public string $location = '';
+
     public string $message = '';
+
     public bool $submitted = false;
 
-    public array $products = [
-        [
-            'id' => 'prefab-portable-house',
-            'title' => 'Prefab Portable House',
-            'category' => 'houses',
-            'price' => 'Rs 1,550',
-            'price_unit' => 'sq ft',
-            'moq' => '1 sq ft',
-            'main_image' => 'shallom/IMG-20260901-WA0009.jpg',
-            'gallery' => [
-                'shallom/IMG-20260901-WA0009.jpg',
-                'shallom/IMG-20260901-WA0027.jpg',
-                'shallom/IMG-20260901-WA0028.jpg',
-            ],
-            'specs' => [
-                'Material' => 'Wood / PUF Sandwich Panels (60mm PPGI) / Steel Framework',
-                'Built Type' => 'Prefabricated Modular',
-                'Color' => 'Brown, Green, White & Custom Options',
-                'House Style' => 'Hut Shape / Modern Slanted Roof',
-                'Usage/Application' => 'Residential House, Farmhouse, Resort Villa',
-                'Structural Lifespan' => '50+ Years (with standard anti-corrosive maintenance)',
-                'Seismic Zone' => 'Seismic Zone-V Compliant',
-                'Wind Load Resistance' => 'Up to 39 m/s Wind Velocity',
-                'Brand' => 'Shallom Prefab Systems',
-                'Available Material' => 'Insulated Panels, Aerocon Panels, PUF Insulation, Structural Steel',
-            ],
-            'description' => 'Leveraging our vast engineering experience since 2009, we provide premium Prefabricated Portable Houses. Fabricated using heavy structural steel framing and 60mm PUF weather-resistant insulated sandwich wall panels with 50+ years lifespan.',
-        ],
-        [
-            'id' => 'prefab-site-office',
-            'title' => 'Prefabricated Site Office Cabin',
-            'category' => 'offices',
-            'price' => 'Rs 1,250',
-            'price_unit' => 'sq ft',
-            'moq' => '100 sq ft',
-            'main_image' => 'shallom/IMG-20260901-WA0010.jpg',
-            'gallery' => [
-                'shallom/IMG-20260901-WA0010.jpg',
-                'shallom/IMG-20260901-WA0029.jpg',
-                'shallom/IMG-20260901-WA0030.jpg',
-            ],
-            'specs' => [
-                'Material' => 'Galvanized Steel Frame & 60mm PUF/EPS Insulation Panels',
-                'Built Type' => 'Prefabricated Container / Cabin',
-                'Color' => 'Off-White, Blue & Custom Corporate Colors',
-                'House Style' => 'Flat Modular Box Cabin',
-                'Usage/Application' => 'Construction Site Executive Office, Meeting Room',
-                'Fire Resistance' => 'Class "O" BS 476 / DIN 4102 Certified',
-                'Structural Lifespan' => '50+ Years',
-                'Brand' => 'Shallom Prefab Systems',
-                'Available Material' => 'PUF Sandwich Panels, UPVC Windows, Heavy Vinyl Flooring',
-            ],
-            'description' => 'Heavy-duty plug-and-play executive site office cabin designed for rapid deployment at infrastructure and construction projects. Features pre-wired electrical sockets, LED lighting, and 60mm thermal wall insulation.',
-        ],
-        [
-            'id' => 'building-metal-structure',
-            'title' => 'Building Metal Structure & Steel Shed',
-            'category' => 'structures',
-            'price' => 'Rs 980',
-            'price_unit' => 'sq ft',
-            'moq' => '500 sq ft',
-            'main_image' => 'shallom/IMG-20260901-WA0011.jpg',
-            'gallery' => [
-                'shallom/IMG-20260901-WA0011.jpg',
-                'shallom/IMG-20260901-WA0031.jpg',
-                'shallom/IMG-20260901-WA0032.jpg',
-            ],
-            'specs' => [
-                'Material' => 'IS 2062 Grade Heavy Structural MS Steel Framework',
-                'Built Type' => 'Pre-Engineered Building (PEB)',
-                'Color' => 'Industrial Grey, Blue Roof Sheets',
-                'House Style' => 'High-Span Gable Roof Industrial Shed',
-                'Usage/Application' => 'Industrial Warehouse, Factory Floor, Rooftop Extension',
-                'Wind Load Resistance' => 'Rated up to 39 m/s',
-                'Seismic Zone' => 'Zone-V Compliant',
-                'Brand' => 'Shallom Prefab Systems',
-                'Available Material' => 'Galvalume Roofing Sheets, Steel Trusses, Anchor Bolts',
-            ],
-            'description' => 'High-span structural steel framework manufactured according to structural load drawings. Perfect for factory sheds, warehouse facilities, and rooftop industrial floor extensions with 50+ years lifespan.',
-        ],
-        [
-            'id' => 'labour-hutment-camp',
-            'title' => 'Labour Hutments for Construction Sites',
-            'category' => 'hutments',
-            'price' => 'Rs 750',
-            'price_unit' => 'sq ft',
-            'moq' => '500 sq ft',
-            'main_image' => 'shallom/IMG-20260901-WA0012.jpg',
-            'gallery' => [
-                'shallom/IMG-20260901-WA0012.jpg',
-                'shallom/IMG-20260901-WA0037.jpg',
-                'shallom/IMG-20260901-WA0038.jpg',
-            ],
-            'specs' => [
-                'Material' => 'Corrugated Sheet / Aerocon Panels / Steel Frame',
-                'Built Type' => 'Demountable Modular Quarters',
-                'Color' => 'Galvanized Silver & Blue Roof',
-                'House Style' => 'Double Slanted Multi-Room Barracks',
-                'Usage/Application' => 'Construction Labour Accommodations, Project Colony',
-                'Relocatable' => '100% Demountable & Portable',
-                'Brand' => 'Shallom Prefab Systems',
-                'Available Material' => 'Demountable Steel Frame, Waterproof Roof, Bunk Beds',
-            ],
-            'description' => 'Economical and 100% relocatable labour housing quarters engineered for high worker capacity, monsoon weather resistance, and rapid nut-and-bolt site erection.',
-        ],
-    ];
+    #[Computed]
+    public function categories(): Collection
+    {
+        return OurRangeCategory::where('is_active', true)
+            ->orderBy('id', 'asc')
+            ->get();
+    }
+
+    #[Computed]
+    public function products(): Collection
+    {
+        return OurRange::with('category')
+            ->where('is_active', true)
+            ->when($this->activeCategory !== 'all', function ($query) {
+                $query->whereHas('category', function ($q) {
+                    $q->where('slug', $this->activeCategory)
+                        ->orWhere('id', $this->activeCategory);
+                });
+            })
+            ->orderBy('id', 'asc')
+            ->get();
+    }
 
     public function openEnquiryModal(string $productTitle): void
     {

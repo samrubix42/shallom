@@ -17,72 +17,76 @@
                 </p>
             </div>
 
-            <!-- Category Filter Pills -->
+            <!-- Dynamic Category Filter Pills -->
             <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none shrink-0">
                 <button wire:click="$set('activeCategory', 'all')" 
                         class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === 'all' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
                     All Ranges
                 </button>
-                <button wire:click="$set('activeCategory', 'houses')" 
-                        class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === 'houses' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
-                    Prefab Houses
-                </button>
-                <button wire:click="$set('activeCategory', 'offices')" 
-                        class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === 'offices' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
-                    Site Offices
-                </button>
-                <button wire:click="$set('activeCategory', 'structures')" 
-                        class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === 'structures' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
-                    Steel Sheds
-                </button>
-                <button wire:click="$set('activeCategory', 'hutments')" 
-                        class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === 'hutments' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
-                    Labour Camps
-                </button>
+                @foreach($this->categories as $cat)
+                    <button wire:click="$set('activeCategory', '{{ $cat->slug }}')" 
+                            class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border {{ $activeCategory === $cat->slug ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
+                        {{ $cat->name }}
+                    </button>
+                @endforeach
             </div>
         </div>
 
         <!-- ELEGANT DETAILED PRODUCT CARDS LIST -->
         <div class="space-y-10">
-            @foreach($products as $product)
-                @if($activeCategory === 'all' || $activeCategory === $product['category'])
-                    
-                    <div x-data="{ activeImg: '{{ asset($product['main_image']) }}' }" 
-                         class="bg-white rounded-2xl border border-slate-200/80 shadow-xs p-6 sm:p-10 space-y-8 hover:border-[#FF8B02]/50 hover:shadow-xl transition-all duration-300">
-                        
-                        <!-- 1. Card Top Bar: Product Name & Call Back Button -->
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
-                            <div class="space-y-1">
-                                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-                                    {{ $product['title'] }}
-                                </h2>
-                                <div class="flex items-center gap-2 text-xs text-slate-500 font-normal">
-                                    <span>Brand: <strong class="text-slate-800">Shallom Prefab Systems</strong></span>
-                                    <span>•</span>
-                                    <span class="text-emerald-600 font-bold"><i class="ri-checkbox-circle-fill"></i> In Stock & Custom Order</span>
-                                </div>
-                            </div>
+            @forelse($this->products as $product)
+                @php
+                    $details = $product->details ?? [];
+                    $price = $details['price'] ?? 'Price on Request';
+                    $priceUnit = $details['price_unit'] ?? 'sq ft';
+                    $moq = $details['moq'] ?? '1 sq ft';
+                    $specs = $details['specs'] ?? [];
+                    $images = $product->images ?? [];
+                    $mainImage = !empty($images) && isset($images[0]) ? asset($images[0]) : asset('shallom/IMG-20260901-WA0009.jpg');
+                    $gallery = !empty($images) ? $images : [$mainImage];
+                @endphp
 
-                            <a href="tel:+917942550323" 
-                               class="inline-flex items-center gap-2 border border-[#FF8B02] text-[#FF8B02] hover:bg-[#FFF4E5] font-bold text-xs px-5 py-2.5 rounded-full transition-all uppercase tracking-wider shrink-0 self-start sm:self-auto">
-                                <i class="ri-phone-line text-sm"></i>
-                                Request Call Back
-                            </a>
+                <div x-data="{ activeImg: '{{ $mainImage }}' }" 
+                     class="bg-white rounded-2xl border border-slate-200/80 shadow-xs p-6 sm:p-10 space-y-8 hover:border-[#FF8B02]/50 hover:shadow-xl transition-all duration-300">
+                    
+                    <!-- 1. Card Top Bar: Product Name & Call Back Button -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+                        <div class="space-y-1">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                                {{ $product->title }}
+                            </h2>
+                            <div class="flex items-center gap-2 text-xs text-slate-500 font-normal">
+                                <span>Brand: <strong class="text-slate-800">Shallom Prefab Systems</strong></span>
+                                <span>•</span>
+                                <span class="text-emerald-600 font-bold"><i class="ri-checkbox-circle-fill"></i> In Stock & Custom Order</span>
+                                @if($product->category)
+                                    <span>•</span>
+                                    <span class="text-slate-600 font-medium">{{ $product->category->name }}</span>
+                                @endif
+                            </div>
                         </div>
 
-                        <!-- 2. Main Content Layout (Left Image Gallery + Right Specs Table) -->
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                        <a href="tel:+917942550323" 
+                           class="inline-flex items-center gap-2 border border-[#FF8B02] text-[#FF8B02] hover:bg-[#FFF4E5] font-bold text-xs px-5 py-2.5 rounded-full transition-all uppercase tracking-wider shrink-0 self-start sm:self-auto">
+                            <i class="ri-phone-line text-sm"></i>
+                            Request Call Back
+                        </a>
+                    </div>
+
+                    <!-- 2. Main Content Layout (Left Photo Showcase + Right Specs Table) -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                        
+                        <!-- LEFT COLUMN: Photo Gallery Showcase + Quote Button -->
+                        <div class="lg:col-span-5 space-y-5">
                             
-                            <!-- LEFT COLUMN: Interactive Thumbnails + Main Showcase Photo + Quote Button -->
-                            <div class="lg:col-span-5 space-y-5">
-                                
+                            @if(count($gallery) > 1)
                                 <div class="flex gap-3 items-start">
                                     <!-- Clickable Thumbnails Column -->
                                     <div class="flex flex-col gap-3 shrink-0 w-20 sm:w-22">
-                                        @foreach($product['gallery'] as $galleryImg)
+                                        @foreach($gallery as $galleryImg)
                                             <button @click="activeImg = '{{ asset($galleryImg) }}'" 
                                                     :class="activeImg === '{{ asset($galleryImg) }}' ? 'border-2 border-[#FF8B02] ring-2 ring-[#FF8B02]/20' : 'border border-slate-200 opacity-75 hover:opacity-100'"
-                                                    class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 transition-all focus:outline-none shadow-2xs">
+                                                    class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 transition-all focus:outline-none shadow-2xs cursor-pointer">
                                                 <img src="{{ asset($galleryImg) }}" alt="Gallery Thumbnail" class="w-full h-full object-cover">
                                             </button>
                                         @endforeach
@@ -90,53 +94,70 @@
 
                                     <!-- Main Showcase Image -->
                                     <div class="flex-1 aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 relative shadow-inner group">
-                                        <img :src="activeImg" alt="{{ $product['title'] }}" class="w-full h-full object-cover transition-all duration-300">
+                                        <img :src="activeImg" alt="{{ $product->title }}" class="w-full h-full object-cover transition-all duration-300">
                                         <div class="absolute bottom-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/20">
                                             <i class="ri-zoom-in-line mr-1"></i> High Resolution View
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- GET BEST QUOTE Button (Full Width Under Image) -->
-                                <button wire:click="openEnquiryModal('{{ $product['title'] }}')"
-                                        class="w-full bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold text-xs py-4 rounded-xl shadow-md shadow-orange-500/20 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 uppercase tracking-wider">
-                                    <i class="ri-mail-send-fill text-sm"></i>
-                                    Get Best Quote
-                                </button>
-
-                            </div>
-
-                            <!-- RIGHT COLUMN: Price Highlight, Specifications Table, Description & Primary CTA -->
-                            <div class="lg:col-span-7 space-y-6">
-                                
-                                <!-- Price & Minimum Order Quantity Card -->
-                                <div class="flex flex-wrap items-center justify-between gap-4 bg-[#FAF9F5] p-5 rounded-2xl border border-slate-200/80">
-                                    <div>
-                                        <span class="text-3xl font-extrabold text-slate-900">{{ $product['price'] }}</span>
-                                        <span class="text-sm font-bold text-slate-600">/ {{ $product['price_unit'] }}</span>
-                                        <a href="#contact" wire:click="openEnquiryModal('{{ $product['title'] }}')" class="text-xs font-bold text-[#FF8B02] underline hover:text-[#E67A00] ml-2">
-                                            Price on Request
-                                        </a>
-                                    </div>
-                                    <div class="text-xs font-bold text-slate-700 bg-white px-4 py-2 rounded-full border border-slate-200/80 shadow-2xs">
-                                        MOQ: <strong class="text-slate-900">{{ $product['moq'] }}</strong>
+                            @else
+                                <!-- Single Showcase Image -->
+                                <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 relative shadow-inner group">
+                                    <img :src="activeImg" alt="{{ $product->title }}" class="w-full h-full object-cover transition-all duration-300">
+                                    <div class="absolute bottom-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/20">
+                                        <i class="ri-zoom-in-line mr-1"></i> High Resolution View
                                     </div>
                                 </div>
+                            @endif
 
-                                <!-- PDF Spec Sheet Download Link -->
-                                <div>
-                                    <a href="#contact" wire:click="openEnquiryModal('{{ $product['title'] }}')" 
+                            <!-- GET BEST QUOTE Button (Full Width Under Image) -->
+                            <button wire:click="openEnquiryModal('{{ $product->title }}')"
+                                    class="w-full bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold text-xs py-4 rounded-xl shadow-md shadow-orange-500/20 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 uppercase tracking-wider cursor-pointer">
+                                <i class="ri-mail-send-fill text-sm"></i>
+                                Get Best Quote
+                            </button>
+
+                        </div>
+
+                        <!-- RIGHT COLUMN: Price Highlight, Specifications Table, Description & Primary CTA -->
+                        <div class="lg:col-span-7 space-y-6">
+                            
+                            <!-- Price on Request & Minimum Order Quantity Card -->
+                            <div class="flex flex-wrap items-center justify-between gap-4 bg-[#FAF9F5] p-5 rounded-2xl border border-slate-200/80">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl font-extrabold text-slate-900">Price on Request</span>
+                                    <button type="button" wire:click="openEnquiryModal('{{ $product->title }}')" class="inline-flex items-center gap-1 text-xs font-bold text-[#FF8B02] hover:text-[#E67A00] bg-[#FFF4E5] px-3.5 py-1.5 rounded-full border border-[#FFD199] transition-colors cursor-pointer">
+                                        <i class="ri-mail-send-line"></i> Get Quote
+                                    </button>
+                                </div>
+                                <div class="text-xs font-bold text-slate-700 bg-white px-4 py-2 rounded-full border border-slate-200/80 shadow-2xs">
+                                    MOQ: <strong class="text-slate-900">{{ $moq }}</strong>
+                                </div>
+                            </div>
+
+                            <!-- PDF Spec Sheet Download Link -->
+                            <div>
+                                @if($product->pdf)
+                                    <a href="{{ asset($product->pdf) }}" target="_blank" 
                                        class="inline-flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-[#FF8B02] bg-white hover:bg-[#FFF4E5] px-4 py-2.5 rounded-xl border border-slate-200/80 transition-colors">
                                         <i class="ri-file-pdf-fill text-red-500 text-base"></i>
                                         <span>Download Product Spec Sheet (PDF)</span>
                                     </a>
-                                </div>
+                                @else
+                                    <button wire:click="openEnquiryModal('{{ $product->title }}')" 
+                                            class="inline-flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-[#FF8B02] bg-white hover:bg-[#FFF4E5] px-4 py-2.5 rounded-xl border border-slate-200/80 transition-colors cursor-pointer">
+                                        <i class="ri-file-pdf-fill text-red-500 text-base"></i>
+                                        <span>Download Product Spec Sheet (PDF)</span>
+                                    </button>
+                                @endif
+                            </div>
 
-                                <!-- Clean Striped Technical Specifications Table -->
+                            <!-- Clean Striped Technical Specifications Table -->
+                            @if(!empty($specs))
                                 <div class="border border-slate-200/80 rounded-xl overflow-hidden shadow-2xs">
                                     <table class="w-full text-xs sm:text-sm text-left">
                                         <tbody class="divide-y divide-slate-100">
-                                            @foreach($product['specs'] as $key => $val)
+                                            @foreach($specs as $key => $val)
                                                 <tr class="odd:bg-white even:bg-[#FAF9F5]/80 hover:bg-[#FFF4E5]/40 transition-colors">
                                                     <td class="px-4 py-2.5 font-bold text-slate-700 w-2/5 sm:w-1/3 border-r border-slate-100">{{ $key }}</td>
                                                     <td class="px-4 py-2.5 font-normal text-slate-900">{{ $val }}</td>
@@ -145,29 +166,35 @@
                                         </tbody>
                                     </table>
                                 </div>
+                            @endif
 
-                                <!-- Description Paragraph -->
-                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    {{ $product['description'] }}
-                                </p>
+                            <!-- Description Paragraph -->
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                {{ $product->description }}
+                            </p>
 
-                                <!-- YES! I AM INTERESTED Primary Button -->
-                                <div class="pt-2">
-                                    <button wire:click="openEnquiryModal('{{ $product['title'] }}')"
-                                            class="w-full sm:w-auto min-w-[280px] border-2 border-[#FF8B02] text-[#FF8B02] hover:bg-[#FF8B02] hover:text-white font-extrabold text-xs px-8 py-3.5 rounded-full transition-all duration-300 shadow-md uppercase tracking-wider flex items-center justify-center gap-2">
-                                        <i class="ri-send-plane-fill text-sm"></i>
-                                        <span>YES! I AM INTERESTED</span>
-                                    </button>
-                                </div>
-
+                            <!-- YES! I AM INTERESTED Primary Button -->
+                            <div class="pt-2">
+                                <button wire:click="openEnquiryModal('{{ $product->title }}')"
+                                        class="w-full sm:w-auto min-w-[280px] border-2 border-[#FF8B02] text-[#FF8B02] hover:bg-[#FF8B02] hover:text-white font-extrabold text-xs px-8 py-3.5 rounded-full transition-all duration-300 shadow-md uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+                                    <i class="ri-send-plane-fill text-sm"></i>
+                                    <span>YES! I AM INTERESTED</span>
+                                </button>
                             </div>
 
                         </div>
 
                     </div>
 
-                @endif
-            @endforeach
+                </div>
+
+            @empty
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-12 text-center text-slate-500 space-y-3">
+                    <i class="ri-box-3-line text-4xl text-slate-300"></i>
+                    <h3 class="text-lg font-bold text-slate-800">No Products Available</h3>
+                    <p class="text-xs text-slate-500">No active products match the selected category filter.</p>
+                </div>
+            @endforelse
         </div>
 
     </div>
@@ -177,7 +204,7 @@
         <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
             <div class="bg-[#FAF9F5] rounded-2xl p-8 max-w-lg w-full border border-slate-200/80 shadow-2xl space-y-6 relative">
                 
-                <button wire:click="closeEnquiryModal" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700">
+                <button wire:click="closeEnquiryModal" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700 cursor-pointer">
                     <i class="ri-close-line text-2xl"></i>
                 </button>
 
@@ -188,7 +215,7 @@
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900">Enquiry Received!</h3>
                         <p class="text-sm text-slate-600 font-normal">Our engineering team will call you back shortly for <strong>{{ $selectedProductForEnquiry }}</strong>.</p>
-                        <button wire:click="closeEnquiryModal" class="bg-[#FF8B02] text-white font-bold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider">
+                        <button wire:click="closeEnquiryModal" class="bg-[#FF8B02] text-white font-bold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider cursor-pointer">
                             Done
                         </button>
                     </div>
@@ -219,7 +246,7 @@
                             <input type="text" wire:model="location" placeholder="e.g. Noida / Gurgaon / Delhi NCR" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#FF8B02] transition-colors">
                         </div>
 
-                        <button type="submit" class="w-full bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-full shadow-md text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-full shadow-md text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
                             <i class="ri-send-plane-fill text-sm"></i>
                             Submit Requirement Now
                         </button>
