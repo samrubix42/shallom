@@ -18,14 +18,19 @@ new #[Layout('layouts::app')] #[Title('Shallom Prefab Systems | Modular Houses &
             ->orderBy('id', 'desc')
             ->get();
     }
+
     // Interactive Product Tab State
     public string $activeCategory = 'all';
 
     // Cost Estimator Calculator State
     public string $buildingType = 'site_office';
+
     public int $areaSize = 600; // in Sq. Ft.
+
     public string $urgency = 'standard'; // 'standard' or 'express'
+
     public bool $includeToilets = false;
+
     public bool $includeACPanels = true;
 
     // Contact / Enquiry Form State
@@ -39,7 +44,9 @@ new #[Layout('layouts::app')] #[Title('Shallom Prefab Systems | Modular Houses &
     public string $email = '';
 
     public string $buildingInterest = 'Prefab Site Office';
+
     public string $projectLocation = '';
+
     public string $message = '';
 
     public bool $enquirySubmitted = false;
@@ -59,7 +66,7 @@ new #[Layout('layouts::app')] #[Title('Shallom Prefab Systems | Modular Houses &
 
         $baseRate = $rates[$this->buildingType] ?? ['min' => 700, 'max' => 950];
         $multiplier = $this->urgency === 'express' ? 1.15 : 1.0;
-        
+
         if ($this->includeToilets) {
             $baseRate['min'] += 50;
             $baseRate['max'] += 75;
@@ -74,7 +81,7 @@ new #[Layout('layouts::app')] #[Title('Shallom Prefab Systems | Modular Houses &
         $totalMax = round(($baseRate['max'] * $this->areaSize * $multiplier) / 1000) * 1000;
 
         // Turnaround estimate (days)
-        $days = match(true) {
+        $days = match (true) {
             $this->areaSize <= 500 => '5 - 7 Days',
             $this->areaSize <= 1500 => '8 - 14 Days',
             $this->areaSize <= 5000 => '15 - 25 Days',

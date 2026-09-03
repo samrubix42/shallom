@@ -154,4 +154,3 @@ new #[Layout('layouts::admin')] #[Title('Clients | Admin')] class extends Compon
             ->paginate(10);
     }
 };
-

@@ -9,19 +9,19 @@
                     <span class="text-xs font-bold uppercase tracking-widest">COMPANY PROFILE & CORPORATE OVERVIEW</span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.18]">
-                    SHALLOM PREFAB SYSTEMS & <br/>
+                    {{ strtoupper(setting('company_name', 'SHALLOM PREFAB SYSTEMS')) }} & <br/>
                     <span class="text-[#FF8B02] font-normal">CORPORATE PROFILE</span>
                 </h1>
                 <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
-                    Established with industry roots dating back to <strong>2009 at Delhi (India)</strong> and GST registered in 2017, Shallom Prefab Systems is a leading manufacturer, exporter, and turnkey service provider of advanced pre-engineered construction solutions under the leadership of Proprietor <strong>Mr. Arvind Kumar Gautam</strong>.
+                    Established with industry roots dating back to <strong>{{ setting('incorporation_year', '2009 (GST Registered: July 2017)') }}</strong>, {{ setting('company_name', 'Shallom Prefab Systems') }} is a leading manufacturer, exporter, and turnkey service provider of advanced pre-engineered construction solutions under the leadership of Proprietor <strong>{{ setting('proprietor', 'Mr. Arvind Kumar Gautam') }}</strong>.
                 </p>
             </div>
 
             <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
-                <a href="tel:+919899552380" 
+                <a href="tel:{{ setting('phone', '+91-9899552380') }}" 
                    class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
                     <i class="ri-phone-fill text-sm"></i>
-                    <span>+91-9899552380</span>
+                    <span>{{ setting('phone', '+91-9899552380') }}</span>
                 </a>
                 <a href="{{ route('products') }}" wire:navigate
                    class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
@@ -116,15 +116,15 @@
                     <tbody class="divide-y divide-slate-200 font-medium">
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50 w-1/3">Company Name</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold w-2/3">Shallom Prefab Systems</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold w-2/3">{{ setting('company_name', 'Shallom Prefab Systems') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Leadership / Proprietor</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Mr. Arvind Kumar Gautam</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('proprietor', 'Mr. Arvind Kumar Gautam') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Year of Incorporation / Roots</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">2009 (GST Registered: July 2017)</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('incorporation_year', '2009 (GST Registered: July 2017)') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Legal Status</td>
@@ -136,23 +136,23 @@
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Annual Turnover</td>
-                            <td class="py-3.5 px-6 text-[#FF8B02] font-extrabold">₹5 Crore – ₹25 Crore</td>
+                            <td class="py-3.5 px-6 text-[#FF8B02] font-extrabold">{{ setting('turnover', '₹5 Crore – ₹25 Crore') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Team Size</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">26 – 50 Skilled Professionals</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('team_size', '26 – 50 Skilled Professionals') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">GST Registration No.</td>
-                            <td class="py-3.5 px-6 font-mono font-bold text-slate-900">07ANDPG4822C2ZI</td>
+                            <td class="py-3.5 px-6 font-mono font-bold text-slate-900">{{ setting('gst_no', '07ANDPG4822C2ZI') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Registered Office Address</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">N-3/A-3, Dilshad Garden, Delhi – 110095, India</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Banker</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">AXIS BANK</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('banker', 'AXIS BANK') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Accepted Payment Modes</td>
@@ -248,10 +248,10 @@
 
                 <div class="pt-2 flex flex-wrap gap-4">
                     <div class="px-4 py-2 rounded-lg bg-[#FAF9F5] border border-slate-200 text-xs font-bold text-slate-800">
-                        GSTIN: <span class="text-[#FF8B02]">07ANDPG4822C2ZI</span>
+                        GSTIN: <span class="text-[#FF8B02]">{{ setting('gst_no', '07ANDPG4822C2ZI') }}</span>
                     </div>
                     <div class="px-4 py-2 rounded-lg bg-[#FAF9F5] border border-slate-200 text-xs font-bold text-slate-800">
-                        Office: <span class="text-slate-600">Dilshad Garden, Delhi – 110095</span>
+                        Office: <span class="text-slate-600">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}</span>
                     </div>
                 </div>
             </div>
@@ -282,7 +282,7 @@
                 </ul>
 
                 <div class="pt-4 border-t border-slate-200">
-                    <a href="tel:+919899552380" class="block text-center bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider transition-all">
+                    <a href="tel:{{ setting('phone', '+91-9899552380') }}" class="block text-center bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider transition-all">
                         Call Direct Engineering Team
                     </a>
                 </div>

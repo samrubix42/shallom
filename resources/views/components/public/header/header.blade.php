@@ -6,14 +6,14 @@
             
             <!-- Left Company Details: Phone & Plant Address -->
             <div class="flex items-center gap-4 sm:gap-6 flex-wrap justify-center sm:justify-start">
-                <a href="tel:+917942550323" class="flex items-center gap-1.5 hover:text-[#FF8B02] transition-colors font-medium">
+                <a href="tel:{{ setting('landline', '07942550323') }}" class="flex items-center gap-1.5 hover:text-[#FF8B02] transition-colors font-medium">
                     <i class="ri-phone-fill text-[#FF8B02]"></i>
-                    <span><strong>Phone:</strong> 07942550323</span>
+                    <span><strong>Phone:</strong> {{ setting('landline', '07942550323') }}</span>
                 </a>
 
                 <div class="hidden md:flex items-center gap-1.5 font-medium text-slate-400">
                     <i class="ri-map-pin-2-fill text-[#FF8B02]"></i>
-                    <span><strong>Office:</strong> Dilshad Garden, Delhi – 110095</span>
+                    <span><strong>Office:</strong> {{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}</span>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
             <div class="flex items-center gap-6 text-[11px] font-semibold">
                 <span class="inline-flex items-center gap-1.5  text-[#FF8B02]">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    GSTIN: 07ANDPG4822C2ZI
+                    GSTIN: {{ setting('gst_no', '07ANDPG4822C2ZI') }}
                 </span>
                 <span class="inline-flex items-center gap-1  text-emerald-400 font-bold">
                     <i class="ri-award-fill text-[#FF8B02]"></i>
@@ -36,10 +36,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div class="flex items-center justify-between h-20 sm:h-22">
             
-            <!-- Left: Logo ONLY (logo.webp) -->
+            <!-- Left: Logo ONLY -->
             <a href="{{ route('home') }}" wire:navigate class="shrink-0 group flex items-center z-10">
-                <img src="{{ asset('logo.webp') }}" 
-                     alt="Shallom Prefab Systems Logo" 
+                <img src="{{ asset(setting('logo', 'logo.webp')) }}" 
+                     alt="{{ setting('company_name', 'Shallom Prefab Systems') }} Logo" 
                      class="h-14 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105">
             </a>
 
@@ -68,9 +68,9 @@
             <!-- Right: Direct Phone & Send Enquiry CTA Button -->
             <div class="hidden sm:flex items-center gap-5 shrink-0 z-10">
                 <!-- Direct Phone Link -->
-                <a href="tel:+917942550323" class="flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-[#FF8B02] transition-colors">
+                <a href="tel:{{ setting('landline', '07942550323') }}" class="flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-[#FF8B02] transition-colors">
                     <i class="ri-phone-fill text-[#FF8B02]"></i>
-                    <span>07942550323</span>
+                    <span>{{ setting('landline', '07942550323') }}</span>
                 </a>
 
                 <!-- Send Enquiry Button -->
@@ -176,10 +176,10 @@
 
         <!-- Direct Contact Actions -->
         <div class="pt-4 border-t border-slate-100 space-y-3">
-            <a href="tel:+919899552380" 
+            <a href="tel:{{ setting('phone', '+91-9899552380') }}" 
                class="w-full inline-flex items-center justify-center gap-2 bg-[#FFF4E5] hover:bg-[#FF8B02] text-[#FF8B02] hover:text-white font-extrabold py-3.5 rounded-2xl border border-[#FFD199] text-xs uppercase tracking-wider transition-all">
                 <i class="ri-phone-fill text-base"></i>
-                <span>Call +91-9899552380 / 07942550323</span>
+                <span>Call {{ setting('phone', '+91-9899552380') }} / {{ setting('landline', '07942550323') }}</span>
             </a>
             
             <a href="{{ route('contact') }}" wire:navigate @click="mobileMenuOpen = false"
@@ -195,7 +195,7 @@
                 <i class="ri-award-fill text-[#FF8B02]"></i>
                 <span>ISO 9001:2015 Certified Manufacturer</span>
             </div>
-            <div class="text-[11px] text-slate-400 font-mono">GSTIN: 07ANDPG4822C2ZI</div>
+            <div class="text-[11px] text-slate-400 font-mono">GSTIN: {{ setting('gst_no', '07ANDPG4822C2ZI') }}</div>
         </div>
     </div>
 

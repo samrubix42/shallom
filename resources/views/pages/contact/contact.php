@@ -4,12 +4,18 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-new #[Layout('layouts::app')] #[Title('Contact Us | Shallom Prefab Systems')] class extends Component {
+new #[Layout('layouts::app')] #[Title('Contact Us | Shallom Prefab Systems')] class extends Component
+{
     public string $name = '';
+
     public string $phone = '';
+
     public string $email = '';
+
     public string $buildingInterest = 'Prefab Site Office';
+
     public string $projectLocation = '';
+
     public string $message = '';
 
     public bool $enquirySubmitted = false;

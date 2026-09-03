@@ -18,10 +18,10 @@
             </div>
 
             <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
-                <a href="tel:+917942550323" 
+                <a href="tel:{{ setting('landline', '07942550323') }}" 
                    class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
                     <i class="ri-phone-fill text-sm"></i>
-                    <span>Call 07942550323</span>
+                    <span>Call {{ setting('landline', '07942550323') }}</span>
                 </a>
                 <button type="button" wire:click="openEnquiryModal('General Catalog Requirement')"
                         class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all cursor-pointer">
@@ -76,7 +76,7 @@
                                 {{ $product->title }}
                             </h2>
                             <div class="flex items-center gap-2 text-xs text-slate-500 font-normal">
-                                <span>Brand: <strong class="text-slate-800">Shallom Prefab Systems</strong></span>
+                                <span>Brand: <strong class="text-slate-800">{{ setting('company_name', 'Shallom Prefab Systems') }}</strong></span>
                                 <span>•</span>
                                 <span class="text-emerald-600 font-bold"><i class="ri-checkbox-circle-fill"></i> In Stock & Custom Order</span>
                                 @if($product->category)
@@ -86,7 +86,7 @@
                             </div>
                         </div>
 
-                        <a href="tel:+917942550323" 
+                        <a href="tel:{{ setting('landline', '07942550323') }}" 
                            class="inline-flex items-center gap-2 border border-[#FF8B02] text-[#FF8B02] hover:bg-[#FFF4E5] font-bold text-xs px-5 py-2.5 rounded-full transition-all uppercase tracking-wider shrink-0 self-start sm:self-auto">
                             <i class="ri-phone-line text-sm"></i>
                             Request Call Back

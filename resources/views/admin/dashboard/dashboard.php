@@ -4,7 +4,8 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-new #[Layout('layouts::admin')] #[Title('Admin Dashboard | Shallom Prefab Systems')] class extends Component {
+new #[Layout('layouts::admin')] #[Title('Admin Dashboard | Shallom Prefab Systems')] class extends Component
+{
     public array $recentEnquiries = [
         [
             'id' => 'ENQ-2026-001',

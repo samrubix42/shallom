@@ -13,6 +13,7 @@ new #[Layout('layouts::app')] #[Title('Core Business Verticals & Turnkey Service
     {
         return Service::query()->where('is_active', true)->get();
     }
+
     public array $verticals = [
         [
             'slug' => 'hospitality-tourism-infrastructure',

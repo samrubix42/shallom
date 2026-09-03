@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Service;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -180,7 +182,7 @@ new #[Layout('layouts::app')] class extends Component
         ];
 
         if ($slug) {
-            $dbModel = \App\Models\Service::where('slug', $slug)->where('is_active', true)->first();
+            $dbModel = Service::where('slug', $slug)->where('is_active', true)->first();
             if ($dbModel) {
                 $this->dbService = $dbModel;
                 $this->slug = $dbModel->slug;
@@ -189,7 +191,7 @@ new #[Layout('layouts::app')] class extends Component
                     'title' => $dbModel->name,
                     'tagline' => 'Turnkey Engineering & Prefab Solution',
                     'icon' => 'ri-customer-service-2-line',
-                    'image' => $dbModel->image ? \Illuminate\Support\Facades\Storage::url($dbModel->image) : 'shallom/IMG-20260901-WA0033.jpg',
+                    'image' => $dbModel->image ? Storage::url($dbModel->image) : 'shallom/IMG-20260901-WA0033.jpg',
                     'summary' => $dbModel->short_description ?: 'Comprehensive turnkey prefab building and modular structure service.',
                     'content' => $dbModel->description ?: '<p class="text-slate-600">No detailed content provided for this service.</p>',
                     'sub_offerings' => [],
@@ -199,6 +201,7 @@ new #[Layout('layouts::app')] class extends Component
                         'Quality Norms' => 'ISO 9001:2015 Manufacturing & Installation Norms',
                     ],
                 ];
+
                 return;
             }
         }
@@ -212,4 +215,3 @@ new #[Layout('layouts::app')] class extends Component
         $this->currentVertical = $this->allVerticals[$this->slug];
     }
 };
-

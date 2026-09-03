@@ -6,7 +6,8 @@ use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-new #[Layout('layouts::auth')] #[Title('Admin Login | Shallom Prefab Systems')] class extends Component {
+new #[Layout('layouts::auth')] #[Title('Admin Login | Shallom Prefab Systems')] class extends Component
+{
     #[Validate('required|email')]
     public string $email = '';
 
@@ -22,6 +23,7 @@ new #[Layout('layouts::auth')] #[Title('Admin Login | Shallom Prefab Systems')] 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
             session()->regenerate();
             $this->redirect(route('admin.dashboard'), navigate: true);
+
             return;
         }
 

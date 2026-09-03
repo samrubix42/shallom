@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'Shallom Prefab Systems | Modern Prefabricated Houses & Modular Structures' }}</title>
-        <meta name="description" content="Shallom Prefab Systems - Leading Manufacturer and Service Provider of Prefabricated Houses, Modular Cabins, Site Offices, Steel Buildings, Labour Hutments, and Aerocon Wall Panels in India.">
+        <title>{{ $title ?? (setting('company_name', 'Shallom Prefab Systems') . ' | ' . setting('company_tagline', 'Modern Prefabricated Houses & Modular Structures')) }}</title>
+        <meta name="description" content="{{ setting('about_summary', 'Shallom Prefab Systems - Leading Manufacturer and Service Provider of Prefabricated Houses, Modular Cabins, Site Offices, Steel Buildings, Labour Hutments, and Aerocon Wall Panels in India.') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset(setting('favicon', 'favicon.ico')) }}">
 
         <!-- Google Fonts: Inter & Manrope -->
         <link rel="preconnect" href="https://fonts.googleapis.com">

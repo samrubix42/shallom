@@ -32,10 +32,10 @@
             </div>
 
             <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
-                <a href="tel:+917942550323" 
+                <a href="tel:{{ setting('landline', '07942550323') }}" 
                    class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
                     <i class="ri-phone-fill text-sm"></i>
-                    <span>07942550323</span>
+                    <span>{{ setting('landline', '07942550323') }}</span>
                 </a>
                 <a href="{{ route('products') }}" 
                    class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
@@ -538,10 +538,10 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto shrink-0 relative z-10">
-                    <a href="tel:+917942550323" 
+                    <a href="tel:{{ setting('landline', '07942550323') }}" 
                        class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-8 py-4 rounded-full shadow-lg shadow-orange-500/20 text-xs uppercase tracking-wider transition-all transform hover:-translate-y-0.5">
                         <i class="ri-phone-fill text-base"></i>
-                        <span>Call 07942550323</span>
+                        <span>Call {{ setting('landline', '07942550323') }}</span>
                     </a>
                     <a href="{{ route('contact') }}" 
                        class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-slate-100 font-extrabold px-8 py-4 rounded-full text-xs uppercase tracking-widest transition-all">

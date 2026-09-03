@@ -18,12 +18,12 @@
             </div>
 
             <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
-                <a href="tel:+917942550323" 
+                <a href="tel:{{ setting('landline', '07942550323') }}" 
                    class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
                     <i class="ri-phone-fill text-sm"></i>
-                    <span>07942550323</span>
+                    <span>{{ setting('landline', '07942550323') }}</span>
                 </a>
-                <a href="https://wa.me/917942550323" target="_blank"
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('whatsapp', '+919899552380')) }}" target="_blank"
                    class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all shadow-xs">
                     <i class="ri-whatsapp-line text-sm"></i>
                     <span>WhatsApp Inquiry</span>
@@ -41,15 +41,15 @@
                 </div>
                 <div class="space-y-1">
                     <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">DIRECT HOTLINE</div>
-                    <a href="tel:+919899552380" class="text-xl font-bold text-slate-900 hover:text-[#FF8B02] transition-colors block">
-                        +91-9899552380
+                    <a href="tel:{{ setting('phone', '+91-9899552380') }}" class="text-xl font-bold text-slate-900 hover:text-[#FF8B02] transition-colors block">
+                        {{ setting('phone', '+91-9899552380') }}
                     </a>
-                    <a href="tel:+917942550323" class="text-sm font-semibold text-slate-600 hover:text-[#FF8B02] transition-colors block">
-                        07942550323
+                    <a href="tel:{{ setting('landline', '07942550323') }}" class="text-sm font-semibold text-slate-600 hover:text-[#FF8B02] transition-colors block">
+                        {{ setting('landline', '07942550323') }}
                     </a>
                 </div>
                 <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                    Email: <a href="mailto:shallomprefabsystems@gmail.com" class="text-[#FF8B02] font-semibold hover:underline">shallomprefabsystems@gmail.com</a>
+                    Email: <a href="mailto:{{ setting('email', 'shallomprefabsystems@gmail.com') }}" class="text-[#FF8B02] font-semibold hover:underline">{{ setting('email', 'shallomprefabsystems@gmail.com') }}</a>
                 </p>
             </div>
 
@@ -61,11 +61,11 @@
                 <div class="space-y-1">
                     <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">REGISTERED OFFICE</div>
                     <div class="text-sm font-bold text-slate-900 leading-snug">
-                        N-3/A-3, Dilshad Garden, Delhi – 110095, India
+                        {{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}
                     </div>
                 </div>
                 <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                    GSTIN: <strong class="text-slate-800">07ANDPG4822C2ZI</strong>
+                    GSTIN: <strong class="text-slate-800">{{ setting('gst_no', '07ANDPG4822C2ZI') }}</strong>
                 </p>
             </div>
 
@@ -76,12 +76,12 @@
                 </div>
                 <div class="space-y-1">
                     <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">WORKING HOURS</div>
-                    <div class="text-lg font-bold text-slate-900">
-                        9:00 AM - 7:00 PM IST
+                    <div class="text-sm font-bold text-slate-900">
+                        {{ setting('business_hours', 'Monday to Saturday | 09:00 AM – 07:00 PM IST') }}
                     </div>
                 </div>
                 <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                    Monday to Saturday • ISO 9001:2015 Certified Manufacturing Operations
+                    ISO 9001:2015 Certified Manufacturing Operations
                 </p>
             </div>
 
@@ -208,8 +208,8 @@
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
                         Speak directly with our technical team for instant budget estimates and dispatch timelines.
                     </p>
-                    <a href="tel:+917942550323" class="inline-flex items-center gap-2 text-[#FF8B02] font-extrabold text-xs uppercase tracking-wider hover:gap-3 transition-all">
-                        <span>CALL 07942550323</span>
+                    <a href="tel:{{ setting('landline', '07942550323') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-extrabold text-xs uppercase tracking-wider hover:gap-3 transition-all">
+                        <span>CALL {{ setting('landline', '07942550323') }}</span>
                         <i class="ri-arrow-right-line text-sm"></i>
                     </a>
                 </div>

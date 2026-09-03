@@ -835,7 +835,7 @@
                             </div>
                             <div>
                                 <div class="text-xs text-slate-500 font-medium">Direct Hotline</div>
-                                <a href="tel:+917942550323" class="text-lg font-bold text-slate-900 hover:text-[#FF8B02] transition-colors">07942550323</a>
+                                <a href="tel:{{ setting('landline', '07942550323') }}" class="text-lg font-bold text-slate-900 hover:text-[#FF8B02] transition-colors">{{ setting('landline', '07942550323') }}</a>
                             </div>
                         </div>
 
@@ -845,8 +845,8 @@
                             </div>
                             <div>
                                 <div class="text-xs text-slate-500 font-medium">Plant & Registered Office</div>
-                                <div class="text-sm font-bold text-slate-900 mt-0.5">Shallom Prefab Systems</div>
-                                <div class="text-xs text-slate-600 mt-0.5">New Delhi, Delhi - 110092, India</div>
+                                <div class="text-sm font-bold text-slate-900 mt-0.5">{{ setting('company_name', 'Shallom Prefab Systems') }}</div>
+                                <div class="text-xs text-slate-600 mt-0.5">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}</div>
                             </div>
                         </div>
 
