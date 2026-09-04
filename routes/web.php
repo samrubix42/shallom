@@ -26,5 +26,6 @@ Route::middleware('auth')->group(function () {
     Route::livewire('/admin/services/{service}/edit', 'admin::service.update')->name('admin.services.edit');
     Route::livewire('/admin/our-range-categories', 'admin::our-range-categories')->name('admin.our-range-categories');
     Route::livewire('/admin/our-ranges', 'admin::our-ranges')->name('admin.our-ranges');
+    Route::livewire('/admin/contacts', 'admin::contact')->name('admin.contacts');
     Route::livewire('/admin/settings', 'admin::setting')->name('admin.settings');
 });

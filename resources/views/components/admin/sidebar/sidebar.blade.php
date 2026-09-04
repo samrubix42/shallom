@@ -60,6 +60,12 @@
                 <span>Our Ranges</span>
             </a>
 
+            <a href="{{ route('admin.contacts') }}" wire:navigate 
+               class="flex items-center gap-2.5 px-3 py-2 rounded-md text-xs font-semibold transition-colors {{ request()->routeIs('admin.contacts') ? 'bg-[#FFF4E5] text-[#FF8B02] border border-[#FFD199]' : 'text-slate-600 hover:bg-[#FAF9F5] hover:text-slate-900' }}">
+                <i class="ri-mail-line text-sm text-[#FF8B02]"></i>
+                <span>Contact Enquiries</span>
+            </a>
+
             <a href="{{ route('admin.settings') }}" wire:navigate 
                class="flex items-center gap-2.5 px-3 py-2 rounded-md text-xs font-semibold transition-colors {{ request()->routeIs('admin.settings') ? 'bg-[#FFF4E5] text-[#FF8B02] border border-[#FFD199]' : 'text-slate-600 hover:bg-[#FAF9F5] hover:text-slate-900' }}">
                 <i class="ri-settings-4-line text-sm text-[#FF8B02]"></i>

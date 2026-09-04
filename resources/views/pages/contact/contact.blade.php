@@ -135,8 +135,9 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1.5">Email Address</label>
-                                <input type="email" wire:model="email" placeholder="e.g. name@company.com" class="w-full bg-[#FAF9F5] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-[#FF8B02] transition-colors">
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">Email Address <span class="text-slate-400 font-normal">(Optional)</span></label>
+                                <input type="email" wire:model="email" placeholder="e.g. name@company.com" class="w-full bg-[#FAF9F5] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-[#FF8B02] transition-colors @error('email') border-red-500 @enderror">
+                                @error('email') <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span> @enderror
                             </div>
 
                             <div>
@@ -162,9 +163,13 @@
                             <textarea wire:model="message" rows="4" placeholder="Mention footprint dimensions (e.g. 20ft x 40ft), wall panel thickness, or special site conditions..." class="w-full bg-[#FAF9F5] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-[#FF8B02] transition-colors"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-4 rounded-xl shadow-lg shadow-orange-500/20 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-                            <i class="ri-send-plane-fill text-base"></i>
-                            Submit Requirement Now
+                        <button type="submit" 
+                                wire:loading.attr="disabled"
+                                class="w-full bg-[#FF8B02] hover:bg-[#E67A00] disabled:opacity-60 text-white font-extrabold py-4 rounded-xl shadow-lg shadow-orange-500/20 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+                            <i wire:loading.remove wire:target="submitEnquiry" class="ri-send-plane-fill text-base"></i>
+                            <i wire:loading wire:target="submitEnquiry" class="ri-loader-4-line text-base animate-spin"></i>
+                            <span wire:loading.remove wire:target="submitEnquiry">Submit Requirement Now</span>
+                            <span wire:loading wire:target="submitEnquiry">Submitting Requirement...</span>
                         </button>
                     </form>
                 @endif
