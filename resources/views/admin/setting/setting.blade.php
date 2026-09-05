@@ -1,3 +1,6 @@
+@section('title', 'System Settings | Admin Control Center')
+@section('meta_description', 'Configure global website settings, company contact info, SEO metadata, and branding.')
+
 <div class="space-y-6">
 
     <!-- HEADER BAR -->

@@ -1,3 +1,6 @@
+@section('title', 'Manage Range Categories | Admin Control Center')
+@section('meta_description', 'Manage product categories for prefabricated houses, site offices, and structures.')
+
 <div x-data="{ 
         open: false, 
         mode: 'form', 

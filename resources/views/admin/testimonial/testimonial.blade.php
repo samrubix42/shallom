@@ -1,4 +1,7 @@
 
+@section('title', 'Manage Testimonials | Admin Control Center')
+@section('meta_description', 'Manage client reviews, testimonials, and ratings for Shallom Prefab Systems website.')
+
 <div x-data="{ 
         open: false, 
         mode: 'form', 

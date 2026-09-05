@@ -1,3 +1,6 @@
+@section('title', ($currentVertical['title'] ?? 'Engineering Service Detail') . ' | Shallom Prefab Systems')
+@section('meta_description', Str::limit(strip_tags($currentVertical['summary'] ?? $currentVertical['tagline'] ?? 'Specialized prefabricated building and modular structure engineering service by Shallom Prefab Systems.'), 160))
+
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800"
      x-data="{
          initScrollReveal() {

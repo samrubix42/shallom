@@ -1,3 +1,6 @@
+@section('title', 'Shallom Prefab Systems | Modular Houses & Prefab Buildings')
+@section('meta_description', 'Shallom Prefab Systems - Leading Manufacturer and Service Provider of Prefabricated Houses, Modular Cabins, Site Offices, Steel Buildings, Labour Hutments, and Aerocon Wall Panels in India.')
+
 <div class="space-y-0 text-slate-800 font-sans bg-[#FAF9F5]"
      x-data="{
          initScrollReveal() {

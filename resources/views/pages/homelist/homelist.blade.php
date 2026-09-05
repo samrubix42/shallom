@@ -1,3 +1,6 @@
+@section('title', 'Our Products & Prefab Ranges | Shallom Prefab Systems')
+@section('meta_description', 'Explore our comprehensive range of prefabricated structures including modular prefab houses, executive site office cabins, labor hutments, steel buildings, and aerocon wall panels in India.')
+
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         

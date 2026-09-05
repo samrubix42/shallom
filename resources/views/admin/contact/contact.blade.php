@@ -1,3 +1,6 @@
+@section('title', 'Manage Contact Messages | Admin Control Center')
+@section('meta_description', 'View and manage customer inquiries and studio quote requests.')
+
 <div x-data="{ 
         open: false, 
         mode: 'view', 

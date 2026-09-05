@@ -1,3 +1,6 @@
+@section('title', 'Contact Us & Get a Quote | Shallom Prefab Systems')
+@section('meta_description', 'Get in touch with Shallom Prefab Systems for custom prefab building quotes, technical consultations, site office inquiries, and modular housing solutions in Delhi and across India.')
+
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         

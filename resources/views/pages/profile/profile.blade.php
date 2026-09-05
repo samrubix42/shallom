@@ -1,3 +1,6 @@
+@section('title', 'Company Profile & About Us | Shallom Prefab Systems')
+@section('meta_description', 'Learn about Shallom Prefab Systems, established in 2009 in Delhi, India. Premier manufacturer and supplier of sustainable, modular pre-engineered buildings and structures.')
+
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         

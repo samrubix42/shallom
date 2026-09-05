@@ -1,3 +1,6 @@
+@section('title', 'Our Prestigious Clients | Shallom Prefab Systems')
+@section('meta_description', 'Trusted by India\'s top infrastructure conglomerates, EPC contractors, corporate giants, and government PSUs since 2009 for heavy pre-engineered steel buildings and modular cabins.')
+
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800"
      x-data="{
          initScrollReveal() {

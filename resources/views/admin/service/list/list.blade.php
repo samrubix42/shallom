@@ -1,3 +1,6 @@
+@section('title', 'Manage Services | Admin Control Center')
+@section('meta_description', 'View and manage all engineering services offered by Shallom Prefab Systems.')
+
 <div x-data="{ 
         deleteOpen: false,
         init() {

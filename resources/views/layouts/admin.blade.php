@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'Admin Control Center | Shallom Prefab Systems' }}</title>
+        <title>@yield('title', $title ?? 'Admin Control Center | Shallom Prefab Systems')</title>
+        <meta name="description" content="@yield('meta_description', 'Admin control center and management dashboard for Shallom Prefab Systems.')">
 
         <!-- Google Fonts: Inter & Manrope -->
         <link rel="preconnect" href="https://fonts.googleapis.com">

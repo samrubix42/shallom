@@ -1,3 +1,6 @@
+@section('title', 'Admin Login | Shallom Prefab Systems')
+@section('meta_description', 'Secure login access for administrators of Shallom Prefab Systems control panel.')
+
 <div class="sm:mx-auto sm:w-full sm:max-w-md space-y-6">
     
     <!-- Studio Logo Header -->

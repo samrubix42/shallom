@@ -1,3 +1,6 @@
+@section('title', 'Manage Products & Ranges | Admin Control Center')
+@section('meta_description', 'Manage product listings, specifications, and images for Shallom Prefab Systems.')
+
 <div x-data="{ 
         open: false, 
         mode: 'form', 

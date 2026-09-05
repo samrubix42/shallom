@@ -1,3 +1,6 @@
+@section('title', 'Turnkey Engineering Services | Shallom Prefab Systems')
+@section('meta_description', 'Professional prefabricated engineering services, custom modular architecture design, heavy steel structure fabrication, site erection, thermal insulation, and maintenance across India.')
+
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800"
      x-data="{
          initScrollReveal() {

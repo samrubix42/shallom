@@ -1,3 +1,6 @@
+@section('title', 'Admin Dashboard | Shallom Prefab Systems')
+@section('meta_description', 'Shallom Prefab Systems admin control center overview and management hub.')
+
 <div class="space-y-8">
     
     <!-- 1. STUDIO HERO HEADER -->

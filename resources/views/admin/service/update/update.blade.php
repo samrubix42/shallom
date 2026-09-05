@@ -1,3 +1,6 @@
+@section('title', 'Edit Service | Admin Control Center')
+@section('meta_description', 'Update and edit existing service details for Shallom Prefab Systems.')
+
 <div class="max-w-4xl mx-auto space-y-6">
 
     <!-- HEADER & BREADCRUMB -->

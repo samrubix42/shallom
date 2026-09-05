@@ -1,3 +1,6 @@
+@section('title', 'Add New Service | Admin Control Center')
+@section('meta_description', 'Create and publish a new engineering service entry on Shallom Prefab Systems website.')
+
 <div class="max-w-4xl mx-auto space-y-6">
 
     <!-- HEADER & BREADCRUMB -->

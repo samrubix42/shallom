@@ -1,4 +1,7 @@
 
+@section('title', 'Manage Clients | Admin Control Center')
+@section('meta_description', 'Manage corporate client logos and partner listings for Shallom Prefab Systems website.')
+
 <div x-data="{ 
         open: false, 
         mode: 'form', 

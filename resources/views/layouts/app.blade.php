@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? (setting('company_name', 'Shallom Prefab Systems') . ' | ' . setting('company_tagline', 'Modern Prefabricated Houses & Modular Structures')) }}</title>
-        <meta name="description" content="{{ setting('about_summary', 'Shallom Prefab Systems - Leading Manufacturer and Service Provider of Prefabricated Houses, Modular Cabins, Site Offices, Steel Buildings, Labour Hutments, and Aerocon Wall Panels in India.') }}">
+        <title>@yield('title', $title ?? (setting('company_name', 'Shallom Prefab Systems') . ' | ' . setting('company_tagline', 'Modern Prefabricated Houses & Modular Structures')))</title>
+        <meta name="description" content="@yield('meta_description', setting('about_summary', 'Shallom Prefab Systems - Leading Manufacturer and Service Provider of Prefabricated Houses, Modular Cabins, Site Offices, Steel Buildings, Labour Hutments, and Aerocon Wall Panels in India.'))">
         <link rel="icon" type="image/x-icon" href="{{ asset(setting('favicon', 'favicon.ico')) }}">
 
         <!-- Google Fonts: Inter & Manrope -->

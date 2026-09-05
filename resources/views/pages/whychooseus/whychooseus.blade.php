@@ -1,3 +1,6 @@
+@section('title', 'Why Choose Us - Engineering Excellence | Shallom Prefab Systems')
+@section('meta_description', 'Discover why Shallom Prefab Systems is India\'s trusted choice for prefabricated structures - 70% faster construction, 25+ year lifespan, 100% relocatable nut-bolt design, and Tata Housing approved quality.')
+
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800"
      x-data="{
          initScrollReveal() {
