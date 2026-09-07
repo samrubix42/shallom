@@ -323,157 +323,112 @@
     <section id="categories" class="py-20 sm:py-28 bg-white text-slate-900 border-b border-slate-200/80 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="max-w-3xl mb-16 space-y-4 reveal-on-scroll">
-                <div class="flex items-center gap-2 text-[#FF8B02]">
-                    <i class="ri-grid-fill text-lg"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest">OUR RANGE</span>
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 reveal-on-scroll">
+                <div class="max-w-2xl space-y-4">
+                    <div class="flex items-center gap-2 text-[#FF8B02]">
+                        <i class="ri-grid-fill text-lg"></i>
+                        <span class="text-xs font-bold uppercase tracking-widest">OUR RANGE</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.18]">
+                        ENGINEERED PREFAB <br/>
+                        <span class="text-[#FF8B02] font-normal">BUILDINGS & STRUCTURES</span>
+                    </h2>
+
+                    <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed pt-1">
+                        Explore our pre-engineered modular solutions crafted for site management, commercial expansions, and luxury residential living.
+                    </p>
                 </div>
 
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.18]">
-                    ENGINEERED PREFAB <br/>
-                    <span class="text-[#FF8B02] font-normal">BUILDINGS & STRUCTURES</span>
-                </h2>
-
-                <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed pt-1">
-                    Explore our pre-engineered modular solutions crafted for site management, commercial expansions, and luxury residential living.
-                </p>
+                @if($this->categories->isNotEmpty())
+                    <!-- Category Filter Buttons -->
+                    <div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none shrink-0">
+                        <button wire:click="filterCategory('all')" 
+                                class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border shrink-0 cursor-pointer {{ $activeCategory === 'all' ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
+                            All Ranges
+                        </button>
+                        @foreach($this->categories as $cat)
+                            <button wire:click="filterCategory('{{ $cat->slug }}')" 
+                                    class="px-5 py-2.5 rounded-full text-xs font-bold transition-all border shrink-0 cursor-pointer {{ $activeCategory === $cat->slug ? 'bg-[#FF8B02] text-white border-[#FF8B02] shadow-xs' : 'bg-[#FAF9F5] text-slate-700 border-slate-200/80 hover:bg-[#FFF4E5] hover:text-[#FF8B02]' }}">
+                                {{ $cat->name }}
+                            </button>
+                        @endforeach
+                    </div>
+                @endif
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Card 1 -->
-                <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-100">
-                    <div>
-                        <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('shallom/IMG-20260901-WA0009.jpg') }}" 
-                                 alt="Prefab Houses" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="p-7 space-y-3">
-                            <div class="text-[11px] font-bold text-[#FF8B02] uppercase tracking-widest">01 • HOUSES</div>
-                            <h3 class="text-xl font-bold text-slate-900">Prefab Houses & Cottages</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">Prefab Portable House, Prefab Cottage House, and Modular Cottages.</p>
-                        </div>
-                    </div>
-                    <div class="px-7 pb-7">
-                        <a href="{{ route('products') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all group/btn">
-                            <span>VIEW HOUSES</span>
-                            <i class="ri-arrow-right-line text-sm group-hover/btn:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
+                @forelse($this->products as $index => $product)
+                    @php
+                        $images = $product->images ?? [];
+                        $mainImage = !empty($images) && isset($images[0]) ? asset($images[0]) : asset('shallom/IMG-20260901-WA0009.jpg');
+                        $details = $product->details ?? [];
+                        $specs = $details['specs'] ?? [];
+                        $firstSpecKey = !empty($specs) ? array_key_first($specs) : null;
+                        $firstSpecVal = $firstSpecKey ? $specs[$firstSpecKey] : null;
+                        $delay = (($index % 3) + 1) * 100;
+                    @endphp
 
-                <!-- Card 2 -->
-                <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-200">
-                    <div>
-                        <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('shallom/IMG-20260901-WA0011.jpg') }}" 
-                                 alt="Prefab Structures" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="p-7 space-y-3">
-                            <div class="text-[11px] font-bold text-[#FF8B02] uppercase tracking-widest">02 • STRUCTURES</div>
-                            <h3 class="text-xl font-bold text-slate-900">Metal & Multi-Story Structures</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">Building Metal Structures, Double Story Prefab Buildings, and Stalls.</p>
-                        </div>
-                    </div>
-                    <div class="px-7 pb-7">
-                        <a href="{{ route('products') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all group/btn">
-                            <span>VIEW STRUCTURES</span>
-                            <i class="ri-arrow-right-line text-sm group-hover/btn:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
+                    <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-{{ $delay }}">
+                        <div>
+                            <div class="relative h-60 w-full overflow-hidden bg-slate-100">
+                                <img src="{{ $mainImage }}" 
+                                     alt="{{ $product->title }}" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                
+                                @if($product->category)
+                                    <div class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20">
+                                        {{ $product->category->name }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="p-7 space-y-3">
+                                <div class="text-[11px] font-bold text-[#FF8B02] uppercase tracking-widest">
+                                    0{{ $index + 1 }} • {{ strtoupper($product->category?->name ?? 'RANGE') }}
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 line-clamp-1">{{ $product->title }}</h3>
+                                <p class="text-xs text-slate-600 leading-relaxed line-clamp-3 font-normal">
+                                    {{ $product->description }}
+                                </p>
 
-                <!-- Card 3 -->
-                <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-300">
-                    <div>
-                        <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('shallom/IMG-20260901-WA0026.jpg') }}" 
-                                 alt="Prefab Buildings" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                @if($firstSpecKey && $firstSpecVal)
+                                    <div class="pt-2 flex items-center gap-1.5 text-xs text-slate-500">
+                                        <i class="ri-checkbox-circle-fill text-[#FF8B02]"></i>
+                                        <span class="font-semibold text-slate-700">{{ $firstSpecKey }}:</span>
+                                        <span class="truncate">{{ $firstSpecVal }}</span>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
-                        <div class="p-7 space-y-3">
-                            <div class="text-[11px] font-bold text-[#FF8B02] uppercase tracking-widest">03 • BUILDINGS</div>
-                            <h3 class="text-xl font-bold text-slate-900">Prefabricated School Buildings</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">School extensions, Rooftop buildings, and institutional complexes.</p>
-                        </div>
-                    </div>
-                    <div class="px-7 pb-7">
-                        <a href="{{ route('products') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all group/btn">
-                            <span>VIEW BUILDINGS</span>
-                            <i class="ri-arrow-right-line text-sm group-hover/btn:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-100">
-                    <div>
-                        <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('shallom/IMG-20260901-WA0010.jpg') }}" 
-                                 alt="Prefab Offices" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="p-7 space-y-3">
-                            <div class="text-[11px] font-bold text-[#FF8B02] uppercase tracking-widest">04 • OFFICES</div>
-                            <h3 class="text-xl font-bold text-slate-900">Site Offices & Cabins</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">Prefab Site Offices, Classroom Structures, and Executive Cabins.</p>
+                        <div class="px-7 pb-7 flex items-center justify-between gap-4">
+                            <a href="{{ route('products') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all group/btn">
+                                <span>VIEW DETAILS</span>
+                                <i class="ri-arrow-right-line text-sm group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="#contact" wire:click="selectProductForEnquiry('{{ $product->title }}')" class="text-xs font-bold text-slate-600 hover:text-[#FF8B02] transition-colors flex items-center gap-1">
+                                <i class="ri-mail-send-line"></i>
+                                <span>Enquire</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="px-7 pb-7">
-                        <a href="{{ route('products') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all group/btn">
-                            <span>VIEW OFFICES</span>
-                            <i class="ri-arrow-right-line text-sm group-hover/btn:translate-x-1 transition-transform"></i>
-                        </a>
+                @empty
+                    <div class="col-span-full py-12 text-center text-slate-500 bg-[#FAF9F5] rounded-2xl border border-slate-200/80 space-y-2">
+                        <i class="ri-box-3-line text-4xl text-slate-300 block"></i>
+                        <p class="text-sm font-semibold">No range products found in this category.</p>
+                        <a href="{{ route('products') }}" class="inline-block text-xs font-bold text-[#FF8B02] underline mt-2">View All Products Catalog</a>
                     </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-200">
-                    <div>
-                        <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/prefab_house_hero_png_1788163818892.jpg') }}" 
-                                 alt="Prefab House" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="p-7 space-y-3">
-                            <div class="text-[11px] font-bold text-[#FF8B02] uppercase tracking-widest">05 • CABINS</div>
-                            <h3 class="text-xl font-bold text-slate-900">Portable Bunk Houses</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">Prefab Portable Cabins, Bunk Houses, and security posts.</p>
-                        </div>
-                    </div>
-                    <div class="px-7 pb-7">
-                        <a href="{{ route('products') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all group/btn">
-                            <span>VIEW CABINS</span>
-                            <i class="ri-arrow-right-line text-sm group-hover/btn:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="bg-[#FAF9F5] rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between group reveal-on-scroll delay-300">
-                    <div>
-                        <div class="relative h-60 w-full overflow-hidden bg-slate-100">
-                            <img src="{{ asset('shallom/IMG-20260901-WA0012.jpg') }}" 
-                                 alt="Labour Hutments" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="p-7 space-y-3">
-                            <div class="text-[11px] font-bold text-[#FF8B02] uppercase tracking-widest">06 • HUTMENTS</div>
-                            <h3 class="text-xl font-bold text-slate-900">Labour Hutments & Camps</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">Labour Hutments, Worker Accommodation Camps, and Portable Rooms.</p>
-                        </div>
-                    </div>
-                    <div class="px-7 pb-7">
-                        <a href="{{ route('products') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all group/btn">
-                            <span>VIEW HUTMENTS</span>
-                            <i class="ri-arrow-right-line text-sm group-hover/btn:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
-
+                @endforelse
             </div>
+
+            <!-- View All Ranges Button -->
+            <div class="mt-14 text-center">
+                <a href="{{ route('products') }}" wire:navigate
+                   class="inline-flex items-center gap-2.5 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-8 py-3.5 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-widest transition-all transform hover:-translate-y-0.5">
+                    <span>Explore Complete Product Range</span>
+                    <i class="ri-arrow-right-line text-base"></i>
+                </a>
+            </div>
+
         </div>
     </section>
 

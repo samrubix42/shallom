@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\OurRange;
+use App\Models\OurRangeCategory;
 use App\Models\Testimonial;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -16,6 +19,29 @@ new #[Layout('layouts::app')] #[Title('Shallom Prefab Systems | Modular Houses &
             ->where('is_active', true)
             ->orderBy('display_order', 'asc')
             ->orderBy('id', 'desc')
+            ->get();
+    }
+
+    #[Computed]
+    public function categories(): Collection
+    {
+        return OurRangeCategory::where('is_active', true)
+            ->orderBy('id', 'asc')
+            ->get();
+    }
+
+    #[Computed]
+    public function products(): Collection
+    {
+        return OurRange::with('category')
+            ->where('is_active', true)
+            ->when($this->activeCategory !== 'all', function ($query) {
+                $query->whereHas('category', function ($q) {
+                    $q->where('slug', $this->activeCategory)
+                        ->orWhere('id', $this->activeCategory);
+                });
+            })
+            ->orderBy('id', 'asc')
             ->get();
     }
 
