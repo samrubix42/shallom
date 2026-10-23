@@ -86,4 +86,33 @@ test('livewire clean dashboard can toggle contact read status and view details',
         ->test('admin::dashboard')
         ->call('viewContact', $contact->id)
         ->assertDispatched('open-modal');
+
+    expect($contact->fresh()->is_read)->toBeTrue();
+});
+
+test('admin contact enquiry view displays all details when opened', function () {
+    $user = User::factory()->create();
+
+    $contact = Contact::create([
+        'name' => 'Adani Infra Projects',
+        'phone' => '07942550323',
+        'email' => 'procurement@adaniinfra.com',
+        'building_interest' => 'Labour Hutments',
+        'project_location' => 'Mundra Port Site',
+        'message' => 'Please provide a quote for 24 accommodation units.',
+        'is_read' => false,
+    ]);
+
+    Livewire::actingAs($user)
+        ->test('admin::contact')
+        ->call('viewContact', $contact->id)
+        ->assertDispatched('open-modal')
+        ->assertSee('Adani Infra Projects')
+        ->assertSee('07942550323')
+        ->assertSee('procurement@adaniinfra.com')
+        ->assertSee('Labour Hutments')
+        ->assertSee('Mundra Port Site')
+        ->assertSee('Please provide a quote for 24 accommodation units.');
+
+    expect($contact->fresh()->is_read)->toBeTrue();
 });

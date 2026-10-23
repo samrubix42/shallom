@@ -7,8 +7,9 @@
         title: 'Enquiry Details',
         init() {
             Livewire.on('open-modal', (data) => {
-                this.mode = data.mode || 'view';
-                this.title = data.title || 'Enquiry Modal';
+                const payload = Array.isArray(data) ? data[0] : (data?.detail || data || {});
+                this.mode = payload.mode || 'view';
+                this.title = payload.title || 'Enquiry Modal';
                 this.open = true;
             });
             Livewire.on('close-modal', () => {
@@ -197,7 +198,7 @@
             </div>
 
             <!-- VIEW MODAL CONTENT -->
-            <template x-if="mode === 'view'">
+            <div x-show="mode === 'view'">
                 <div class="p-6 space-y-4">
                     @if($selectedContact)
                         <div class="grid grid-cols-2 gap-4 text-xs">
@@ -244,10 +245,10 @@
                         </div>
                     @endif
                 </div>
-            </template>
+            </div>
 
             <!-- DELETE CONFIRMATION MODAL -->
-            <template x-if="mode === 'delete'">
+            <div x-show="mode === 'delete'">
                 <div class="p-6 space-y-4">
                     <p class="text-xs text-slate-600">
                         Are you sure you want to delete the enquiry from <strong class="text-slate-900">{{ $deletingContactName }}</strong>? This action cannot be undone.
@@ -267,7 +268,7 @@
                         </button>
                     </div>
                 </div>
-            </template>
+            </div>
 
         </div>
     </div>
