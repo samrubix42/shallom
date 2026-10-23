@@ -25,27 +25,6 @@
     <!-- Clean Minimal White Card -->
     <div class="bg-white rounded-3xl border border-slate-200/80 p-8 sm:p-10 shadow-xs space-y-6">
         
-        <!-- Auto Fill Helper Pill -->
-        <div x-data="{
-                fillCredentials() {
-                    $wire.email = 'admin@shallomprefab.com';
-                    $wire.password = 'password';
-                }
-             }"
-             class="bg-[#FAF9F5] border border-slate-200/80 rounded-2xl p-4 flex items-center justify-between gap-3 text-xs">
-            <div class="space-y-0.5">
-                <div class="font-bold text-slate-800 flex items-center gap-1">
-                    <i class="ri-user-shared-line text-[#FF8B02]"></i>
-                    <span>Default Admin Account:</span>
-                </div>
-                <div class="text-slate-500 font-mono text-[11px]">admin@shallomprefab.com</div>
-            </div>
-            <button @click="fillCredentials()" type="button" 
-                    class="bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider shrink-0 transition-colors shadow-2xs">
-                Auto Fill
-            </button>
-        </div>
-
         <!-- Form -->
         <form wire:submit="authenticate" class="space-y-5" x-data="{ showPassword: false }">
             
@@ -61,7 +40,7 @@
                     <input id="email" 
                            type="email" 
                            wire:model="email" 
-                           placeholder="admin@shallomprefab.com" 
+                           placeholder="you@example.com"
                            required
                            class="w-full bg-[#FAF9F5] text-slate-900 placeholder-slate-400 border border-slate-200/80 rounded-2xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:border-[#FF8B02] focus:ring-1 focus:ring-[#FF8B02] transition-colors">
                 </div>
