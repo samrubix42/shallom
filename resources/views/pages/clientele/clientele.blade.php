@@ -1,5 +1,5 @@
 @section('title', 'Our Prestigious Clients | Shallom Prefab Systems')
-@section('meta_description', 'Trusted by India\'s top infrastructure conglomerates, EPC contractors, corporate giants, and government PSUs since 2009 for heavy pre-engineered steel buildings and modular cabins.')
+@section('meta_description', 'Shallom Prefab Systems works with clients across infrastructure, commercial, and industrial sectors.')
 
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800"
      x-data="{
@@ -35,10 +35,10 @@
             </div>
 
             <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
-                <a href="tel:{{ setting('landline', '07942550323') }}" 
+                <a href="tel:{{ setting('phone', '+91 98995 52380') }}"
                    class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
                     <i class="ri-phone-fill text-sm"></i>
-                    <span>{{ setting('landline', '07942550323') }}</span>
+                    <span>{{ setting('phone', '+91 98995 52380') }}</span>
                 </a>
                 <a href="{{ route('contact') }}" 
                    class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">

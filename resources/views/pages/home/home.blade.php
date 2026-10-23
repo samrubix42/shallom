@@ -224,31 +224,31 @@
     <div class="bg-gradient-to-r from-[#0B132B] via-[#0F172A] to-[#0B132B] text-white py-3.5 overflow-hidden border-y border-[#FF8B02]/30 relative shadow-lg">
         <div class="animate-marquee whitespace-nowrap flex items-center gap-12 text-xs font-bold uppercase tracking-widest">
             <div class="flex items-center gap-12 shrink-0">
-                <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2009 (Delhi, India)</span>
+                <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2017</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-slate-200">25+ Years Structural Lifespan</span>
+                <span class="text-slate-200">50-Year Structure Lifespan</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-[#FF8B02] font-extrabold">70% Rapid Construction Turnaround</span>
+                <span class="text-[#FF8B02] font-extrabold">60% Faster Turnaround</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-slate-200">100% Demountable Nut & Bolt Relocatable</span>
+                <span class="text-slate-200">Modular & Relocatable Structures</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-emerald-400 font-extrabold">Tata Housing Approved</span>
+                <span class="text-emerald-400 font-extrabold">50+ Skilled Engineers</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-[#FF8B02]">GSTIN: 07ANDPG4822C2ZI</span>
+                <span class="text-[#FF8B02]">Annual Capacity ₹25 Cr</span>
                 <span class="text-slate-500">•</span>
             </div>
             <div class="flex items-center gap-12 shrink-0">
-                <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2009 (Delhi, India)</span>
+                <span class="flex items-center gap-2 text-[#FF8B02]"><i class="ri-checkbox-circle-fill text-emerald-400"></i> Established 2017</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-slate-200">25+ Years Structural Lifespan</span>
+                <span class="text-slate-200">50-Year Structure Lifespan</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-[#FF8B02] font-extrabold">70% Rapid Construction Turnaround</span>
+                <span class="text-[#FF8B02] font-extrabold">60% Faster Turnaround</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-slate-200">100% Demountable Nut & Bolt Relocatable</span>
+                <span class="text-slate-200">Modular & Relocatable Structures</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-emerald-400 font-extrabold">Tata Housing Approved</span>
+                <span class="text-emerald-400 font-extrabold">50+ Skilled Engineers</span>
                 <span class="text-slate-500">•</span>
-                <span class="text-[#FF8B02]">GSTIN: 07ANDPG4822C2ZI</span>
+                <span class="text-[#FF8B02]">Annual Capacity ₹25 Cr</span>
                 <span class="text-slate-500">•</span>
             </div>
         </div>
@@ -303,7 +303,7 @@
                     </h2>
 
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                        Shallom Prefab Systems is a top-ranked prefabricated manufacturing practice providing high-performance Design-Build coordinates across India. Incorporated in <strong>2009 at Delhi (India)</strong>, we are actively engaged in manufacturing, exporting, and supplying an extensive range of Prefab Houses, Prefab Structures, Prefab Buildings, Prefab Cabins, Prefab Toilets, and Prefabricated Offices. Sourced strictly from certified industry vendors in compliance with international quality standards, our structures deliver extreme weather protection, fine finish, robust construction, and complete turnkey installation & maintenance services.
+                        Established in <strong>2017</strong>, Shallom Prefab Systems delivers pre-engineered building solutions across India. Our turnkey work spans architectural design, precision manufacturing, transport, and rapid installation for residential, commercial, and industrial projects.
                     </p>
 
                     <div class="pt-4">
@@ -458,7 +458,7 @@
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="ri-[#FF8B02] ri-flashlight-line text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">70% Faster Turnaround</h3>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">60% Faster Turnaround</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
                         Pre-fabricated off-site components allow rapid assembly in days rather than months of chaotic site construction.
                     </p>
@@ -478,7 +478,7 @@
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="ri-[#FF8B02] ri-drag-drop-line text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">100% Relocatable</h3>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Modular & Relocatable</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
                         Demountable nut-and-bolt framing ensures modules can be dismantled, moved, and re-erected at new sites effortlessly.
                     </p>
@@ -490,7 +490,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">Thermal Efficiency</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        High-density PUF/EPS sandwich panel core cuts HVAC cooling and heating energy consumption by up to 40%.
+                        Insulated Aerocon and PUF panel systems support high thermal efficiency.
                     </p>
                 </div>
 
@@ -515,7 +515,7 @@
             </h2>
 
             <p class="text-slate-300 text-xs sm:text-sm font-normal max-w-2xl mx-auto leading-relaxed">
-                Since 2009, Shallom Prefab Systems has delivered pre-engineered structural excellence for India's leading EPC conglomerates, government PSUs, and commercial developers.
+                Since 2017, Shallom Prefab Systems has delivered modular construction solutions for residential, commercial, and industrial projects across India.
             </p>
         </div>
 
@@ -719,7 +719,7 @@
                         <i class="ri-add-line text-xl text-[#FF8B02] shrink-0 transition-transform duration-300" :class="{ 'rotate-45': openFaq === 0 }"></i>
                     </button>
                     <div x-show="openFaq === 0" x-cloak x-collapse class="px-7 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal border-t border-slate-100">
-                        Our prefabricated structures are engineered using anti-corrosive IS 2062 grade steel framework and heavy EPS/PUF sandwich wall panels, offering a structural lifespan of 20 to 25+ years with basic maintenance.
+                        The presentation describes a structure lifespan of up to 50 years. Project life depends on the design, materials, installation, and maintenance.
                     </div>
                 </div>
 
@@ -730,7 +730,7 @@
                         <i class="ri-add-line text-xl text-[#FF8B02] shrink-0 transition-transform duration-300" :class="{ 'rotate-45': openFaq === 1 }"></i>
                     </button>
                     <div x-show="openFaq === 1" x-cloak x-collapse class="px-7 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal border-t border-slate-100">
-                        Standard site offices and portable cabins (up to 500 sq. ft.) are dispatched within 3 to 5 days and erected on-site in less than 48 hours. Larger labour colonies (2,000+ sq. ft.) are completed within 7 to 14 business days.
+                        Off-site panel fabrication can reduce installation timelines by up to 60% compared with traditional civil construction. Project schedules depend on the design and scope.
                     </div>
                 </div>
 
@@ -792,8 +792,9 @@
                                 <i class="ri-phone-fill text-lg"></i>
                             </div>
                             <div>
-                                <div class="text-xs text-slate-500 font-medium">Direct Hotline</div>
-                                <a href="tel:{{ setting('landline', '07942550323') }}" class="text-lg font-bold text-slate-900 hover:text-[#FF8B02] transition-colors">{{ setting('landline', '07942550323') }}</a>
+                                <div class="text-xs text-slate-500 font-medium">Contact Numbers</div>
+                                <a href="tel:{{ setting('phone', '+91 98995 52380') }}" class="text-lg font-bold text-slate-900 hover:text-[#FF8B02] transition-colors">{{ setting('phone', '+91 98995 52380') }}</a>
+                                <a href="tel:{{ setting('secondary_phone', '+91 70650 13555') }}" class="block text-sm font-semibold text-slate-700 hover:text-[#FF8B02] transition-colors">{{ setting('secondary_phone', '+91 70650 13555') }}</a>
                             </div>
                         </div>
 
@@ -802,19 +803,20 @@
                                 <i class="ri-map-pin-2-fill text-lg"></i>
                             </div>
                             <div>
-                                <div class="text-xs text-slate-500 font-medium">Plant & Registered Office</div>
-                                <div class="text-sm font-bold text-slate-900 mt-0.5">{{ setting('company_name', 'Shallom Prefab Systems') }}</div>
-                                <div class="text-xs text-slate-600 mt-0.5">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}</div>
+                                <div class="text-xs text-slate-500 font-medium">Head Office</div>
+                                <div class="text-sm font-bold text-slate-900 mt-0.5">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi - 110095') }}</div>
+                                <div class="text-xs text-slate-500 font-medium mt-3">Branch Office</div>
+                                <div class="text-sm font-bold text-slate-900 mt-0.5">{{ setting('branch_address', 'D-15, Sector 3, Noida (U.P.) - 201301') }}</div>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#FAF9F5] border border-slate-200/80">
                             <div class="w-10 h-10 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center shrink-0">
-                                <i class="ri-shield-check-fill text-lg"></i>
+                                <i class="ri-mail-line text-lg"></i>
                             </div>
                             <div>
-                                <div class="text-xs text-slate-500 font-medium">GST Identification Number</div>
-                                <div class="text-sm font-mono font-bold text-[#FF8B02] mt-0.5">07ANDPG4822C2ZI</div>
+                                <div class="text-xs text-slate-500 font-medium">Email</div>
+                                <a href="mailto:{{ setting('email', 'shallomprefab@yahoo.com') }}" class="text-sm font-bold text-[#FF8B02] mt-0.5">{{ setting('email', 'shallomprefab@yahoo.com') }}</a>
                             </div>
                         </div>
                     </div>
@@ -862,12 +864,15 @@
                                 <div>
                                     <label class="block text-xs font-bold text-slate-700 mb-1.5">Product Requirement</label>
                                     <select wire:model="buildingInterest" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-[#FF8B02] transition-colors">
-                                        <option value="Prefab Site Office">Prefab Site Office</option>
-                                        <option value="Prefab Portable House">Prefab Portable House</option>
-                                        <option value="Building Metal Structure">Building Metal Structure</option>
-                                        <option value="Labour Hutments for Construction Sites">Labour Hutments for Construction</option>
-                                        <option value="Aerocon Wall Panel System">Aerocon Wall Panels</option>
-                                        <option value="Prefab Toilet Block">Prefab Toilet Block</option>
+                                        <option value="Modular Villas and Eco Resort Cottages">Modular Villas & Eco Resort Cottages</option>
+                                        <option value="Wooden Pine Homes and Rooftop Extensions">Wooden Pine Homes & Rooftop Extensions</option>
+                                        <option value="Executive Cabins and Site Offices">Executive Cabins & Site Offices</option>
+                                        <option value="Institutional and School Infrastructure">Institutional & School Infrastructure</option>
+                                        <option value="Cafeterias, Dining Halls and Sanitary Toll Booths">Cafeterias, Dining Halls & Sanitary Toll Booths</option>
+                                        <option value="Acoustic Ceilings, Drywall Partitions and Wall Panelling">Acoustic Ceilings, Drywall Partitions & Wall Panelling</option>
+                                        <option value="Industrial Sheds and PEB Warehouses">Industrial Sheds & PEB Warehouses</option>
+                                        <option value="Worker Colonies and Labour Camps">Worker Colonies & Labour Camps</option>
+                                        <option value="Mobile Sanitation Units">Mobile Sanitation Units</option>
                                     </select>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 @section('title', 'Contact Us & Get a Quote | Shallom Prefab Systems')
-@section('meta_description', 'Get in touch with Shallom Prefab Systems for custom prefab building quotes, technical consultations, site office inquiries, and modular housing solutions in Delhi and across India.')
+@section('meta_description', 'Contact Shallom Prefab Systems for modular building and turnkey construction enquiries. Call our Head Office or Noida Branch.')
 
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -16,76 +16,63 @@
                     <span class="text-[#FF8B02] font-normal">ENGINEERING STUDIO</span>
                 </h1>
                 <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
-                    Have a custom structural layout drawing or urgent site requirement? Connect directly with our Delhi NCR engineering plant for instant estimations and technical consultations.
+                    Contact Shallom Prefab Systems for residential, commercial, or industrial modular construction and turnkey project enquiries.
                 </p>
             </div>
 
             <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
-                <a href="tel:{{ setting('landline', '07942550323') }}" 
+                <a href="tel:{{ setting('phone', '+91 98995 52380') }}"
                    class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
                     <i class="ri-phone-fill text-sm"></i>
-                    <span>{{ setting('landline', '07942550323') }}</span>
+                    <span>{{ setting('phone', '+91 98995 52380') }}</span>
                 </a>
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('whatsapp', '+919899552380')) }}" target="_blank"
-                   class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all shadow-xs">
-                    <i class="ri-whatsapp-line text-sm"></i>
-                    <span>WhatsApp Inquiry</span>
+                <a href="tel:{{ setting('secondary_phone', '+91 70650 13555') }}"
+                   class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
+                    <i class="ri-phone-fill text-sm"></i>
+                    <span>{{ setting('secondary_phone', '+91 70650 13555') }}</span>
                 </a>
             </div>
         </div>
 
         <!-- 2. DIRECT CONTACT COORDINATES CARDS -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             
-            <!-- Card 1: Direct Hotline -->
             <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all space-y-4 group">
                 <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center group-hover:scale-110 transition-transform">
                     <i class="ri-phone-fill text-2xl"></i>
                 </div>
                 <div class="space-y-1">
-                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">DIRECT HOTLINE</div>
-                    <a href="tel:{{ setting('phone', '+91-9899552380') }}" class="text-xl font-bold text-slate-900 hover:text-[#FF8B02] transition-colors block">
-                        {{ setting('phone', '+91-9899552380') }}
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">CONTACT NUMBERS</div>
+                    <a href="tel:{{ setting('phone', '+91 98995 52380') }}" class="text-xl font-bold text-slate-900 hover:text-[#FF8B02] transition-colors block">
+                        {{ setting('phone', '+91 98995 52380') }}
                     </a>
-                    <a href="tel:{{ setting('landline', '07942550323') }}" class="text-sm font-semibold text-slate-600 hover:text-[#FF8B02] transition-colors block">
-                        {{ setting('landline', '07942550323') }}
+                    <a href="tel:{{ setting('secondary_phone', '+91 70650 13555') }}" class="text-sm font-semibold text-slate-600 hover:text-[#FF8B02] transition-colors block">
+                        {{ setting('secondary_phone', '+91 70650 13555') }}
                     </a>
                 </div>
                 <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                    Email: <a href="mailto:{{ setting('email', 'shallomprefabsystems@gmail.com') }}" class="text-[#FF8B02] font-semibold hover:underline">{{ setting('email', 'shallomprefabsystems@gmail.com') }}</a>
+                    Email: <a href="mailto:{{ setting('email', 'shallomprefab@yahoo.com') }}" class="text-[#FF8B02] font-semibold hover:underline">{{ setting('email', 'shallomprefab@yahoo.com') }}</a>
                 </p>
             </div>
 
-            <!-- Card 2: Plant & Office Coordinates -->
             <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all space-y-4 group">
                 <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center group-hover:scale-110 transition-transform">
                     <i class="ri-map-pin-2-fill text-2xl"></i>
                 </div>
-                <div class="space-y-1">
-                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">REGISTERED OFFICE</div>
-                    <div class="text-sm font-bold text-slate-900 leading-snug">
-                        {{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}
+                <div class="space-y-4">
+                    <div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">HEAD OFFICE</div>
+                        <div class="text-sm font-bold text-slate-900 leading-snug">
+                            {{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi - 110095') }}
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">BRANCH OFFICE</div>
+                        <div class="text-sm font-bold text-slate-900 leading-snug">
+                            {{ setting('branch_address', 'D-15, Sector 3, Noida (U.P.) - 201301') }}
+                        </div>
                     </div>
                 </div>
-                <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                    GSTIN: <strong class="text-slate-800">{{ setting('gst_no', '07ANDPG4822C2ZI') }}</strong>
-                </p>
-            </div>
-
-            <!-- Card 3: Business Hours & Quality -->
-            <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all space-y-4 group">
-                <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <i class="ri-time-line text-2xl"></i>
-                </div>
-                <div class="space-y-1">
-                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">WORKING HOURS</div>
-                    <div class="text-sm font-bold text-slate-900">
-                        {{ setting('business_hours', 'Monday to Saturday | 09:00 AM – 07:00 PM IST') }}
-                    </div>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                    ISO 9001:2015 Certified Manufacturing Operations
-                </p>
             </div>
 
         </div>
@@ -146,12 +133,15 @@
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1.5">Product Requirement</label>
                                 <select wire:model="buildingInterest" class="w-full bg-[#FAF9F5] border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-[#FF8B02] transition-colors">
-                                    <option value="Prefab Site Office">Prefab Site Office</option>
-                                    <option value="Prefab Portable House">Prefab Portable House</option>
-                                    <option value="Building Metal Structure">Building Metal Structure</option>
-                                    <option value="Labour Hutments for Construction Sites">Labour Hutments for Construction</option>
-                                    <option value="Aerocon Wall Panel System">Aerocon Wall Panels</option>
-                                    <option value="Prefab Toilet Block">Prefab Toilet Block</option>
+                                    <option value="Modular Villas and Eco Resort Cottages">Modular Villas & Eco Resort Cottages</option>
+                                    <option value="Wooden Pine Homes and Rooftop Extensions">Wooden Pine Homes & Rooftop Extensions</option>
+                                    <option value="Executive Cabins and Site Offices">Executive Cabins & Site Offices</option>
+                                    <option value="Institutional and School Infrastructure">Institutional & School Infrastructure</option>
+                                    <option value="Cafeterias, Dining Halls and Sanitary Toll Booths">Cafeterias, Dining Halls & Sanitary Toll Booths</option>
+                                    <option value="Acoustic Ceilings, Drywall Partitions and Wall Panelling">Acoustic Ceilings, Drywall Partitions & Wall Panelling</option>
+                                    <option value="Industrial Sheds and PEB Warehouses">Industrial Sheds & PEB Warehouses</option>
+                                    <option value="Worker Colonies and Labour Camps">Worker Colonies & Labour Camps</option>
+                                    <option value="Mobile Sanitation Units">Mobile Sanitation Units</option>
                                 </select>
                             </div>
                         </div>
@@ -185,39 +175,23 @@
                 <div class="bg-white border border-slate-200/80 rounded-2xl p-8 shadow-xs space-y-6">
                     <div class="flex items-center gap-2 text-[#FF8B02]">
                         <i class="ri-compass-3-line text-lg"></i>
-                        <span class="text-xs font-bold uppercase tracking-widest">PLANT LOCATION</span>
+                        <span class="text-xs font-bold uppercase tracking-widest">OUR OFFICES</span>
                     </div>
 
-                    <h3 class="text-xl font-bold text-slate-900">Delhi Manufacturing Facility</h3>
-                    
-                    <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Our plant is conveniently situated in New Delhi with easy highway access for transporting heavy pre-engineered structural steel frames, sandwich panels, and modular bunk houses.
-                    </p>
-
-                    <div class="space-y-3 pt-2">
-                        <div class="flex items-center gap-3 text-xs text-slate-700 font-medium">
-                            <i class="ri-shield-check-fill text-[#FF8B02] text-base"></i>
-                            <span>On-Site Erection & Installation Support</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-xs text-slate-700 font-medium">
-                            <i class="ri-draft-line text-[#FF8B02] text-base"></i>
-                            <span>CAD Footprint Consultation & Layout Specs</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-xs text-slate-700 font-medium">
-                            <i class="ri-box-3-line text-[#FF8B02] text-base"></i>
-                            <span>Material Sample Inspections Available</span>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Head Office</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi - 110095') }}</p>
+                    <h3 class="text-xl font-bold text-slate-900">Branch Office</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">{{ setting('branch_address', 'D-15, Sector 3, Noida (U.P.) - 201301') }}</p>
                 </div>
 
                 <div class="bg-[#FAF9F5] border border-slate-200/80 rounded-2xl p-8 space-y-4">
-                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">QUICK ASSISTANCE</div>
-                    <h4 class="text-lg font-bold text-slate-900">Need Immediate Pricing?</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Speak directly with our technical team for instant budget estimates and dispatch timelines.
-                    </p>
-                    <a href="tel:{{ setting('landline', '07942550323') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-extrabold text-xs uppercase tracking-wider hover:gap-3 transition-all">
-                        <span>CALL {{ setting('landline', '07942550323') }}</span>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">CALL US</div>
+                    <a href="tel:{{ setting('phone', '+91 98995 52380') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-extrabold text-xs uppercase tracking-wider hover:gap-3 transition-all">
+                        <span>{{ setting('phone', '+91 98995 52380') }}</span>
+                        <i class="ri-arrow-right-line text-sm"></i>
+                    </a>
+                    <a href="tel:{{ setting('secondary_phone', '+91 70650 13555') }}" class="inline-flex items-center gap-2 text-[#FF8B02] font-extrabold text-xs uppercase tracking-wider hover:gap-3 transition-all">
+                        <span>{{ setting('secondary_phone', '+91 70650 13555') }}</span>
                         <i class="ri-arrow-right-line text-sm"></i>
                     </a>
                 </div>

@@ -52,13 +52,14 @@ new #[Layout('layouts::admin')] #[Title('Admin Dashboard | Shallom Prefab System
     {
         return [
             'company_name' => Setting::get('company_name', 'Shallom Prefab Systems'),
-            'proprietor' => Setting::get('proprietor', 'Mr. Arvind Kumar Gautam'),
-            'turnover' => Setting::get('turnover', '₹5 Crore – ₹25 Crore'),
-            'team_size' => Setting::get('team_size', '26 – 50 Professionals'),
-            'gst_no' => Setting::get('gst_no', '07ANDPG4822C2ZI'),
-            'banker' => Setting::get('banker', 'AXIS BANK'),
-            'phone' => Setting::get('phone', '+91-9899552380'),
-            'address' => Setting::get('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India'),
+            'proprietor' => Setting::get('proprietor', 'Mr. Arvind Kumar'),
+            'annual_capacity' => Setting::get('annual_capacity', '₹25 Cr'),
+            'skilled_engineers' => Setting::get('skilled_engineers', '50+'),
+            'structure_lifespan' => Setting::get('structure_lifespan', '50 Years'),
+            'phone' => Setting::get('phone', '+91 98995 52380'),
+            'secondary_phone' => Setting::get('secondary_phone', '+91 70650 13555'),
+            'address' => Setting::get('address', 'N-3/A-3, Dilshad Garden, Delhi - 110095'),
+            'branch_address' => Setting::get('branch_address', 'D-15, Sector 3, Noida (U.P.) - 201301'),
         ];
     }
 

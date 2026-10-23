@@ -201,26 +201,36 @@
                     <span class="font-bold text-slate-900">{{ $this->companySettings['proprietor'] }}</span>
                 </div>
                 <div class="flex items-center justify-between py-1.5 border-b border-slate-100">
-                    <span class="text-slate-400">Annual Turnover:</span>
-                    <span class="font-semibold text-slate-800">{{ $this->companySettings['turnover'] }}</span>
+                    <span class="text-slate-400">Annual Capacity:</span>
+                    <span class="font-semibold text-slate-800">{{ $this->companySettings['annual_capacity'] }}</span>
                 </div>
                 <div class="flex items-center justify-between py-1.5 border-b border-slate-100">
-                    <span class="text-slate-400">Team Strength:</span>
-                    <span class="font-semibold text-slate-800">{{ $this->companySettings['team_size'] }}</span>
+                    <span class="text-slate-400">Skilled Engineers:</span>
+                    <span class="font-semibold text-slate-800">{{ $this->companySettings['skilled_engineers'] }}</span>
                 </div>
                 <div class="flex items-center justify-between py-1.5 border-b border-slate-100">
-                    <span class="text-slate-400">GSTIN:</span>
-                    <span class="font-mono font-bold text-[#FF8B02]">{{ $this->companySettings['gst_no'] }}</span>
+                    <span class="text-slate-400">Structure Lifespan:</span>
+                    <span class="font-semibold text-slate-800">{{ $this->companySettings['structure_lifespan'] }}</span>
                 </div>
                 <div class="flex items-center justify-between py-1.5 border-b border-slate-100">
-                    <span class="text-slate-400">Banker:</span>
-                    <span class="font-semibold text-slate-800">{{ $this->companySettings['banker'] }}</span>
-                </div>
-                <div class="flex items-center justify-between py-1.5 border-b border-slate-100">
-                    <span class="text-slate-400">Phone:</span>
+                    <span class="text-slate-400">Primary Phone:</span>
                     <a href="tel:{{ $this->companySettings['phone'] }}" class="font-mono font-bold text-slate-900 hover:text-[#FF8B02]">
                         {{ $this->companySettings['phone'] }}
                     </a>
+                </div>
+                <div class="flex items-center justify-between py-1.5 border-b border-slate-100">
+                    <span class="text-slate-400">Secondary Phone:</span>
+                    <a href="tel:{{ $this->companySettings['secondary_phone'] }}" class="font-mono font-bold text-slate-900 hover:text-[#FF8B02]">
+                        {{ $this->companySettings['secondary_phone'] }}
+                    </a>
+                </div>
+                <div class="py-1.5 border-b border-slate-100">
+                    <span class="text-slate-400">Head Office:</span>
+                    <span class="block font-semibold text-slate-800">{{ $this->companySettings['address'] }}</span>
+                </div>
+                <div class="py-1.5">
+                    <span class="text-slate-400">Branch Office:</span>
+                    <span class="block font-semibold text-slate-800">{{ $this->companySettings['branch_address'] }}</span>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 @section('title', 'Company Profile & About Us | Shallom Prefab Systems')
-@section('meta_description', 'Learn about Shallom Prefab Systems, established in 2009 in Delhi, India. Premier manufacturer and supplier of sustainable, modular pre-engineered buildings and structures.')
+@section('meta_description', 'Learn about Shallom Prefab Systems, established in 2017, and its modular prefab building solutions, materials, capacity, and offices.')
 
 <div class="py-6 sm:py-10 bg-[#FAF9F5] min-h-screen font-sans text-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -16,15 +16,15 @@
                     <span class="text-[#FF8B02] font-normal">CORPORATE PROFILE</span>
                 </h1>
                 <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
-                    Established with industry roots dating back to <strong>{{ setting('incorporation_year', '2009 (GST Registered: July 2017)') }}</strong>, {{ setting('company_name', 'Shallom Prefab Systems') }} is a leading manufacturer, exporter, and turnkey service provider of advanced pre-engineered construction solutions under the leadership of Proprietor <strong>{{ setting('proprietor', 'Mr. Arvind Kumar Gautam') }}</strong>.
+                    Established in <strong>{{ setting('established_year', '2017') }}</strong>, {{ setting('company_name', 'Shallom Prefab Systems') }} designs and delivers modular prefab buildings and turnkey construction solutions under the leadership of Proprietor <strong>{{ setting('proprietor', 'Mr. Arvind Kumar') }}</strong>.
                 </p>
             </div>
 
             <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
-                <a href="tel:{{ setting('phone', '+91-9899552380') }}" 
+                <a href="tel:{{ setting('phone', '+91 98995 52380') }}"
                    class="inline-flex items-center justify-center gap-2 bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold px-6 py-3 rounded-full shadow-md shadow-orange-500/20 text-xs uppercase tracking-wider transition-all">
                     <i class="ri-phone-fill text-sm"></i>
-                    <span>{{ setting('phone', '+91-9899552380') }}</span>
+                    <span>{{ setting('phone', '+91 98995 52380') }}</span>
                 </a>
                 <a href="{{ route('products') }}" wire:navigate
                    class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-[#FF8B02] hover:text-[#FF8B02] text-slate-700 font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
@@ -65,7 +65,7 @@
                     </video>
                     <div class="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-2 rounded-xl text-xs font-bold border border-white/20 flex items-center gap-2 pointer-events-none">
                         <i class="ri-calendar-check-fill text-[#FF8B02] text-base"></i>
-                        <span>Established 2009 • Dilshad Garden, Delhi</span>
+                        <span>Established {{ setting('established_year', '2017') }} • Delhi NCR</span>
                     </div>
                 </div>
             </div>
@@ -83,21 +83,21 @@
                 </h2>
 
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                    Incorporated in the year <strong>2009 at Delhi (India)</strong>, we, <strong>“Shallom Prefab Systems”</strong>, are actively engaged in manufacturing, exporting, and supplying an extensive range of Prefab Houses, Prefab Structures, Prefab Buildings, Prefab Cabins, Prefab Toilets, and Prefabricated Offices. Our comprehensive product portfolio includes Prefab Houses, Prefabricated Luxurious Houses, Prefabricated Labor Camps, Labor Hutments, Office Cafeterias, Prefabricated Office Ceilings, and customized structural units.
+                    Established in <strong>{{ setting('established_year', '2017') }}</strong>, <strong>{{ setting('company_name', 'Shallom Prefab Systems') }}</strong> provides modular prefab buildings and turnkey solutions for residential, commercial, and industrial projects. Its range includes villas, eco-resort cottages, site offices, institutional buildings, industrial sheds, warehouses, worker colonies, and sanitation units.
                 </p>
 
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                    Under the visionary leadership of Proprietor <strong>Mr. Arvind Kumar Gautam</strong>, our structures are manufactured with high precision using supreme quality raw materials and latest technology. Sourced strictly from certified industry vendors in compliance with international quality standards, our solutions deliver fine finish, excellent design, robust construction, easy installation, and protection under extreme weather conditions.
+                    Led by Proprietor <strong>{{ setting('proprietor', 'Mr. Arvind Kumar') }}</strong>, the company works with Aerocon and PUF materials to create modular structures designed for efficient installation, relocation, and use across varied project needs.
                 </p>
 
                 <div class="grid grid-cols-2 gap-4 pt-2">
                     <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-2xs flex items-center gap-3">
                         <i class="ri-checkbox-circle-fill text-[#FF8B02] text-xl shrink-0"></i>
-                        <span class="text-xs font-bold text-slate-800">ISO 9001:2015 Quality Norms</span>
+                        <span class="text-xs font-bold text-slate-800">Aerocon & PUF Materials</span>
                     </div>
                     <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-2xs flex items-center gap-3">
                         <i class="ri-tools-fill text-[#FF8B02] text-xl shrink-0"></i>
-                        <span class="text-xs font-bold text-slate-800">Turnkey Erection Services</span>
+                        <span class="text-xs font-bold text-slate-800">Turnkey Modular Construction</span>
                     </div>
                 </div>
             </div>
@@ -123,43 +123,47 @@
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
                             <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Leadership / Proprietor</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('proprietor', 'Mr. Arvind Kumar Gautam') }}</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('proprietor', 'Mr. Arvind Kumar') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Year of Incorporation / Roots</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('incorporation_year', '2009 (GST Registered: July 2017)') }}</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Established</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('established_year', '2017') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Legal Status</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Sole Proprietorship</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Annual Production Capacity</td>
+                            <td class="py-3.5 px-6 text-[#FF8B02] font-extrabold">{{ setting('annual_capacity', '₹25 Cr') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Nature of Business</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Manufacturer, Exporter, Supplier, Wholesaler, Trader & Turnkey Service Provider</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Skilled Engineers</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('skilled_engineers', '50+') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Annual Turnover</td>
-                            <td class="py-3.5 px-6 text-[#FF8B02] font-extrabold">{{ setting('turnover', '₹5 Crore – ₹25 Crore') }}</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Structure Lifespan</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('structure_lifespan', '50 Years') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Team Size</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('team_size', '26 – 50 Skilled Professionals') }}</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Building Range</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Villas, resort cottages, site offices, institutional buildings, industrial sheds, warehouses, worker colonies, and sanitation units</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">GST Registration No.</td>
-                            <td class="py-3.5 px-6 font-mono font-bold text-slate-900">{{ setting('gst_no', '07ANDPG4822C2ZI') }}</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Construction Materials</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Aerocon and PUF</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Registered Office Address</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Primary Phone</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('phone', '+91 98995 52380') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Banker</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('banker', 'AXIS BANK') }}</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Secondary Phone</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('secondary_phone', '+91 70650 13555') }}</td>
                         </tr>
                         <tr class="hover:bg-[#FAF9F5]">
-                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Accepted Payment Modes</td>
-                            <td class="py-3.5 px-6 text-slate-800 font-semibold">Cash, Cheque, Demand Draft (DD), Wire Transfer</td>
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Head Office</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi - 110095') }}</td>
+                        </tr>
+                        <tr class="hover:bg-[#FAF9F5]">
+                            <td class="py-3.5 px-6 font-bold text-slate-900 bg-slate-50">Branch Office</td>
+                            <td class="py-3.5 px-6 text-slate-800 font-semibold">{{ setting('branch_address', 'D-15, Sector 3, Noida (U.P.) - 201301') }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -174,11 +178,11 @@
                     <span class="text-xs font-bold uppercase tracking-widest">ROBUST INFRASTRUCTURE</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-light text-slate-800 tracking-tight leading-[1.18]">
-                    CUTTING-EDGE MANUFACTURING <br/>
-                    <span class="text-[#FF8B02] font-normal">& DIVISIONAL UNITS</span>
+                    MODULAR PREFAB <br/>
+                    <span class="text-[#FF8B02] font-normal">BUILDING SOLUTIONS</span>
                 </h2>
                 <p class="text-slate-600 text-sm font-normal leading-relaxed">
-                    We have invested a substantial amount for the construction of our robust infrastructural setup in Delhi NCR, equipped with modern roll-forming and welding machinery operated by highly skilled personnel.
+                    Shallom delivers modular, relocatable structures using Aerocon and PUF materials, with solutions for residential, commercial, and industrial projects.
                 </p>
             </div>
 
@@ -188,9 +192,9 @@
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center">
                         <i class="ri-settings-4-line text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Production Unit</h3>
+                    <h3 class="text-lg font-bold text-slate-900">Modular Structures</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Well-installed with latest profile sheet roll-formers, hydraulic benders, and arc welding equipment capable of delivering flawless batch outputs.
+                        Modular building systems designed to be installed efficiently and relocated when project needs change.
                     </p>
                 </div>
 
@@ -198,9 +202,9 @@
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center">
                         <i class="ri-test-tube-line text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Quality Testing</h3>
+                    <h3 class="text-lg font-bold text-slate-900">Aerocon & PUF</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Manned by certified quality controllers testing every raw material batch on structural load capacity, weatherproofing, and fire retardancy.
+                        The company profile identifies Aerocon and PUF as materials used across its prefab building solutions.
                     </p>
                 </div>
 
@@ -210,7 +214,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-slate-900">Skilled Engineers</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Our 26–50 expert personnel team includes structural engineers, CAD draftsmen, and quality controllers dedicated to achieving client specifications.
+                        {{ setting('skilled_engineers', '50+') }} skilled engineers support Shallom's modular construction work.
                     </p>
                 </div>
 
@@ -220,7 +224,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-slate-900">Sales & Logistics</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Assuring prompt nationwide delivery and turnkey assembly at customer site coordinates with complete post-installation support.
+                        Turnkey construction solutions serve residential, commercial, and industrial projects across India.
                     </p>
                 </div>
 
@@ -237,24 +241,24 @@
                 </div>
 
                 <h2 class="text-3xl sm:text-4xl font-light text-slate-800 tracking-tight leading-[1.18]">
-                    CUSTOMER CENTRIC PRACTICE & <br/>
-                    <span class="text-[#FF8B02] font-normal">TRANSPARENT DEALINGS</span>
+                    PERFORMANCE & STRUCTURAL <br/>
+                    <span class="text-[#FF8B02] font-normal">DESIGN FEATURES</span>
                 </h2>
 
                 <p class="text-slate-600 text-sm leading-relaxed font-normal">
-                    For making our entire product range defect-free, we ensure that products are manufactured using optimum quality raw material procured from trustworthy vendors of the industry. Quality controllers test our offered products on multiple parameters of durability and weather endurance.
+                    The company profile highlights up to 60% faster turnaround, structures designed for a 50-year lifespan, and performance features for demanding site conditions.
                 </p>
 
                 <p class="text-slate-600 text-sm leading-relaxed font-normal">
-                    We are a customer-centric company that has reinforced its foothold strongly in the market. By offering our clients best-in-class products designed in conformation with international standards, transparent dealings, and timely delivery, we have earned immense recognition nationwide.
+                    Its listed structural features include Zone-V earthquake suitability, wind resistance up to 39 m/s, and Class “O” fire safety.
                 </p>
 
                 <div class="pt-2 flex flex-wrap gap-4">
                     <div class="px-4 py-2 rounded-lg bg-[#FAF9F5] border border-slate-200 text-xs font-bold text-slate-800">
-                        GSTIN: <span class="text-[#FF8B02]">{{ setting('gst_no', '07ANDPG4822C2ZI') }}</span>
+                        Turnaround: <span class="text-[#FF8B02]">Up to 60% faster</span>
                     </div>
                     <div class="px-4 py-2 rounded-lg bg-[#FAF9F5] border border-slate-200 text-xs font-bold text-slate-800">
-                        Office: <span class="text-slate-600">{{ setting('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India') }}</span>
+                        Structure lifespan: <span class="text-slate-600">{{ setting('structure_lifespan', '50 Years') }}</span>
                     </div>
                 </div>
             </div>
@@ -264,28 +268,28 @@
                 <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
                     <li class="flex items-center gap-2 font-medium">
                         <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>100% Certified Industry Vendor Raw Material</span>
+                        <span>Modular and relocatable structures</span>
                     </li>
                     <li class="flex items-center gap-2 font-medium">
                         <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>Custom Dimensions & Interior Ceilings</span>
+                        <span>Zone-V earthquake suitability</span>
                     </li>
                     <li class="flex items-center gap-2 font-medium">
                         <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>Turnkey Erection & Maintenance Services</span>
+                        <span>Wind resistance up to 39 m/s</span>
                     </li>
                     <li class="flex items-center gap-2 font-medium">
                         <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>Ethical Business Policy & Transparent Pricing</span>
+                        <span>Class “O” fire safety</span>
                     </li>
                     <li class="flex items-center gap-2 font-medium">
                         <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>On-Time Nationwide Delivery</span>
+                        <span>Turnkey construction solutions</span>
                     </li>
                 </ul>
 
                 <div class="pt-4 border-t border-slate-200">
-                    <a href="tel:{{ setting('phone', '+91-9899552380') }}" class="block text-center bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider transition-all">
+                    <a href="tel:{{ setting('phone', '+91 98995 52380') }}" class="block text-center bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider transition-all">
                         Call Direct Engineering Team
                     </a>
                 </div>

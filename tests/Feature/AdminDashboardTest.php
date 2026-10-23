@@ -116,3 +116,38 @@ test('admin contact enquiry view displays all details when opened', function () 
 
     expect($contact->fresh()->is_read)->toBeTrue();
 });
+
+test('admin can save both company contact numbers and office addresses', function () {
+    $user = User::factory()->create();
+
+    Livewire::actingAs($user)
+        ->test('admin::setting')
+        ->set('phone', '+91 11111 11111')
+        ->set('secondary_phone', '+91 22222 22222')
+        ->set('address', 'Updated Head Office, Delhi')
+        ->set('branch_address', 'Updated Branch Office, Noida')
+        ->call('save')
+        ->assertDispatched('toast-show');
+
+    expect(Setting::get('phone'))->toBe('+91 11111 11111')
+        ->and(Setting::get('secondary_phone'))->toBe('+91 22222 22222')
+        ->and(Setting::get('address'))->toBe('Updated Head Office, Delhi')
+        ->and(Setting::get('branch_address'))->toBe('Updated Branch Office, Noida');
+
+    $this->actingAs($user)
+        ->get('/contact')
+        ->assertSee('+91 11111 11111')
+        ->assertSee('+91 22222 22222')
+        ->assertSee('Updated Head Office, Delhi')
+        ->assertSee('Updated Branch Office, Noida');
+
+    $this->get('/profile')
+        ->assertOk()
+        ->assertSee('OFFICIAL CREDENTIALS')
+        ->assertSee('+91 11111 11111')
+        ->assertSee('+91 22222 22222')
+        ->assertSee('Updated Head Office, Delhi')
+        ->assertSee('Updated Branch Office, Noida')
+        ->assertDontSee('ISO 9001:2015')
+        ->assertDontSee('2009');
+});

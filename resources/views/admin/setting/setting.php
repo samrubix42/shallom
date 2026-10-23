@@ -26,30 +26,26 @@ new #[Layout('layouts::admin')] #[Title('System Settings | Admin')] class extend
     // Contact Information
     public string $phone = '';
 
-    public string $whatsapp = '';
-
-    public string $landline = '';
+    public string $secondary_phone = '';
 
     public string $email = '';
 
     public string $address = '';
 
+    public string $branch_address = '';
+
     public string $website = '';
 
-    public string $business_hours = '';
-
-    // Company Details & Tax
-    public string $gst_no = '';
-
+    // Company Details
     public string $proprietor = '';
 
-    public string $incorporation_year = '';
+    public string $established_year = '';
 
-    public string $turnover = '';
+    public string $annual_capacity = '';
 
-    public string $team_size = '';
+    public string $skilled_engineers = '';
 
-    public string $banker = '';
+    public string $structure_lifespan = '';
 
     public string $about_summary = '';
 
@@ -60,21 +56,19 @@ new #[Layout('layouts::admin')] #[Title('System Settings | Admin')] class extend
         $this->logo_path = Setting::get('logo', 'logo.webp');
         $this->favicon_path = Setting::get('favicon', 'favicon.ico');
 
-        $this->phone = Setting::get('phone', '+91-9899552380');
-        $this->whatsapp = Setting::get('whatsapp', '+919899552380');
-        $this->landline = Setting::get('landline', '07942550323');
-        $this->email = Setting::get('email', 'shallomprefabsystems@gmail.com');
-        $this->address = Setting::get('address', 'N-3/A-3, Dilshad Garden, Delhi – 110095, India');
-        $this->website = Setting::get('website', 'http://www.shallomprefab.com/');
-        $this->business_hours = Setting::get('business_hours', 'Monday to Saturday | 09:00 AM – 07:00 PM IST');
+        $this->phone = Setting::get('phone', '+91-98995 52380');
+        $this->secondary_phone = Setting::get('secondary_phone', '+91 70650 13555');
+        $this->email = Setting::get('email', 'shallomprefab@yahoo.com');
+        $this->address = Setting::get('address', 'N-3/A-3, Dilshad Garden, Delhi - 110095');
+        $this->branch_address = Setting::get('branch_address', 'D-15, Sector 3, Noida (U.P.) - 201301');
+        $this->website = Setting::get('website', 'https://www.shallomprefabsystems.com');
 
-        $this->gst_no = Setting::get('gst_no', '07ANDPG4822C2ZI');
-        $this->proprietor = Setting::get('proprietor', 'Mr. Arvind Kumar Gautam');
-        $this->incorporation_year = Setting::get('incorporation_year', '2009 (GST Registered: July 2017)');
-        $this->turnover = Setting::get('turnover', '₹5 Crore – ₹25 Crore');
-        $this->team_size = Setting::get('team_size', '26 – 50 Skilled Professionals');
-        $this->banker = Setting::get('banker', 'AXIS BANK');
-        $this->about_summary = Setting::get('about_summary', 'Shallom Prefab Systems is a dynamic, rapidly growing manufacturer.');
+        $this->proprietor = Setting::get('proprietor', 'Mr. Arvind Kumar');
+        $this->established_year = Setting::get('established_year', '2017');
+        $this->annual_capacity = Setting::get('annual_capacity', '₹25 Cr');
+        $this->skilled_engineers = Setting::get('skilled_engineers', '50+');
+        $this->structure_lifespan = Setting::get('structure_lifespan', '50 Years');
+        $this->about_summary = Setting::get('about_summary', 'Innovative modular engineering and scalable turnkey construction for residential, commercial, and industrial projects across India.');
     }
 
     public function save(): void
@@ -83,18 +77,16 @@ new #[Layout('layouts::admin')] #[Title('System Settings | Admin')] class extend
             'company_name' => 'required|string|max:255',
             'company_tagline' => 'nullable|string|max:500',
             'phone' => 'required|string|max:50',
-            'whatsapp' => 'nullable|string|max:50',
-            'landline' => 'nullable|string|max:50',
+            'secondary_phone' => 'required|string|max:50',
             'email' => 'required|email|max:255',
             'address' => 'required|string|max:500',
+            'branch_address' => 'required|string|max:500',
             'website' => 'nullable|url|max:255',
-            'business_hours' => 'nullable|string|max:255',
-            'gst_no' => 'nullable|string|max:50',
             'proprietor' => 'nullable|string|max:255',
-            'incorporation_year' => 'nullable|string|max:255',
-            'turnover' => 'nullable|string|max:255',
-            'team_size' => 'nullable|string|max:255',
-            'banker' => 'nullable|string|max:255',
+            'established_year' => 'nullable|string|max:255',
+            'annual_capacity' => 'nullable|string|max:255',
+            'skilled_engineers' => 'nullable|string|max:255',
+            'structure_lifespan' => 'nullable|string|max:255',
             'about_summary' => 'nullable|string|max:2000',
             'logoFile' => 'nullable|image|max:2048',
             'faviconFile' => 'nullable|file|mimes:ico,png,jpg,svg,webp|max:1024',
@@ -121,20 +113,18 @@ new #[Layout('layouts::admin')] #[Title('System Settings | Admin')] class extend
 
         // Save Contact
         Setting::set('phone', $this->phone, 'contact');
-        Setting::set('whatsapp', $this->whatsapp, 'contact');
-        Setting::set('landline', $this->landline, 'contact');
+        Setting::set('secondary_phone', $this->secondary_phone, 'contact');
         Setting::set('email', $this->email, 'contact');
         Setting::set('address', $this->address, 'contact');
+        Setting::set('branch_address', $this->branch_address, 'contact');
         Setting::set('website', $this->website, 'contact');
-        Setting::set('business_hours', $this->business_hours, 'contact');
 
-        // Save Company & Tax
-        Setting::set('gst_no', $this->gst_no, 'company');
+        // Save company profile
         Setting::set('proprietor', $this->proprietor, 'company');
-        Setting::set('incorporation_year', $this->incorporation_year, 'company');
-        Setting::set('turnover', $this->turnover, 'company');
-        Setting::set('team_size', $this->team_size, 'company');
-        Setting::set('banker', $this->banker, 'company');
+        Setting::set('established_year', $this->established_year, 'company');
+        Setting::set('annual_capacity', $this->annual_capacity, 'company');
+        Setting::set('skilled_engineers', $this->skilled_engineers, 'company');
+        Setting::set('structure_lifespan', $this->structure_lifespan, 'company');
 
         $this->logoFile = null;
         $this->faviconFile = null;

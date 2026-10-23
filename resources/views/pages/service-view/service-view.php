@@ -32,9 +32,9 @@ new #[Layout('layouts::app')] class extends Component
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Key Technical Advantages</h3>
                     <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-6">
                         <li><strong>Wooden-Finish Aesthetic:</strong> Elegant architectural finish without harming natural timber forests.</li>
-                        <li><strong>High Thermal Core:</strong> High R-value PUF/EPS sandwich insulation cutting HVAC power bills by up to 40%.</li>
+                        <li><strong>Thermal Efficiency:</strong> Aerocon and PUF insulation options support high thermal efficiency.</li>
                         <li><strong>Zero Site Pollution:</strong> Demountable nut-and-bolt assembly with zero wet masonry site waste.</li>
-                        <li><strong>25+ Year Lifespan:</strong> Heavy galvanized structural steel framing (IS 2062) coated with anti-corrosive primer.</li>
+                        <li><strong>Structure Lifespan:</strong> The company profile states a structure lifespan of 50 years.</li>
                     </ul>
 
                     <div class="p-4 bg-orange-50 border-l-4 border-[#FF8B02] rounded-r-xl text-slate-800 text-sm font-semibold mb-4">
@@ -45,7 +45,7 @@ new #[Layout('layouts::app')] class extends Component
                     [
                         'name' => 'Modular Resorts & Eco-Cottages',
                         'desc' => 'High-end luxury prefab wooden-finish cottages, eco-resort cabins, glamping pods, and hill-station retreat villas built with zero environmental damage.',
-                        'features' => ['Wooden-texture aesthetic', 'PUF/EPS thermal core', 'High wind & rain resistance', 'Fast 7-day deployment'],
+                        'features' => ['Wooden pine homes', 'PUF thermal insulation option', 'Turnkey project delivery', 'Modular and relocatable designs'],
                     ],
                     [
                         'name' => 'Premium Guest Houses & Recreation Blocks',
@@ -56,9 +56,9 @@ new #[Layout('layouts::app')] class extends Component
                 'specs' => [
                     'Structural Frame' => 'Galvanized Heavy MS Tubular & Box Sections (IS 2062)',
                     'Wall Panelling' => '50mm to 100mm PUF/EPS Sandwich Core / Aerocon Panels',
-                    'Thermal Performance' => 'R-Value high thermal resistance (saves 40% HVAC power)',
+                    'Thermal Performance' => 'Aerocon and PUF insulation options',
                     'Roofing Sheet' => 'Insulated Corrugated Pre-Painted Galvanized Steel (PPGL)',
-                    'Design Lifespan' => '25+ Years with anti-corrosive primer coating',
+                    'Design Lifespan' => '50 Years',
                 ],
             ],
             'institutional-accommodation-solutions' => [
@@ -70,12 +70,12 @@ new #[Layout('layouts::app')] class extends Component
                 'summary' => 'Rapidly deployable pre-engineered school buildings, multi-story student hostels, and industrial worker housing camps engineered for high density and durability.',
                 'content' => '
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Rapid Institutional & Worker Housing</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">Pre-engineered school blocks, multi-classroom modules, student dormitories, and heavy-duty industrial worker housing camps built for rapid 70% faster turnaround time.</p>
+                    <p class="text-slate-600 leading-relaxed mb-4">Pre-engineered school blocks, modular classrooms, student housing, and industrial worker accommodation designed for turnkey delivery.</p>
 
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Key Performance Parameters</h3>
                     <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-6">
-                        <li><strong>Fire Retardant Walls:</strong> Aerocon fiber-cement tongue-and-groove panels with 2-hour fire rating.</li>
-                        <li><strong>Multi-Story Framing:</strong> G+1 and G+2 structural PEB steel framing options.</li>
+                        <li><strong>Fire Safety:</strong> The company profile specifies Class "O" fire safety ratings.</li>
+                        <li><strong>Faster Turnaround:</strong> Off-site fabrication can reduce installation timelines by up to 60%.</li>
                         <li><strong>High Capacity:</strong> Modular dormitories with attached sanitation blocks for high-density worker camps.</li>
                     </ul>
                 ',
@@ -88,20 +88,19 @@ new #[Layout('layouts::app')] class extends Component
                     [
                         'name' => 'Hostel Blocks & Student Housing',
                         'desc' => 'Multi-story G+1 / G+2 modular dormitories, student housing complexes, dining halls, and warden quarters designed for maximum occupant safety.',
-                        'features' => ['G+1 / G+2 structural framing', 'Attached sanitary blocks', 'Heavy vinyl flooring', 'Seismic earthquake compliant'],
+                        'features' => ['Modular classrooms and student housing', 'Turnkey project delivery', 'Zone-V earthquake design', 'Wind speeds up to 39 m/s'],
                     ],
                     [
                         'name' => 'Labour Accommodation Blocks & Worker Colonies',
                         'desc' => 'Heavy-duty industrial labour camps, bunk houses, worker housing colonies, and attached sanitation blocks for mining and infra project sites.',
-                        'features' => ['100% Demountable & relocatable', 'High occupant capacity', 'Monsoon leak-proof roofing', 'Rapid 48-hr assembly'],
+                        'features' => ['Modular and relocatable', 'Worker accommodation', 'Turnkey site installation'],
                     ],
                 ],
                 'specs' => [
                     'Structural Frame' => 'Pre-Engineered Heavy Steel Frame (PEB G+1/G+2 ready)',
                     'Wall Panelling' => 'Aerocon Tongue & Groove Fiber Cement Sandwich Panels',
-                    'Fire Rating' => 'Up to 2-Hour Fire Retardancy Rating',
-                    'Flooring System' => 'Heavy Duty Antiskid Vinyl / Cement Fiber Sheet',
-                    'Design Lifespan' => '25+ Years with zero structural degradation',
+                    'Fire Rating' => 'Class "O" fire safety rating',
+                    'Design Lifespan' => '50 Years',
                 ],
             ],
             'commercial-site-utilities' => [
@@ -139,7 +138,7 @@ new #[Layout('layouts::app')] class extends Component
                     'Wall Panelling' => 'Insulated PUF / EPS Sandwich Panels (50mm / 75mm)',
                     'Windows & Doors' => 'UPVC Sliding Glazed Windows with Safety Grills',
                     'Electrical Fixtures' => 'Concealed Copper Wiring, LED Panels, Switchboards',
-                    'Design Lifespan' => '25+ Years with 100% relocatability',
+                    'Design Lifespan' => '50 Years',
                 ],
             ],
             'specialized-interior-contracting' => [
@@ -156,7 +155,7 @@ new #[Layout('layouts::app')] class extends Component
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Capabilities</h3>
                     <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-6">
                         <li><strong>Acoustic Isolation:</strong> Soundproof gypsum and Aerocon dry wall partitions.</li>
-                        <li><strong>Energy Savings:</strong> Industrial PUF/EPS sandwich wall panelling cutting HVAC costs by 40%.</li>
+                        <li><strong>Thermal Insulation:</strong> PUF and Aerocon panel systems support thermal efficiency.</li>
                     </ul>
                 ',
                 'sub_offerings' => [
@@ -168,7 +167,7 @@ new #[Layout('layouts::app')] class extends Component
                     [
                         'name' => 'Industrial Wall Panelling & Thermal Insulation',
                         'desc' => 'High-density PUF/EPS sandwich wall panels, cold-room insulation, exterior thermal cladding, and protective profile walling for industrial facilities.',
-                        'features' => ['Cuts HVAC bills by 40%', 'Vapour & moisture barrier', 'ISO 9001:2015 precision', 'Chemical & rust resistant'],
+                        'features' => ['PUF and Aerocon insulation options', 'Turnkey installation', 'Modular construction'],
                     ],
                 ],
                 'specs' => [
@@ -176,7 +175,6 @@ new #[Layout('layouts::app')] class extends Component
                     'Ceiling System' => 'Grid Ceiling / Acoustic Mineral Fiber False Ceiling',
                     'Thermal Performance' => 'High R-Value insulation preventing thermal transfer',
                     'Finish Options' => 'Textured Paint / Laminate / Vinyl / Profile Cladding',
-                    'Quality Norms' => 'ISO 9001:2015 Manufacturing & Installation Norms',
                 ],
             ],
         ];
@@ -198,7 +196,6 @@ new #[Layout('layouts::app')] class extends Component
                     'specs' => [
                         'Structural Frame' => 'Galvanized Heavy MS Tubular & Box Sections (IS 2062)',
                         'Wall Panelling' => 'Insulated PUF / EPS Sandwich Core / Aerocon Panels',
-                        'Quality Norms' => 'ISO 9001:2015 Manufacturing & Installation Norms',
                     ],
                 ];
 

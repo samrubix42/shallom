@@ -129,7 +129,7 @@
 
     <!-- Footer -->
     <div class="text-center text-xs text-slate-500 font-medium">
-        © {{ date('Y') }} Shallom Prefab Systems • ISO 9001:2015 Certified
+        © {{ date('Y') }} Shallom Prefab Systems
     </div>
 
 </div>

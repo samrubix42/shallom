@@ -79,9 +79,9 @@ new #[Layout('layouts::app')] #[Title('Core Business Verticals & Turnkey Service
                 'Industrial Wall Panelling & Thermal Insulation',
             ],
             'highlights' => [
-                'Saves up to 40% HVAC energy consumption',
+                'Thermal insulation options using Aerocon and PUF materials',
                 'Acoustic noise isolation & moisture barrier',
-                'ISO 9001:2015 quality norms compliance',
+                'Turnkey design, manufacturing, transport, and installation',
             ],
         ],
     ];

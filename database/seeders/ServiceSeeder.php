@@ -60,8 +60,8 @@ class ServiceSeeder extends Seeder
                         <ul class="list-disc pl-5 space-y-2 text-slate-600">
                             <li><strong>Structural Framing:</strong> Heavy-duty galvanized MS tubular box sections (IS 2062 certified).</li>
                             <li><strong>Wall & Roof Insulation:</strong> 60mm high-density Polyurethane Foam (PUF) / Aerocon sandwich panels.</li>
-                            <li><strong>Thermal Efficiency:</strong> Superior R-value rating cutting HVAC electricity bills by up to 40%.</li>
-                            <li><strong>Safety Ratings:</strong> Seismic Zone-V earthquake resistance & wind velocity rating up to 39 m/s.</li>
+                            <li><strong>Thermal Efficiency:</strong> PUF and Aerocon insulation options support thermal efficiency.</li>
+                            <li><strong>Safety Ratings:</strong> Designs for Zone-V earthquake loads and wind speeds up to 39 m/s, with Class "O" fire safety ratings.</li>
                         </ul>
                     </div>
                 ',
@@ -163,7 +163,7 @@ class ServiceSeeder extends Seeder
 
                         <h3 class="text-xl font-bold text-slate-900 pt-2">Performance & Relocatability</h3>
                         <ul class="list-disc pl-5 space-y-2 text-slate-600">
-                            <li><strong>100% Relocatable:</strong> Demountable nut-and-bolt assembly allowing complete dismantling and re-erection.</li>
+                            <li><strong>Modular & Relocatable:</strong> Flexible structural frameworks allow future expansion, layout changes, or relocation.</li>
                             <li><strong>Fire Safety:</strong> Aerocon tongue-and-groove fiber-cement panels with 2-hour fire rating (Class "O" BS 476).</li>
                         </ul>
                     </div>
@@ -200,7 +200,7 @@ class ServiceSeeder extends Seeder
                                 <li class="flex items-start gap-2">
                                     <i class="ri-checkbox-circle-fill text-[#FF8B02] text-lg shrink-0 mt-0.5"></i>
                                     <div>
-                                        <strong>Thermal & Acoustic Insulation:</strong> Advanced PUF/Aerocon panelling solutions to cut HVAC energy bills by 40% and eliminate sound transmission.
+                                        <strong>Thermal & Acoustic Insulation:</strong> PUF/Aerocon panelling options for thermal insulation and interior applications.
                                     </div>
                                 </li>
                             </ul>
@@ -208,7 +208,7 @@ class ServiceSeeder extends Seeder
 
                         <h3 class="text-xl font-bold text-slate-900 pt-2">Quality Standards</h3>
                         <ul class="list-disc pl-5 space-y-2 text-slate-600">
-                            <li><strong>ISO 9001:2015 Norms:</strong> Strict manufacturing tolerances and site commissioning quality checks.</li>
+                            <li><strong>Turnkey Delivery:</strong> Architectural design, precision manufacturing, transport, and rapid installation.</li>
                             <li><strong>Acoustic Isolation:</strong> Sound-damping mineral wool and fiber-cement board sandwich construction.</li>
                         </ul>
                     </div>

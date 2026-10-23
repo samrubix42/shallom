@@ -13,7 +13,7 @@ new #[Layout('layouts::app')] #[Title('Contact Us | Shallom Prefab Systems')] cl
 
     public string $email = '';
 
-    public string $buildingInterest = 'Prefab Site Office';
+    public string $buildingInterest = 'Modular Villas and Eco Resort Cottages';
 
     public string $projectLocation = '';
 
@@ -56,7 +56,7 @@ new #[Layout('layouts::app')] #[Title('Contact Us | Shallom Prefab Systems')] cl
         $this->name = '';
         $this->phone = '';
         $this->email = '';
-        $this->buildingInterest = 'Prefab Site Office';
+        $this->buildingInterest = 'Modular Villas and Eco Resort Cottages';
         $this->projectLocation = '';
         $this->message = '';
         $this->enquirySubmitted = false;

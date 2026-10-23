@@ -69,7 +69,7 @@ new #[Layout('layouts::app')] #[Title('Shallom Prefab Systems | Modular Houses &
     #[Validate('nullable|email')]
     public string $email = '';
 
-    public string $buildingInterest = 'Prefab Site Office';
+    public string $buildingInterest = 'Modular Villas and Eco Resort Cottages';
 
     public string $projectLocation = '';
 

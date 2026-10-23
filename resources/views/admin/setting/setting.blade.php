@@ -7,7 +7,7 @@
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-200/80">
         <div>
             <h1 class="text-xl font-semibold text-slate-800">System Settings</h1>
-            <p class="text-xs text-slate-500">Manage company branding, logos, contact numbers, address, and GST details</p>
+            <p class="text-xs text-slate-500">Manage company branding, contact details, and profile information</p>
         </div>
 
         <button wire:click="save" 
@@ -111,35 +111,23 @@
                 <span>Contact Channels & Office Address</span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- Phone -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1">
                     <label class="block text-xs font-semibold text-slate-700">Primary Phone Number <span class="text-rose-500">*</span></label>
                     <div class="relative">
                         <i class="ri-phone-fill absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                        <input type="text" wire:model="phone" placeholder="+91-9899552380" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                        <input type="text" wire:model="phone" placeholder="+91 98995 52380" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
                     </div>
                     @error('phone') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
 
-                <!-- WhatsApp -->
                 <div class="space-y-1">
-                    <label class="block text-xs font-semibold text-slate-700">WhatsApp Number</label>
+                    <label class="block text-xs font-semibold text-slate-700">Secondary Phone Number <span class="text-rose-500">*</span></label>
                     <div class="relative">
-                        <i class="ri-whatsapp-fill absolute left-3 top-1/2 -translate-y-1/2 text-emerald-500 text-xs"></i>
-                        <input type="text" wire:model="whatsapp" placeholder="+919899552380" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                        <i class="ri-phone-fill absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                        <input type="text" wire:model="secondary_phone" placeholder="+91 70650 13555" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
                     </div>
-                    @error('whatsapp') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
-                </div>
-
-                <!-- Landline -->
-                <div class="space-y-1">
-                    <label class="block text-xs font-semibold text-slate-700">Landline / Hotline</label>
-                    <div class="relative">
-                        <i class="ri-customer-service-2-line absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                        <input type="text" wire:model="landline" placeholder="07942550323" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
-                    </div>
-                    @error('landline') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
+                    @error('secondary_phone') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
             </div>
 
@@ -149,7 +137,7 @@
                     <label class="block text-xs font-semibold text-slate-700">Official Email Address <span class="text-rose-500">*</span></label>
                     <div class="relative">
                         <i class="ri-mail-fill absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                        <input type="email" wire:model="email" placeholder="shallomprefabsystems@gmail.com" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                        <input type="email" wire:model="email" placeholder="shallomprefab@yahoo.com" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
                     </div>
                     @error('email') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
@@ -159,80 +147,71 @@
                     <label class="block text-xs font-semibold text-slate-700">Website URL</label>
                     <div class="relative">
                         <i class="ri-global-line absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                        <input type="url" wire:model="website" placeholder="http://www.shallomprefab.com/" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                        <input type="url" wire:model="website" placeholder="https://www.shallomprefabsystems.com" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
                     </div>
                     @error('website') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
             </div>
 
-            <!-- Address -->
-            <div class="space-y-1">
-                <label class="block text-xs font-semibold text-slate-700">Office & Works Address <span class="text-rose-500">*</span></label>
-                <div class="relative">
-                    <i class="ri-map-pin-2-fill absolute left-3 top-3 text-slate-400 text-xs"></i>
-                    <textarea wire:model="address" rows="2" placeholder="Full office address..." class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]"></textarea>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                    <label class="block text-xs font-semibold text-slate-700">Head Office Address <span class="text-rose-500">*</span></label>
+                    <div class="relative">
+                        <i class="ri-map-pin-2-fill absolute left-3 top-3 text-slate-400 text-xs"></i>
+                        <textarea wire:model="address" rows="2" placeholder="N-3/A-3, Dilshad Garden, Delhi - 110095" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]"></textarea>
+                    </div>
+                    @error('address') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
-                @error('address') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
-            </div>
 
-            <!-- Business Hours -->
-            <div class="space-y-1">
-                <label class="block text-xs font-semibold text-slate-700">Business Hours</label>
-                <input type="text" wire:model="business_hours" placeholder="Monday to Saturday | 09:00 AM – 07:00 PM IST" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
-                @error('business_hours') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
+                <div class="space-y-1">
+                    <label class="block text-xs font-semibold text-slate-700">Branch Office Address <span class="text-rose-500">*</span></label>
+                    <div class="relative">
+                        <i class="ri-map-pin-2-fill absolute left-3 top-3 text-slate-400 text-xs"></i>
+                        <textarea wire:model="branch_address" rows="2" placeholder="D-15, Sector 3, Noida (U.P.) - 201301" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]"></textarea>
+                    </div>
+                    @error('branch_address') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
+                </div>
             </div>
         </div>
 
-        <!-- 3. GST, TAX & CORPORATE INFORMATION -->
+        <!-- 3. COMPANY PROFILE INFORMATION -->
         <div class="bg-white rounded-lg border border-slate-200 shadow-xs p-5 sm:p-6 space-y-5">
             <div class="flex items-center gap-2 text-slate-800 font-bold text-sm border-b border-slate-100 pb-3">
                 <i class="ri-[#FF8B02] ri-shield-check-line text-[#FF8B02] text-base"></i>
-                <span>GST Registration & Corporate Information</span>
+                <span>Company Profile Details</span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- GST Number -->
-                <div class="space-y-1">
-                    <label class="block text-xs font-semibold text-slate-700">GST Registration Number</label>
-                    <input type="text" wire:model="gst_no" placeholder="07ANDPG4822C2ZI" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs font-mono focus:outline-none focus:border-[#FF8B02]">
-                    @error('gst_no') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
-                </div>
-
-                <!-- Proprietor -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1">
                     <label class="block text-xs font-semibold text-slate-700">Proprietor / Key Contact</label>
-                    <input type="text" wire:model="proprietor" placeholder="Mr. Arvind Kumar Gautam" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                    <input type="text" wire:model="proprietor" placeholder="Mr. Arvind Kumar" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
                     @error('proprietor') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
 
-                <!-- Incorporation Year -->
                 <div class="space-y-1">
-                    <label class="block text-xs font-semibold text-slate-700">Incorporation Year / Details</label>
-                    <input type="text" wire:model="incorporation_year" placeholder="2009 (GST Registered: July 2017)" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
-                    @error('incorporation_year') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
+                    <label class="block text-xs font-semibold text-slate-700">Established Year</label>
+                    <input type="text" wire:model="established_year" placeholder="2017" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                    @error('established_year') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- Turnover -->
                 <div class="space-y-1">
-                    <label class="block text-xs font-semibold text-slate-700">Annual Turnover Range</label>
-                    <input type="text" wire:model="turnover" placeholder="₹5 Crore – ₹25 Crore" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
-                    @error('turnover') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
+                    <label class="block text-xs font-semibold text-slate-700">Annual Capacity</label>
+                    <input type="text" wire:model="annual_capacity" placeholder="₹25 Cr" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                    @error('annual_capacity') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
 
-                <!-- Team Size -->
                 <div class="space-y-1">
-                    <label class="block text-xs font-semibold text-slate-700">Team Size</label>
-                    <input type="text" wire:model="team_size" placeholder="26 – 50 Skilled Professionals" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
-                    @error('team_size') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
+                    <label class="block text-xs font-semibold text-slate-700">Skilled Engineers</label>
+                    <input type="text" wire:model="skilled_engineers" placeholder="50+" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                    @error('skilled_engineers') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
 
-                <!-- Banker -->
                 <div class="space-y-1">
-                    <label class="block text-xs font-semibold text-slate-700">Primary Banker</label>
-                    <input type="text" wire:model="banker" placeholder="AXIS BANK" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
-                    @error('banker') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
+                    <label class="block text-xs font-semibold text-slate-700">Structure Lifespan</label>
+                    <input type="text" wire:model="structure_lifespan" placeholder="50 Years" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                    @error('structure_lifespan') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
                 </div>
             </div>
 
