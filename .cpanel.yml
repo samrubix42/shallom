@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home4/growtfce/shallomprefabsystems.com
+    - export DEPLOYPATH=//home4/mobiyqdc/shallomprefabsystems.com
     - /bin/cp -R * $DEPLOYPATH 
 
 
