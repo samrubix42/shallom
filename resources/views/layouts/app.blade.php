@@ -33,7 +33,7 @@
         <!-- Footer -->
         <x-public.footer />
 
-        <a href="https://wa.me/{{ preg_replace('/\D+/', '', setting('whatsapp_phone', '+91 98995 52380')) }}"
+        <a href="https://wa.me/{{ preg_replace('/\D+/', '', setting('whatsapp_phone', '+91 98995 52380')) }}?text=Hi"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Chat with us on WhatsApp"

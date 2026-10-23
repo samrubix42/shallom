@@ -154,7 +154,7 @@ test('admin can save both company contact numbers and office addresses', functio
         ->assertDontSee('2009');
 
     $this->get('/')
-        ->assertSee('href="https://wa.me/913333333333"', false)
+        ->assertSee('href="https://wa.me/913333333333?text=Hi"', false)
         ->assertSee('aria-label="Chat with us on WhatsApp"', false);
 });
 
