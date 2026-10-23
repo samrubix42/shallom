@@ -254,8 +254,9 @@
         </div>
     </div>
 
+   
 
-    <!-- 3. ARCHITECTURAL "KNOW US BETTER" SECTION (EXACT REFERENCE DESIGN) -->
+    <!-- 4. ARCHITECTURAL "KNOW US BETTER" SECTION (EXACT REFERENCE DESIGN) -->
     <section id="about" class="py-20 sm:py-28 bg-[#FAF9F5] text-slate-900 border-b border-slate-200/80 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -318,8 +319,63 @@
             </div>
         </div>
     </section>
+     <!-- 3. ENTERPRISE SCALE & TRACK RECORD -->
+    <section id="enterprise-scale" class="bg-[#0F1B24] py-16 text-white sm:py-20">
+        <div class="mx-auto max-w-7xl space-y-10 px-4 sm:px-6 lg:px-8">
+            <header class="space-y-3">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#FF8B02]">Our Capabilities</p>
+                <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">Enterprise Scale <span class="text-[#FF8B02]">& Track Record</span></h2>
+            </header>
 
-    <!-- 4. MINIMALIST CORE PRODUCTS SECTION -->
+            <div class="grid grid-cols-2 divide-x divide-y divide-white/15 border-y border-white/15 sm:grid-cols-4 sm:divide-y-0">
+                <article class="px-4 py-5 sm:px-6 sm:py-6">
+                    <p class="text-3xl font-bold sm:text-4xl">15+</p>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-wider text-[#FF8B02] sm:text-sm">Years Track Record</p>
+                </article>
+                <article class="px-4 py-5 sm:px-6 sm:py-6">
+                    <p class="text-3xl font-bold sm:text-4xl">{{ setting('annual_capacity', '₹25 Cr') }}</p>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-wider text-[#FF8B02] sm:text-sm">Annual Capacity</p>
+                </article>
+                <article class="px-4 py-5 sm:px-6 sm:py-6">
+                    <p class="text-3xl font-bold sm:text-4xl">{{ setting('skilled_engineers', '50+') }}</p>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-wider text-[#FF8B02] sm:text-sm">Skilled Engineers</p>
+                </article>
+                <article class="px-4 py-5 sm:px-6 sm:py-6">
+                    <p class="text-3xl font-bold sm:text-4xl">{{ setting('structure_lifespan', '50 Years') }}</p>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-wider text-[#FF8B02] sm:text-sm">Structure Lifespan</p>
+                </article>
+            </div>
+
+            <div class="space-y-5 border-t border-white/15 pt-8">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">Delivery & Technology</p>
+                    <h3 class="mt-2 text-xl font-semibold text-white sm:text-2xl">Built for efficient project delivery</h3>
+                </div>
+                <div class="grid gap-4 lg:grid-cols-2">
+                    <article class="flex gap-5 rounded-xl border border-white/10 bg-white/5 p-6 sm:p-7">
+                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#FF8B02]/15 text-[#FF8B02]">
+                            <i class="ri-tools-line text-2xl" aria-hidden="true"></i>
+                        </span>
+                        <div class="space-y-2">
+                            <h4 class="text-lg font-bold">Turnkey Manufacturing & Execution</h4>
+                            <p class="text-sm leading-relaxed text-slate-300">End-to-end delivery from architectural design and panel fabrication to rapid on-site assembly.</p>
+                        </div>
+                    </article>
+                    <article class="flex gap-5 rounded-xl border border-white/10 bg-white/5 p-6 sm:p-7">
+                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#FF8B02]/15 text-[#FF8B02]">
+                            <i class="ri-stack-line text-2xl" aria-hidden="true"></i>
+                        </span>
+                        <div class="space-y-2">
+                            <h4 class="text-lg font-bold">Advanced Insulation Technologies</h4>
+                            <p class="text-sm leading-relaxed text-slate-300">Aerocon panels, cold-rolled steel framing, and polyurethane foam (PUF) insulation cores.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MINIMALIST CORE PRODUCTS SECTION -->
     <section id="categories" class="py-20 sm:py-28 bg-white text-slate-900 border-b border-slate-200/80 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -432,7 +488,7 @@
         </div>
     </section>
 
-    <!-- 5. MINIMALIST WHY CHOOSE US SECTION -->
+    <!-- 6. STRATEGIC PREFAB ADVANTAGES, CORE VALUES, MISSION & VISION -->
     <section id="why-us" class="py-20 sm:py-28 bg-[#FAF9F5] text-slate-900 border-b border-slate-200/80 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -443,12 +499,12 @@
                 </div>
 
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-800 tracking-tight leading-[1.18]">
-                    PRECISION & <br/>
-                    <span class="text-[#FF8B02] font-normal">STRUCTURAL INTEGRITY</span>
+                    STRATEGIC <br/>
+                    <span class="text-[#FF8B02] font-normal">PREFAB ADVANTAGES</span>
                 </h2>
 
                 <p class="text-slate-600 text-sm sm:text-base font-normal leading-relaxed pt-1">
-                    Our modular pre-engineered buildings outperform traditional civil masonry across every critical engineering metric.
+                    Modular construction combines faster turnaround, structural performance, thermal efficiency, and relocatable design.
                 </p>
             </div>
 
@@ -456,43 +512,66 @@
                 
                 <div class="bg-white border border-slate-200/80 p-8 rounded-2xl hover:border-[#FF8B02] shadow-xs hover:shadow-lg transition-all group reveal-on-scroll delay-100">
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ri-[#FF8B02] ri-flashlight-line text-2xl"></i>
+                        <i class="ri-flashlight-line text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">60% Faster Turnaround</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Pre-fabricated off-site components allow rapid assembly in days rather than months of chaotic site construction.
+                        Off-site panel fabrication can reduce installation timelines by up to 60% compared with traditional civil builds.
                     </p>
                 </div>
 
                 <div class="bg-white border border-slate-200/80 p-8 rounded-2xl hover:border-[#FF8B02] shadow-xs hover:shadow-lg transition-all group reveal-on-scroll delay-200">
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ri-[#FF8B02] ri-temp-cold-line text-2xl"></i>
+                        <i class="ri-shield-check-line text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">All-Weather Durability</h3>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Seismic & Wind Performance</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Heavy galvanized steel structure withstands high-velocity wind pressures, heavy rains, and seismic shocks.
+                        Designed for Zone-V earthquake loads and winds up to 39 m/s, with Class “O” fire safety.
                     </p>
                 </div>
 
                 <div class="bg-white border border-slate-200/80 p-8 rounded-2xl hover:border-[#FF8B02] shadow-xs hover:shadow-lg transition-all group reveal-on-scroll delay-300">
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ri-[#FF8B02] ri-drag-drop-line text-2xl"></i>
+                        <i class="ri-drag-drop-line text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">Modular & Relocatable</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Demountable nut-and-bolt framing ensures modules can be dismantled, moved, and re-erected at new sites effortlessly.
+                        Flexible structural frameworks support future expansion, layout changes, or relocation.
                     </p>
                 </div>
 
                 <div class="bg-white border border-slate-200/80 p-8 rounded-2xl hover:border-[#FF8B02] shadow-xs hover:shadow-lg transition-all group reveal-on-scroll delay-400">
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ri-[#FF8B02] ri-leaf-line text-2xl"></i>
+                        <i class="ri-leaf-line text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">Thermal Efficiency</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Insulated Aerocon and PUF panel systems support high thermal efficiency.
+                        Aerocon panels and PUF insulation cores support energy-efficient thermal performance.
                     </p>
                 </div>
+
+            </div>
+
+            <div class="mt-14 grid gap-6 lg:grid-cols-3">
+                <div class="space-y-4 rounded-2xl bg-[#0F1B24] p-7 text-white lg:col-span-1">
+                    <p class="text-xs font-bold uppercase tracking-widest text-[#FF8B02]">Core Values</p>
+                    <ul class="space-y-4 text-sm leading-relaxed text-slate-200">
+                        <li><strong class="text-white">Quality Excellence:</strong> Quality-focused production using premium Aerocon and PUF materials.</li>
+                        <li><strong class="text-white">Sustainability:</strong> Energy-efficient insulation and recyclable building systems.</li>
+                        <li><strong class="text-white">Client Partnership:</strong> Turnkey accountability from architectural design through site commissioning.</li>
+                    </ul>
+                </div>
+                <article class="space-y-3 rounded-2xl border border-slate-200 bg-white p-7">
+                    <p class="text-xs font-bold uppercase tracking-widest text-[#FF8B02]">Our Mission</p>
+                    <h3 class="text-xl font-bold text-slate-900">Engineer dependable building systems</h3>
+                    <p class="text-sm leading-relaxed text-slate-600">To engineer world-class pre-engineered building systems that deliver structural durability, rapid execution, and high thermal efficiency for industrial, commercial, and residential growth across India.</p>
+                </article>
+                <article class="space-y-3 rounded-2xl border border-slate-200 bg-white p-7">
+                    <p class="text-xs font-bold uppercase tracking-widest text-[#FF8B02]">Our Vision</p>
+                    <h3 class="text-xl font-bold text-slate-900">Advance off-site modular construction</h3>
+                    <p class="text-sm leading-relaxed text-slate-600">To be a leading modular construction partner, setting benchmarks in sustainable architecture, eco-friendly materials, and turnkey engineering for the future of infrastructure.</p>
+                </article>
+            </div>
 
         </div>
     </section>
@@ -564,7 +643,7 @@
         </div>
     </section>
 
-    <!-- 6. MINIMALIST CLIENT REVIEWS SECTION -->
+    <!-- 7. MINIMALIST CLIENT REVIEWS SECTION -->
     @php
         $testimonialGroups = $this->testimonials->chunk(3);
     @endphp
@@ -693,7 +772,7 @@
         </div>
     </section>
 
-    <!-- 7. MINIMALIST FAQ SECTION -->
+    <!-- 8. MINIMALIST FAQ SECTION -->
     <section id="faq" 
              x-data="{ openFaq: 0 }" 
              class="py-20 sm:py-28 bg-[#FAF9F5] text-slate-900 border-b border-slate-200/80 relative">
@@ -764,7 +843,7 @@
 
 
 
-    <!-- 8. MINIMALIST CONTACT & ENQUIRY FORM SECTION -->
+    <!-- 9. MINIMALIST CONTACT & ENQUIRY FORM SECTION -->
     <section id="contact" class="py-20 sm:py-28 bg-white text-slate-900 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

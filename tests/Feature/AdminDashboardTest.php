@@ -151,3 +151,29 @@ test('admin can save both company contact numbers and office addresses', functio
         ->assertDontSee('ISO 9001:2015')
         ->assertDontSee('2009');
 });
+
+test('home and profile pages present company scale and prefab advantages', function () {
+    $this->get('/')
+        ->assertSee('Enterprise Scale')
+        ->assertSee('15+')
+        ->assertSee('Annual Capacity')
+        ->assertSee('Turnkey Manufacturing & Execution', false)
+        ->assertSee('Advanced Insulation Technologies')
+        ->assertSee('STRATEGIC')
+        ->assertSee('Zone-V')
+        ->assertSee('Core Values')
+        ->assertSee('Our Mission')
+        ->assertSee('Our Vision')
+        ->assertDontSee('ISO 9001:2015');
+
+    $this->get('/profile')
+        ->assertSee('15+')
+        ->assertSee('Turnkey Manufacturing & Execution', false)
+        ->assertSee('Advanced Insulation Technologies')
+        ->assertSee('Zone-V')
+        ->assertSee('CORE VALUES')
+        ->assertSee('Our Mission')
+        ->assertSee('Our Vision')
+        ->assertDontSee('ISO 9001:2015')
+        ->assertDontSee('2009');
+});

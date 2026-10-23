@@ -34,6 +34,25 @@
             </div>
         </div>
 
+        <section class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <article class="rounded-xl border border-slate-200/80 bg-white p-5 shadow-xs">
+                <p class="text-3xl font-extrabold text-slate-900">15+</p>
+                <p class="mt-1 text-xs font-bold uppercase tracking-wider text-[#FF8B02]">Years Track Record</p>
+            </article>
+            <article class="rounded-xl border border-slate-200/80 bg-white p-5 shadow-xs">
+                <p class="text-3xl font-extrabold text-slate-900">{{ setting('annual_capacity', '₹25 Cr') }}</p>
+                <p class="mt-1 text-xs font-bold uppercase tracking-wider text-[#FF8B02]">Annual Capacity</p>
+            </article>
+            <article class="rounded-xl border border-slate-200/80 bg-white p-5 shadow-xs">
+                <p class="text-3xl font-extrabold text-slate-900">{{ setting('skilled_engineers', '50+') }}</p>
+                <p class="mt-1 text-xs font-bold uppercase tracking-wider text-[#FF8B02]">Skilled Engineers</p>
+            </article>
+            <article class="rounded-xl border border-slate-200/80 bg-white p-5 shadow-xs">
+                <p class="text-3xl font-extrabold text-slate-900">{{ setting('structure_lifespan', '50 Years') }}</p>
+                <p class="mt-1 text-xs font-bold uppercase tracking-wider text-[#FF8B02]">Structure Lifespan</p>
+            </article>
+        </section>
+
         <!-- 2. CORPORATE NARRATIVE & OVERVIEW -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -192,9 +211,9 @@
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center">
                         <i class="ri-settings-4-line text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Modular Structures</h3>
+                    <h3 class="text-lg font-bold text-slate-900">Turnkey Manufacturing & Execution</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Modular building systems designed to be installed efficiently and relocated when project needs change.
+                        End-to-end delivery from architectural design and panel fabrication to rapid on-site assembly.
                     </p>
                 </div>
 
@@ -202,9 +221,9 @@
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center">
                         <i class="ri-test-tube-line text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Aerocon & PUF</h3>
+                    <h3 class="text-lg font-bold text-slate-900">Advanced Insulation Technologies</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        The company profile identifies Aerocon and PUF as materials used across its prefab building solutions.
+                        Aerocon panels, cold-rolled steel framing, and polyurethane foam (PUF) insulation cores.
                     </p>
                 </div>
 
@@ -222,36 +241,34 @@
                     <div class="w-12 h-12 rounded-xl bg-[#FFF4E5] text-[#FF8B02] flex items-center justify-center">
                         <i class="ri-truck-line text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">Sales & Logistics</h3>
+                    <h3 class="text-lg font-bold text-slate-900">Seismic & Wind Performance</h3>
                     <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                        Turnkey construction solutions serve residential, commercial, and industrial projects across India.
+                        Designed for Zone-V earthquake loads and winds up to 39 m/s, with Class “O” fire safety.
                     </p>
                 </div>
 
             </div>
         </div>
 
-        <!-- 5. QUALITY COMMITMENT & CUSTOMER CENTRIC PHILOSOPHY -->
+        <!-- 5. CORE VALUES, MISSION & VISION -->
         <div class="bg-white rounded-2xl border border-slate-200/80 p-8 sm:p-12 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <div class="lg:col-span-7 space-y-6">
                 <div class="flex items-center gap-2 text-[#FF8B02]">
-                    <i class="ri-award-line text-lg"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest">QUALITY ASSURANCE</span>
+                    <i class="ri-heart-line text-lg"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">CORE VALUES</span>
                 </div>
 
                 <h2 class="text-3xl sm:text-4xl font-light text-slate-800 tracking-tight leading-[1.18]">
-                    PERFORMANCE & STRUCTURAL <br/>
-                    <span class="text-[#FF8B02] font-normal">DESIGN FEATURES</span>
+                    BUILT ON <br/>
+                    <span class="text-[#FF8B02] font-normal">PURPOSE & PARTNERSHIP</span>
                 </h2>
 
-                <p class="text-slate-600 text-sm leading-relaxed font-normal">
-                    The company profile highlights up to 60% faster turnaround, structures designed for a 50-year lifespan, and performance features for demanding site conditions.
-                </p>
-
-                <p class="text-slate-600 text-sm leading-relaxed font-normal">
-                    Its listed structural features include Zone-V earthquake suitability, wind resistance up to 39 m/s, and Class “O” fire safety.
-                </p>
+                <ul class="space-y-4 text-sm leading-relaxed text-slate-600">
+                    <li><strong class="text-slate-900">Quality Excellence:</strong> Quality-focused production using premium Aerocon and PUF materials.</li>
+                    <li><strong class="text-slate-900">Sustainability:</strong> Energy-efficient, low-carbon thermal insulation and recyclable building systems.</li>
+                    <li><strong class="text-slate-900">Client Partnership:</strong> Turnkey accountability from initial architectural design through site commissioning.</li>
+                </ul>
 
                 <div class="pt-2 flex flex-wrap gap-4">
                     <div class="px-4 py-2 rounded-lg bg-[#FAF9F5] border border-slate-200 text-xs font-bold text-slate-800">
@@ -263,36 +280,21 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-5 space-y-4 bg-[#FAF9F5] p-8 rounded-2xl border border-slate-200/80">
-                <h3 class="text-xl font-bold text-slate-900 border-b border-slate-200 pb-3">Why Partner With Shallom?</h3>
-                <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
-                    <li class="flex items-center gap-2 font-medium">
-                        <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>Modular and relocatable structures</span>
-                    </li>
-                    <li class="flex items-center gap-2 font-medium">
-                        <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>Zone-V earthquake suitability</span>
-                    </li>
-                    <li class="flex items-center gap-2 font-medium">
-                        <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>Wind resistance up to 39 m/s</span>
-                    </li>
-                    <li class="flex items-center gap-2 font-medium">
-                        <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>Class “O” fire safety</span>
-                    </li>
-                    <li class="flex items-center gap-2 font-medium">
-                        <i class="ri-check-line text-[#FF8B02] font-extrabold text-base"></i>
-                        <span>Turnkey construction solutions</span>
-                    </li>
-                </ul>
-
-                <div class="pt-4 border-t border-slate-200">
-                    <a href="tel:{{ setting('phone', '+91 98995 52380') }}" class="block text-center bg-[#FF8B02] hover:bg-[#E67A00] text-white font-extrabold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider transition-all">
-                        Call Direct Engineering Team
-                    </a>
-                </div>
+            <div class="lg:col-span-5 space-y-5">
+                <article class="rounded-2xl bg-[#FF8B02] p-7 text-slate-950">
+                    <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                        <i class="ri-checkbox-circle-line text-lg"></i>
+                        <span>Our Mission</span>
+                    </div>
+                    <p class="mt-4 text-sm leading-relaxed">To engineer world-class pre-engineered building systems that deliver structural durability, rapid execution, and high thermal efficiency—empowering industrial, commercial, and residential growth across India.</p>
+                </article>
+                <article class="rounded-2xl bg-[#FF8B02] p-7 text-slate-950">
+                    <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                        <i class="ri-eye-line text-lg"></i>
+                        <span>Our Vision</span>
+                    </div>
+                    <p class="mt-4 text-sm leading-relaxed">To be India's leading off-site modular construction partner, setting benchmarks in sustainable architecture, eco-friendly materials, and turnkey engineering that redefine the future of infrastructure.</p>
+                </article>
             </div>
 
         </div>
