@@ -33,6 +33,15 @@
         <!-- Footer -->
         <x-public.footer />
 
+        <a href="https://wa.me/{{ preg_replace('/\D+/', '', setting('whatsapp_phone', '+91 98995 52380')) }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Chat with us on WhatsApp"
+           title="Chat with us on WhatsApp"
+           class="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 hover:bg-[#1FBA59] focus:outline-none focus:ring-4 focus:ring-[#25D366]/30">
+            <i class="ri-whatsapp-line text-3xl" aria-hidden="true"></i>
+        </a>
+
         <x-toaster />
 
         @livewireScripts

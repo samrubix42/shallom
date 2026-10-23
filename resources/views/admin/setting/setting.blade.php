@@ -132,6 +132,18 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                    <label class="block text-xs font-semibold text-slate-700">WhatsApp Number <span class="text-rose-500">*</span></label>
+                    <div class="relative">
+                        <i class="ri-whatsapp-line absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                        <input type="tel" wire:model="whatsapp_phone" placeholder="+91 98995 52380" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:border-[#FF8B02]">
+                    </div>
+                    <p class="text-[11px] text-slate-500">Include the country code. This number appears on the website's WhatsApp button.</p>
+                    @error('whatsapp_phone') <span class="text-rose-500 text-[11px] block">{{ $message }}</span> @enderror
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <!-- Email -->
                 <div class="space-y-1">
                     <label class="block text-xs font-semibold text-slate-700">Official Email Address <span class="text-rose-500">*</span></label>

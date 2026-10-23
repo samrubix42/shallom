@@ -24,6 +24,7 @@ class SettingSeeder extends Seeder
             ['key' => 'structure_lifespan', 'value' => '50 Years', 'group' => 'company'],
             ['key' => 'phone', 'value' => '+91 98995 52380', 'group' => 'contact'],
             ['key' => 'secondary_phone', 'value' => '+91 70650 13555', 'group' => 'contact'],
+            ['key' => 'whatsapp_phone', 'value' => '+91 98995 52380', 'group' => 'contact'],
             ['key' => 'email', 'value' => 'shallomprefab@yahoo.com', 'group' => 'contact'],
             ['key' => 'address', 'value' => 'N-3/A-3, Dilshad Garden, Delhi - 110095', 'group' => 'contact'],
             ['key' => 'branch_address', 'value' => 'D-15, Sector 3, Noida (U.P.) - 201301', 'group' => 'contact'],

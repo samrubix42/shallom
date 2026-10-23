@@ -124,6 +124,7 @@ test('admin can save both company contact numbers and office addresses', functio
         ->test('admin::setting')
         ->set('phone', '+91 11111 11111')
         ->set('secondary_phone', '+91 22222 22222')
+        ->set('whatsapp_phone', '+91 33333 33333')
         ->set('address', 'Updated Head Office, Delhi')
         ->set('branch_address', 'Updated Branch Office, Noida')
         ->call('save')
@@ -131,6 +132,7 @@ test('admin can save both company contact numbers and office addresses', functio
 
     expect(Setting::get('phone'))->toBe('+91 11111 11111')
         ->and(Setting::get('secondary_phone'))->toBe('+91 22222 22222')
+        ->and(Setting::get('whatsapp_phone'))->toBe('+91 33333 33333')
         ->and(Setting::get('address'))->toBe('Updated Head Office, Delhi')
         ->and(Setting::get('branch_address'))->toBe('Updated Branch Office, Noida');
 
@@ -150,6 +152,10 @@ test('admin can save both company contact numbers and office addresses', functio
         ->assertSee('Updated Branch Office, Noida')
         ->assertDontSee('ISO 9001:2015')
         ->assertDontSee('2009');
+
+    $this->get('/')
+        ->assertSee('href="https://wa.me/913333333333"', false)
+        ->assertSee('aria-label="Chat with us on WhatsApp"', false);
 });
 
 test('home and profile pages present company scale and prefab advantages', function () {

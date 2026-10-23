@@ -28,6 +28,8 @@ new #[Layout('layouts::admin')] #[Title('System Settings | Admin')] class extend
 
     public string $secondary_phone = '';
 
+    public string $whatsapp_phone = '';
+
     public string $email = '';
 
     public string $address = '';
@@ -58,6 +60,7 @@ new #[Layout('layouts::admin')] #[Title('System Settings | Admin')] class extend
 
         $this->phone = Setting::get('phone', '+91-98995 52380');
         $this->secondary_phone = Setting::get('secondary_phone', '+91 70650 13555');
+        $this->whatsapp_phone = Setting::get('whatsapp_phone', '+91 98995 52380');
         $this->email = Setting::get('email', 'shallomprefab@yahoo.com');
         $this->address = Setting::get('address', 'N-3/A-3, Dilshad Garden, Delhi - 110095');
         $this->branch_address = Setting::get('branch_address', 'D-15, Sector 3, Noida (U.P.) - 201301');
@@ -78,6 +81,7 @@ new #[Layout('layouts::admin')] #[Title('System Settings | Admin')] class extend
             'company_tagline' => 'nullable|string|max:500',
             'phone' => 'required|string|max:50',
             'secondary_phone' => 'required|string|max:50',
+            'whatsapp_phone' => 'required|string|max:50',
             'email' => 'required|email|max:255',
             'address' => 'required|string|max:500',
             'branch_address' => 'required|string|max:500',
@@ -114,6 +118,7 @@ new #[Layout('layouts::admin')] #[Title('System Settings | Admin')] class extend
         // Save Contact
         Setting::set('phone', $this->phone, 'contact');
         Setting::set('secondary_phone', $this->secondary_phone, 'contact');
+        Setting::set('whatsapp_phone', $this->whatsapp_phone, 'contact');
         Setting::set('email', $this->email, 'contact');
         Setting::set('address', $this->address, 'contact');
         Setting::set('branch_address', $this->branch_address, 'contact');
